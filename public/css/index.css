@@ -1,0 +1,511 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+}
+#landing {
+    overflow: hidden;
+}
+.stage {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.topsection {
+    height: 45%;
+    background: rgb(0, 197, 209);
+    position: relative;
+}
+.logoimg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 0;
+    left: 0;
+}
+.bottomsection {
+    height: 45%;
+    width: 100vw;
+    background: rgb(255, 217, 0);
+    color: rgb(66, 66, 66);
+    position: relative;
+}
+a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+footer {
+    width: 100%;
+    height: 10%;
+    cursor: pointer;
+}
+.howitworks {
+    line-height: 9vh;
+    background-color: rgb(51, 51, 51);
+    color: rgb(239, 239, 239);
+}
+.howitworks a {
+    font-size: 6vw;
+}
+.textline1 {
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    line-height: 10vh;
+    font-size: 6vw;
+}
+.desc {
+    width: 90%;
+    height: 35%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    margin: auto;
+    font-size: 6vw;
+    color: rgb(66, 66, 66);
+}
+.logotxt {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+    font-size: 10vw;
+    color: rgb(0, 204, 214);
+}
+#DNDtitle {
+    width: 100%;
+    height: 25%;
+    line-height: 35vh;
+    font-size: 8vw;
+    color: #00BCD4;
+}
+.DNDlogo {
+    position: absolute;
+    top: 0;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 12%;
+    width: 25%;
+}
+.DNDlogo img {
+    width: 100%;
+}
+.button {
+    width: 55%;
+    height: 9%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 9vw;
+    text-align: center;
+    line-height: 9vh;
+    cursor: pointer;
+}
+#fblogin {
+    top: 25%;
+    width: 65%;
+    font-weight: bold;
+    line-height: 7.7vh;
+    background: yellow;
+    margin: auto;
+}
+#fblogin a {
+    color: rgb(51, 51, 51);
+}
+/*****DND HOME PAGE*****/
+
+#opt {
+    background: url(../images/highway.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.homeheader {
+    width: 100vw;
+    height: 9vh;
+    line-height: 10vh;
+    background: rgb(255, 255, 255);
+    /*rgb(239, 239, 239);*/
+    color: rgb(51, 51, 51);
+}
+.icon {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.headersections,
+.left {
+    width: 20%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+#profileicon {
+    float: left;
+}
+#messages {
+    float: right;
+}
+svg {
+    width: 55%;
+    height: 55%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+#current,
+.center {
+    width: 60%;
+    float: left;
+    font-size: 6.5vw;
+    color: rgb(0, 204, 214);
+}
+footer {
+    width: 100%;
+    position: absolute;
+    height: 10%;
+    bottom: 0;
+    cursor: pointer;
+    background: rgba(61, 61, 61, 0.7);
+    line-height: 9vh;
+}
+.options {
+    width: 90%;
+    height: 30%;
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.dndopt {
+    width: 100%;
+    height: 30%;
+}
+#optDrive {
+    top: 10%;
+    background: rgb(0, 197, 209);
+}
+#optDrive a {
+    width: 100%;
+    font-size: 5vw;
+}
+#optDropped {
+    background: rgb(255, 217, 0);
+}
+#optDropped a {
+    width: 100%;
+    font-size: 5vw;
+}
+.selection {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90vw;
+}
+.selectdrive {
+    width: 100%;
+    height: 15%;
+}
+.circles {
+    height: 50%;
+    position: relative;
+}
+input {
+    width: 75%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    right: 0;
+    font-size: 5vw;
+    transition: border 0.3s;
+    border-bottom: 1px solid rgba(61, 61, 61, 0.67) !important;
+    border: none;
+}
+input:focus {
+    outline: none;
+}
+/*****on off button ******/
+
+.onoffswitch {
+    position: relative;
+    width: 63px;
+    float: right;
+    margin: 4.5vw;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    height: 30px;
+    padding: 0;
+    line-height: 25px;
+    border: 2px solid #FFFFFF;
+    border-radius: 41px;
+    background-color: #CCCCCC;
+    transition: background-color 0.3s ease-in;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block;
+    width: 19px;
+    height: 18px;
+    margin: 0px;
+    background: #FFFFFF;
+    position: absolute;
+    top: 4px;
+    bottom: 0px;
+    right: 36px;
+    border: 2px solid #fff;
+    border-radius: 22px;
+    transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-label:after {
+    width: 20px;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #00C5D1;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label,
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    border-color: #00C5D1;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px;
+}
+/*****/
+
+.selectdrive {
+    width: 100%;
+    height: 40%;
+}
+ul {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+li {
+    /*border-bottom: 1px solid rgba(61, 61, 61, 0.67);*/
+    height: 20%;
+    position: relative;
+}
+.lefticons {
+    width: 19%;
+    height: 100%;
+    position: relative;
+    float: left;
+    /*background: rgba(61, 61, 61, 0.3);*/
+}
+li h3 {
+    margin: 0;
+    font-weight: normal;
+    float: left;
+    padding: 4vw 0 0 6vw;
+    color: rgba(61, 61, 61, 0.66);
+    line-height: normal;
+}
+.circledest {
+    height: 60%;
+    position: absolute;
+    box-sizing: content-box;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+#drivebgd {
+    width: 100%;
+    height: 50%;
+    background: url(../images/blurrcity.jpg) no-repeat;
+    background-size: cover;
+    background-position: 10%;
+}
+.findride {
+    width: 100%;
+    height: 34%;
+}
+#droplist li {
+    height: 25%;
+}
+#dropbgd {
+    width: 100%;
+    height: 50%;
+    background: url(../images/map.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#backicon {
+    width: 40%;
+    height: 50%;
+}
+.route {
+    background: #00C5D1;
+}
+body.showSidebar .stage {
+    -webkit-transform: translateX(50%);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    -webkit-perspective: 1000;
+}
+#sidebar {
+    position: absolute;
+    left: -50% !important;
+    top: 0;
+    background: rgb(239, 239, 239);
+    height: 100%;
+    position: absolute;
+    width: 50%;
+    float: left;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+#sidebar ul {
+    height: 45%;
+    list-style-type: disc;
+    display: block;
+    width: 100%;
+    color: rbg(51, 51, 51);
+    margin: 0;
+    padding: 0
+}
+#sidebar ul li {
+    margin: 0;
+    padding: 0 0 0 1em;
+    position: relative;
+    line-height: 10vh;
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(66, 66, 66);
+    width: 100%;
+    white-space: nowrap;
+    font-size: 1em;
+    background-size: 4.4em;
+    background-repeat: no-repeat;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+    background-position: 1em center;
+    text-align: left;
+    border: none;
+}
+#sidebar ul li:first-child {
+    height: 35%;
+}
+/**** SEARCH RESULTS *****/
+
+.posts {
+    height: 81%;
+    background: rgb(239, 239, 239);
+    position: relative;
+}
+.posts p {
+    width: 80%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+.filter {
+    background: rgba(239, 239, 239, 0.01);
+    border: 1px solid rgb(0, 197, 209);
+    color: rgb(0, 197, 209);
+    top: 0.5em;
+}
+.numberresults {
+    color: rgb(51, 51, 51);
+    font-size: 0.8em;
+    top: 2.5em;
+    font-weight: bold;
+}
+.extrainfo {
+    width: 100%;
+    position: relative;
+    height: 12%;
+}
+.post {
+    width: 95%;
+    height: 25%;
+    background: white;
+    margin: 5px auto;
+}
+.time {
+    width: 15%;
+    float: left;
+    text-align: left;
+    margin-left: 1.4em;
+    font-weight: bold;
+}
+.leavingfrom {
+    text-align: left;
+    font-size: 0.7em;
+    margin-right: 1.5em;
+    float: right;
+    margin-top: 0em;
+}
+.seats {
+    width: 64%;
+    float: right;
+    color: rgb(216, 82, 128);
+    text-align: right;
+    margin-right: 1em;
+    font-weight: bold;
+}
+.minidp {
+    width: 20%;
+    float: left;
+    margin: 1em;
+    border: 1px solid rgb(0, 197, 209);
+    border-radius: 2em;
+    background: rgb(0, 197, 209);
+}
+.minidp img {
+    width: 100%;
+}
+.driverinfo {
+    width: 57%;
+    margin: 1px;
+    float: right;
+    text-align: left;
+}
+.rating {
+    width: 10%;
+    float: left;
+}
+.rating img {
+    width: 100%;
+}
