@@ -41,7 +41,7 @@ class Home extends React.Component {
 						<a href='drop.html'>Find a ride</a>
 					</div>
 				</div>
-				<footer>I am footer</footer>
+				<footer>footer</footer>
 			</div>
 
 		)
