@@ -1,11 +1,10 @@
 import React from "react";
+import Header from "./header.js";
 class Layout extends React.Component {
 	render(){
 		return (
-			<div>Hey this is layout</div>
+			<div><Header name="khushboo"></Header></div>
 		)
 	};
 }
-
-
 export default Layout;

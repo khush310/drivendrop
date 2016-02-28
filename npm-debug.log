@@ -2,15 +2,15 @@
 1 verbose cli [ '/usr/local/Cellar/node/4.1.2/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
 1 verbose cli   'run',
-1 verbose cli   'start' ]
+1 verbose cli   'webpack' ]
 2 info using npm@2.14.6
 3 info using node@v4.1.2
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart drivendrop@1.0.0
-6 info start drivendrop@1.0.0
+4 verbose run-script [ 'prewebpack', 'webpack', 'postwebpack' ]
+5 info prewebpack drivendrop@1.0.0
+6 info webpack drivendrop@1.0.0
 7 verbose unsafe-perm in lifecycle true
-8 info drivendrop@1.0.0 Failed to exec start script
-9 verbose stack Error: drivendrop@1.0.0 start: `babel-node index.js`
+8 info drivendrop@1.0.0 Failed to exec webpack script
+9 verbose stack Error: drivendrop@1.0.0 webpack: `node  builds/webpack/server.js`
 9 verbose stack Exit status 1
 9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
 9 verbose stack     at emitTwo (events.js:87:13)
@@ -23,17 +23,17 @@
 10 verbose pkgid drivendrop@1.0.0
 11 verbose cwd /Users/khush/Documents/DrivenDrop
 12 error Darwin 14.5.0
-13 error argv "/usr/local/Cellar/node/4.1.2/bin/node" "/usr/local/bin/npm" "run" "start"
+13 error argv "/usr/local/Cellar/node/4.1.2/bin/node" "/usr/local/bin/npm" "run" "webpack"
 14 error node v4.1.2
 15 error npm  v2.14.6
 16 error code ELIFECYCLE
-17 error drivendrop@1.0.0 start: `babel-node index.js`
+17 error drivendrop@1.0.0 webpack: `node  builds/webpack/server.js`
 17 error Exit status 1
-18 error Failed at the drivendrop@1.0.0 start script 'babel-node index.js'.
+18 error Failed at the drivendrop@1.0.0 webpack script 'node  builds/webpack/server.js'.
 18 error This is most likely a problem with the drivendrop package,
 18 error not with npm itself.
 18 error Tell the author that this fails on your system:
-18 error     babel-node index.js
+18 error     node  builds/webpack/server.js
 18 error You can get their info via:
 18 error     npm owner ls drivendrop
 18 error There is likely additional logging output above.
