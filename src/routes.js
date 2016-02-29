@@ -6,13 +6,13 @@ import Home from "./components/home.js";
 import FindRide from "./components/findride.js";
 
 class App extends React.Component {
-
 	render() {
 		return (
 			<div style={{width: '100%', height: '100%'}}>{this.props.children}</div>
 		)
 	}
 }
+
 
 
 const routingTree = (

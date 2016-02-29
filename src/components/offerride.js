@@ -1,18 +1,29 @@
 import React from "react";
 import Header from "./header";
 
+
 class OfferRide extends React.Component {
+	handleFrom= (e) =>{
+		console.log(e.target.value);
+		const {store} = this.props;
+		store.cursor(["currentRide", "from"]).update(function() {
+			return e.target.value;
+		});
+	}
 	render(){
+		const {store} = this.props;
+		const from = store.cursor(["currentRide", "from"]).deref();
 		return (
-				<div style={{padding: 10, background: "black"}} className="stage">
+				<div className="stage">
 					<Header></Header>
+					going from  {from}
 					<section className="selectdrive ">
 						<ul>
 							<li id="selectFrom">
 								<div className="lefticons">
 									<img className="circledest" src="/_assets/images/circleyellow.png" />
 								</div>
-								<input type="text" name="from" placeholder="sdfsdf" id="from" />
+								<input onChange={this.handleFrom} type="text" name="from" placeholder="sdfsdf" id="from" />
 							</li>
 							<li id="selectTo">
 								<div className="lefticons">

@@ -3,7 +3,22 @@ import Header from "./header";
 import {  Link } from 'react-router'
 
 class Home extends React.Component {
-	render(){
+	constructor() {
+		super();
+	}
+
+	handleClick = (e) => {
+		console.log(this.props);
+		const {store} = this.props;
+		store.cursor(["currentUser", "name"]).update(function() {
+			return "John Doe"
+		});
+	};
+
+	render = () => {
+		console.log(this.props);
+		const {store} = this.props;
+		const name = store.cursor(["currentUser", "name"]).deref();
 		return (
 			<div className="stage" id="opt">
 				<Header name="khushboo" id="homescreen"></Header>
@@ -17,8 +32,11 @@ class Home extends React.Component {
 					</ul>
 				</div>
 				<div className="options">
+					<div
+						onClick={this.handleClick}
+					>click me</div>
 					<div className="button dndopt" id="optDrive">
-						<Link to='/offerride'>Offer a ride</Link>
+						<Link to='/offerride'>{name}</Link>
 					</div>
 					<div className="button dndopt" id="optDropped">
 						<a href='/findride'>Find a ride</a>
