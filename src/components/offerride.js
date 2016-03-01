@@ -1,35 +1,47 @@
 import React from "react";
 import Header from "./header";
-
+import Footer from "./footer";
+import {Link} from 'react-router';
 
 class OfferRide extends React.Component {
 	handleFrom= (e) =>{
-		console.log(e.target.value);
 		const {store} = this.props;
 		store.cursor(["currentRide", "from"]).update(function() {
 			return e.target.value;
 		});
-	}
+	};
+	handleTo=(e) =>{
+		const {store} = this.props;
+		store.cursor(["currentRide", "to"]).update(function () {
+			return e.target.value;
+		})
+	};
+	handleSeats=(e) =>{
+		const {store} = this.props;
+		store.cursor(["currentRide", "seats"]).update(function () {
+			return e.target.value;
+		})
+	};
+
 	render(){
 		const {store} = this.props;
-		const from = store.cursor(["currentRide", "from"]).deref();
+		const ride = store.cursor(["currentRide"]).deref();
 		return (
 				<div className="stage">
 					<Header></Header>
-					going from  {from}
 					<section className="selectdrive ">
 						<ul>
 							<li id="selectFrom">
 								<div className="lefticons">
 									<img className="circledest" src="/_assets/images/circleyellow.png" />
 								</div>
-								<input onChange={this.handleFrom} type="text" name="from" placeholder="sdfsdf" id="from" />
+								<input onChange={this.saveFrom} type="text" name="from" placeholder="From" id="from" />
 							</li>
 							<li id="selectTo">
 								<div className="lefticons">
 									<img className="circledest" src="/_assets/images/circleblue.png" />
 								</div>
-								<input type="text" name="to" placeholder="To" id="to" />
+								<input onChange={this.saveTo} type="text" name="to" placeholder="To" id="to" />
 							</li>
 							<li id="selectSeats">
 								<div className="lefticons">
@@ -80,7 +92,7 @@ class OfferRide extends React.Component {
 						</ul>
 					</section>
 					<section id="drivebgd"></section>
-					{this.props.footer}
+					<Footer></Footer>
 				</div>
 		)
 	};

@@ -52,3 +52,8 @@ app.get("/findride", function(req, res){
 	const element = <FindRide footer={footer}></FindRide>
 	res.status(200).send("<!DOCTYPE html>\n" + compileToHtml(element));
 });
+
+
+/*<div
+ onClick={this.handleClick}
+ >click me</div>*/

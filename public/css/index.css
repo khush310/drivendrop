@@ -48,10 +48,29 @@ a {
     text-decoration: none;
     color: white;
 }
+.intro {
+    font-size: 10vw;
+    line-height: 17vh;
+}
 footer {
     width: 100%;
     height: 10%;
     cursor: pointer;
+    font-size: 1.5em;
+    color: rgb(239, 239, 239);
+    border-top: 2px solid rgba(0, 0, 0, 0.52);
+}
+#drive, #drop{
+    width: 50%;
+    height: 100%;
+}
+#drive{
+    float: left;
+    border-right: 1px solid rgba(0, 0, 0, 0.86);
+}
+#drop{
+    float: right;
+    border-left: 1px solid rgba(0, 0, 0, 0.86);
 }
 .howitworks {
     line-height: 9vh;
@@ -349,7 +368,7 @@ li h3 {
 }
 #drivebgd {
     width: 100%;
-    height: 50%;
+    height: 44%;
     background: url(../images/blurrcity.jpg) no-repeat;
     background-size: cover;
     background-position: 10%;
@@ -455,9 +474,9 @@ body.showSidebar .stage {
 }
 .post {
     width: 95%;
-    height: 25%;
+    height: 23%;
     background: white;
-    margin: 5px auto;
+    margin: 1em auto;
 }
 .time {
     width: 15%;
@@ -469,16 +488,15 @@ body.showSidebar .stage {
 .leavingfrom {
     text-align: left;
     font-size: 0.7em;
-    margin-right: 1.5em;
+    margin: 0 1.5em 0 0;
     float: right;
-    margin-top: 0em;
 }
 .seats {
     width: 64%;
     float: right;
     color: rgb(216, 82, 128);
     text-align: right;
-    margin-right: 1em;
+    margin: 0.5em 0.5em 0 0;
     font-weight: bold;
 }
 .minidp {
@@ -494,7 +512,7 @@ body.showSidebar .stage {
 }
 .driverinfo {
     width: 57%;
-    margin: 1px;
+    margin: 0.5em;
     float: right;
     text-align: left;
 }
