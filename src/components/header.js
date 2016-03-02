@@ -1,8 +1,10 @@
 import React from "react";
+import classnames from 'classnames';
+
 class Header extends React.Component {
 	render(){
 		return (<header className="homeheader" id={this.props.id}>
-							<div className="headersections" id="profileicon">
+							<div className="headersections" id="profileicon" onClick={this.props.onToggleSidebar}>
 								<svg className="icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 									<g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none">
 										<path d="M9.5 13.281v2.719l-5.009 1.789c-1.194.427-1.991 1.558-1.991 2.825v1.886h19v-1.886c0-1.268-.797-2.398-1.991-2.825l-5.009-1.789v-2.906" />

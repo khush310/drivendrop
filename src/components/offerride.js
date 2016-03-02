@@ -1,9 +1,18 @@
 import React from "react";
 import Header from "./header";
+import Sidebar from "./sidebar";
 import Footer from "./footer";
-import {Link} from 'react-router';
+import {Link} from "react-router";
+import classnames from "classnames";
 
 class OfferRide extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {active: false};
+	};
+	onToggleSidebar= (e) => {
+		this.setState({active: !this.state.active});
+	};
 	handleFrom= (e) =>{
 		const {store} = this.props;
 		store.cursor(["currentRide", "from"]).update(function() {
@@ -24,11 +33,13 @@ class OfferRide extends React.Component {
 	};
 
 	render(){
+		let classes = classnames('stage', {active: this.state.active});
 		const {store} = this.props;
 		const ride = store.cursor(["currentRide"]).deref();
 		return (
-				<div className="stage">
-					<Header></Header>
+				<div className={classes}>
+					<Header onToggleSidebar={this.onToggleSidebar}></Header>
+					<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
 					<section className="selectdrive ">
 						<ul>
 							<li id="selectFrom">

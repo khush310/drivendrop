@@ -1,11 +1,18 @@
 import React from "react";
 import Header from "./header";
+import Sidebar from "./sidebar";
 import Footer from "./footer";
 import { Link } from 'react-router';
+import classnames from 'classnames';
 
 class Home extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
+		this.state = {active: false};
+	};
+	onToggleSidebar= (e) => {
+		this.setState({active: !this.state.active});
+
 	};
 
 	handleClick = (e) => {
@@ -16,20 +23,13 @@ class Home extends React.Component {
 	};
 
 	render = () => {
+		let classes = classnames('stage', {active: this.state.active});
 		const {store} = this.props;
 		const name = store.cursor(["currentUser", "name"]).deref();
 		return (
-			<div className="stage" id="opt">
-				<Header id="homescreen"></Header>
-				<div id="sidebar">
-					<ul>
-						<li className="myprofile"><a href="#">My profile</a></li>
-						<li className="wallet"><a href="#">Wallet</a></li>
-						<li className="settings"><a href="#">Settings</a></li>
-						<li className="invite"><a href="#">Invites Friends</a></li>
-						<li className="help"><a href="#">Help</a></li>
-					</ul>
-				</div>
+			<div className={classes} id="opt">
+				<Header onToggleSidebar={this.onToggleSidebar}  id="homescreen"></Header>
+				<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
 				<div className="options">
 					<div className="button dndopt" id="optDrive">
 						<Link to='/offerride'>Offer a ride</Link>

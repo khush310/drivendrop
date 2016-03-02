@@ -1,10 +1,16 @@
 import React from "react";
-import Header from "./header.js";
 import { Link } from 'react-router';
+import classnames from 'classnames';
+import Header from "./header.js";
+import Sidebar from "./sidebar";
 
 class FindRide extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
+		this.state = {active: false};
+	};
+	onToggleSidebar= (e) => {
+		this.setState({active: !this.state.active});
 	};
 	saveFrom= (e) =>{
 	const {store} = this.props;
@@ -20,27 +26,13 @@ class FindRide extends React.Component {
 	};
 
 	render(){
+		let classes = classnames('stage', {active: this.state.active});
 		const {store} = this.props;
 		const ride = store.cursor(["currentRide"]).deref();
 		return (
-			<div className="stage">
-				<header className="homeheader">
-					<div className="headersections left" id="back">
-						<Link to="/home">
-							<svg id="backicon" version="1.1" id="Outline_Icons" xmlns="http://www.w3.org/2000/svg"  x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24">
-								<polyline fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="18.5,0.55.5,12 18.5,23.5 " />
-							</svg>
-						</Link>
-					</div>
-					<div className="destsrc center">Destination</div>
-					<div className="headersections right" id="messages">
-						<svg className="icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-							<g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none">
-								<path d="M23.5 18c0 .828-.672 1.5-1.5 1.5h-20c-.828 0-1.5-.672-1.5-1.5v-12c0-.829.672-1.5 1.5-1.5h20c.828 0 1.5.671 1.5 1.5v12zM20.5 8.5l-8.5 5.5-8.5-5.5M3.5 16l3.5-2M20.5 16l-3.5-2" />
-							</g>
-						</svg>
-					</div>
-				</header>
+			<div className={classes}>
+				<Header onToggleSidebar={this.onToggleSidebar}  id="homescreen"></Header>
+				<Sidebar currentpage="Switch to Offering" currentlink="/offerride"></Sidebar>
 				<section className="findride">
 					<ul id="droplist">
 						<li id="selectFrom">

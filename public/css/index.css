@@ -46,7 +46,7 @@ a {
     width: 100%;
     display: block;
     text-decoration: none;
-    color: white;
+    color: black;
 }
 .intro {
     font-size: 10vw;
@@ -394,23 +394,23 @@ li h3 {
 .route {
     background: #00C5D1;
 }
-body.showSidebar .stage {
-    -webkit-transform: translateX(50%);
+.stage.active{
+    -webkit-transform: translateX(65%);
     -webkit-transition: -webkit-transform 0.3s ease-out;
 }
-#sidebar {
+.sidebar {
     position: absolute;
-    left: -50% !important;
+    left: -65% !important;
     top: 0;
     background: rgb(239, 239, 239);
     height: 100%;
     position: absolute;
-    width: 50%;
+    width: 65%;
     float: left;
     overflow-y: hidden;
     overflow-x: hidden;
 }
-#sidebar ul {
+.sidebar ul {
     height: 45%;
     list-style-type: disc;
     display: block;
@@ -419,7 +419,7 @@ body.showSidebar .stage {
     margin: 0;
     padding: 0
 }
-#sidebar ul li {
+.sidebar ul li {
     margin: 0;
     padding: 0 0 0 1em;
     position: relative;
@@ -438,7 +438,7 @@ body.showSidebar .stage {
     text-align: left;
     border: none;
 }
-#sidebar ul li:first-child {
+.sidebar ul li:first-child {
     height: 35%;
 }
 /**** SEARCH RESULTS *****/
