@@ -4,7 +4,9 @@ import Header from "./header";
 import Footer from "./footer";
 
 class SearchResults extends React.Component {
+
 	render() {
+		console.log(this.props.notification)
 		const {store} = this.props;
 		const ride = store.cursor(["currentRide"]).deref();
 		const users = store.cursor(["otherUsers"]).deref();

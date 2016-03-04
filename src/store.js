@@ -4,9 +4,8 @@ import Immutable from "immutable";
 export function createStore() {
 	const state = Immutable.Map({
 		profileUser: Immutable.Map({
-			name: null,
-			age: null,
-			about: null,
+			name: "Khushboo Verma",
+			age: 28
 		}),
 		otherUsers: Immutable.Map({
 			user1:{

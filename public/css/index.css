@@ -21,8 +21,12 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+}
+.offerheader{
+    background: url(../images/blurrcity.jpg) no-repeat;
+    background-size: cover;
 }
 .topsection {
     width: 100%;
@@ -154,9 +158,8 @@ footer {
 }
 .homeheader {
     width: 100%;
-    height: 75px;
-    flex: 0.5;
-    line-height: 11vh;
+    height: 10%;
+    line-height: 10vh;
     background: rgb(240, 240, 240);
     color: rgb(51, 51, 51);
 }
@@ -187,14 +190,40 @@ footer {
     float: right;
 }
 svg {
-    width: 55%;
-    height: 55%;
+    width: 60%;
+    height: 60%;
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
     margin: auto;
+}
+textarea{
+    width: 88%;
+    height: 70px;
+    font-size: 1em;
+    margin: auto;
+    margin-top: 30px;
+}
+.offersection2{
+    margin-top: 10px;
+    width: 86%;
+    height: 60%;
+    flex: 0;
+    background: rgba(158, 158, 158, 0.5);
+}
+.offersection2 ul{
+    height:80%;
+}
+.offersection2 ul li{
+    height: 16%;
+}
+.offersection2 ul li .selecttr{
+    line-height:2em;
+}
+.offersection2 .continue{
+    margin-bottom: 20px;
 }
 #current,
 .center {
@@ -254,67 +283,66 @@ input {
     height: 100%;
     display: block;
     font-size: 5vw;
+    color: rgb(244, 244, 244);
     transition: border 0.3s;
     border-bottom: 1px solid rgba(61, 61, 61, 0.67) !important;
     border: none;
+    background: rgba(255, 0, 0, 0);
 }
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: rgb(244, 244, 244);;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+    color: rgb(244, 244, 244);
+}
+input:-ms-input-placeholder { /* IE 10+ */
+    color: rgb(244, 244, 244);
+}
+input:-moz-placeholder { /* Firefox 18- */
+    color: rgb(244, 244, 244);
+}
+
 input:focus {
     outline: none;
 }
 /*****on off button ******/
-
 .onoffswitch {
-    position: relative;
-    width: 63px;
+    position: relative; width: 50px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
     float: right;
-    margin: 4.5vw 0;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    margin: 2.5vw 0;
 }
 .onoffswitch-checkbox {
     display: none;
 }
 .onoffswitch-label {
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    height: 30px;
-    padding: 0;
-    line-height: 25px;
-    border: 2px solid #FFFFFF;
-    border-radius: 41px;
-    background-color: #CCCCCC;
+    display: block; overflow: hidden; cursor: pointer;
+    height: 20px; padding: 0; line-height: 20px;
+    border: 2px solid #CCCCCC; border-radius: 20px;
+    background-color: #FFFFFF;
     transition: background-color 0.3s ease-in;
 }
 .onoffswitch-label:before {
     content: "";
-    display: block;
-    width: 19px;
-    height: 18px;
-    margin: 0px;
+    display: block; width: 18px; margin: 0px;
     background: #FFFFFF;
-    position: absolute;
-    top: 4px;
-    bottom: 0px;
+    position: absolute; top: 0; bottom: 0;
     right: 36px;
-    border: 2px solid #fff;
-    border-radius: 22px;
+    border: 2px solid #CCCCCC; border-radius: 20px;
     transition: all 0.3s ease-in 0s;
 }
-.onoffswitch-label:after {
-    width: 20px;
-}
 .onoffswitch-checkbox:checked + .onoffswitch-label {
-    background-color: #00C5D1;
+    background-color: #FFD900;
 }
-.onoffswitch-checkbox:checked + .onoffswitch-label,
-.onoffswitch-checkbox:checked + .onoffswitch-label:before {
-    border-color: #00C5D1;
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    border-color: #FFD900;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label:before {
     right: 0px;
 }
+
+
+
 /*****/
 
 .selectdrive {
@@ -324,12 +352,12 @@ input:focus {
 ul {
     list-style: none;
     width: 100%;
-    height: 100%;
-    padding: 0;
+    height: 70%;
+    padding: 10px 0px;
     margin: 0;
 }
 li {
-    height: 20%;
+    height: 25%;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
@@ -367,11 +395,27 @@ li h3 {
     margin: auto;
 }
 #drivebgd {
-    width: 100%;
-    height: 44%;
-    background: url(../images/blurrcity.jpg) no-repeat;
-    background-size: cover;
-    background-position: 10%;
+    margin-top: 10px;
+    width: 86%;
+    height: 50%;
+    flex: 0;
+    background: rgba(158, 158, 158, 0.5);
+}
+.continue{
+    width: 70%;
+    background: rgba(0, 0, 0, 0.67);
+    height: 14%;
+    font-size: 1.3em;
+    margin-bottom: 15%;
+    border-radius: 21px;
+    border-color: rgba(255, 0, 0, 0);
+}
+.continue:focus{
+    outline:none;
+}
+.continue a{
+    color: rgb(239, 239, 239);
+
 }
 .findride {
     width: 100%;

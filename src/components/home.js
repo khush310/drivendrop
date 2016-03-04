@@ -28,17 +28,15 @@ class Home extends React.Component {
 		const name = store.cursor(["currentUser", "name"]).deref();
 		return (
 			<div className={classes} id="opt">
-				<Header onToggleSidebar={this.onToggleSidebar}  id="homescreen"></Header>
 				<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
 				<div className="options">
-					<div className="button dndopt" id="optDrive">
-						<Link to='/offerride'>Offer a ride</Link>
-					</div>
 					<div className="button dndopt" id="optDropped">
 						<Link to='/findride'>Find a ride</Link>
 					</div>
+					<div className="button dndopt" id="optDrive">
+						<Link to='/offerride'>Offer a ride</Link>
+					</div>
 				</div>
-				<Footer></Footer>
 			</div>
 		)
 	};
