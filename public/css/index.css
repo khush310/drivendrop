@@ -225,9 +225,8 @@ textarea{
 .offersection2 .continue{
     margin-bottom: 20px;
 }
-#current,
-.center {
-    width: 60%;
+.current{
+    width: 100%;
     float: left;
     font-size: 6.5vw;
     color: rgb(0, 204, 214);
@@ -245,7 +244,7 @@ footer {
     width: 100%;
     display: flex;
     flex-direction: column;
-    flex: 0.5;
+    flex: 0.8;
     justify-content: center;
     align-items: initial;
 }
@@ -394,7 +393,7 @@ li h3 {
     top: 0;
     margin: auto;
 }
-#drivebgd {
+.findsection, #drivebgd {
     margin-top: 10px;
     width: 86%;
     height: 50%;
@@ -419,7 +418,9 @@ li h3 {
 }
 .findride {
     width: 100%;
-    height: 34%;
+    height: 90.5%;
+    background: url(../images/nyc.jpg) no-repeat;
+    background-position: center;
 }
 #droplist li {
     height: 25%;

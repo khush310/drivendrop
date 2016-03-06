@@ -31,10 +31,10 @@ class Home extends React.Component {
 				<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
 				<div className="options">
 					<div className="button dndopt" id="optDropped">
-						<Link to='/findride'>Find a ride</Link>
+						<Link to='/findride' type="passenger">Find a ride</Link>
 					</div>
 					<div className="button dndopt" id="optDrive">
-						<Link to='/offerride'>Offer a ride</Link>
+						<Link to='/offerride' type="driver">Offer a ride</Link>
 					</div>
 				</div>
 			</div>

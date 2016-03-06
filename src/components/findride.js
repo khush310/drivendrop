@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import Header from "./header.js";
+import Footer from "./footer.js";
 import Sidebar from "./sidebar";
 
 class FindRide extends React.Component {
@@ -26,14 +27,13 @@ class FindRide extends React.Component {
 	};
 
 	render(){
-		let classes = classnames('stage', {active: this.state.active});
+		let classes = classnames('stage findride', {active: this.state.active});
 		const {store} = this.props;
 		const ride = store.cursor(["currentRide"]).deref();
 		return (
 			<div className={classes}>
-				<Header onToggleSidebar={this.onToggleSidebar}  id="homescreen"></Header>
-				<Sidebar currentpage="Switch to Offering" currentlink="/offerride"></Sidebar>
-				<section className="findride">
+				<Header title="Find a Ride"></Header>
+				<section className="findsection">
 					<ul id="droplist">
 						<li id="selectFrom">
 							<div className="lefticons">
@@ -76,10 +76,8 @@ class FindRide extends React.Component {
 						</li>
 					</ul>
 				</section>
-				<section id="dropbgd"></section>
-				<footer className="howitworks">
-					<Link to='/searchresults'>Search ></Link>
-				</footer>
+				<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
+				<Sidebar currentpage="Switch to Offering" currentlink="/offerride"></Sidebar>
 			</div>
 		)
 	}
