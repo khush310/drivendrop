@@ -14,21 +14,15 @@ class OfferRide2 extends React.Component {
 	onToggleSidebar = (e) => {
 		this.setState({active: !this.state.active});
 	};
-	handleFrom = (e) => {
+	handleSeats = (e) => {
 		const {store} = this.props;
-		store.cursor(["currentRide", "from"]).update(function () {
-			return e.target.value;
-		});
-	};
-	handleTo = (e) => {
-		const {store} = this.props;
-		store.cursor(["currentRide", "to"]).update(function () {
+		store.cursor(["offer", "seats"]).update(function () {
 			return e.target.value;
 		})
 	};
-	handleSeats = (e) => {
+	handleComment = (e) => {
 		const {store} = this.props;
-		store.cursor(["currentRide", "seats"]).update(function () {
+		store.cursor(["offer", "comments"]).update(function () {
 			return e.target.value;
 		})
 	};
@@ -38,7 +32,7 @@ class OfferRide2 extends React.Component {
 		const {store} = this.props;
 		const ride = store.cursor(["currentRide"]).deref();
 		return (<div className={classes}>
-			<Header onToggleSidebar={this.onToggleSidebar}></Header>
+			<Link to="/offerride"><Header title="Back"></Header></Link>
 			<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
 			<section className="selectdrive offersection2 " id="drivebgd">
 				<ul>
@@ -54,8 +48,7 @@ class OfferRide2 extends React.Component {
 								</g>
 							</svg>
 						</div>
-						<input type="number" pattern="[0-4]*" name="numberofseats" placeholder="No. of seats available"
-						       id="numseats"/>
+						<input onChange={this.handleSeats} type="number" name="numberofseats" placeholder="No. of seats available" id="numseats"/>
 					</li>
 					<li id="selectWomen">
 						<div className="lefticons">
@@ -75,33 +68,11 @@ class OfferRide2 extends React.Component {
 					</li>
 					<li id="selectReturn">
 						<div className="lefticons">
-							<svg version="1.1" id="Outline_Icons" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px"
-							     height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24">
-								<g>
-									<path fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
-									      d="M5,13.5c2,0,4.5,8,4.5,8H2.842c-0.907,0-1.702-0.611-1.934-1.487C0.294,17.687,0.109,13.5,5,13.5z"/>
-									<path fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
-									      d="M19,13.5c-2,0-4.5,8-4.5,8h6.658c0.907,0,1.702-0.611,1.934-1.487C23.706,17.687,23.891,13.5,19,13.5z"/>
-									<path fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
-									      d="M5.953,9.973C6.264,6.865,8.878,4.5,12,4.5s5.736,2.365,6.047,5.473L18.5,13.5c-4.333-2-8.667-2-13,0L5.953,9.973z"/>
-									<path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
-									      stroke-miterlimit="10" d="M8.977,9.736C9.132,8.184,10.439,7,12,7"/>
-									<line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="9" y1="21.5"
-									      x2="15" y2="21.5"/>
-									<rect x="17.5" y="21.5" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
-									      width="4" height="2"/>
-									<rect x="2.5" y="21.5" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10"
-									      width="4" height="2"/>
-									<circle fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" cx="20"
-									        cy="17.784" r="1.5"/>
-									<circle fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" cx="4" cy="17.784"
-									        r="1.5"/>
-								</g>
-							</svg>
+							<svg version="1.1" id="Outline_Icons" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24"><g><path fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" d="M5,13.5c2,0,4.5,8,4.5,8H2.842c-0.907,0-1.702-0.611-1.934-1.487C0.294,17.687,0.109,13.5,5,13.5z"/><path fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" d="M19,13.5c-2,0-4.5,8-4.5,8h6.658c0.907,0,1.702-0.611,1.934-1.487C23.706,17.687,23.891,13.5,19,13.5z"/><path fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" d="M5.953,9.973C6.264,6.865,8.878,4.5,12,4.5s5.736,2.365,6.047,5.473L18.5,13.5c-4.333-2-8.667-2-13,0L5.953,9.973z"/><path fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="M8.977,9.736C9.132,8.184,10.439,7,12,7"/><line fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" x1="9" y1="21.5" x2="15" y2="21.5"/><rect x="17.5" y="21.5" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" width="4" height="2"/><rect x="2.5" y="21.5" fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" width="4" height="2"/><circle fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" cx="20" cy="17.784" r="1.5"/><circle fill="none" stroke="#000000" stroke-linejoin="round" stroke-miterlimit="10" cx="4" cy="17.784" r="1.5"/></g></svg>
 						</div>
 						<div className="selecttr">Return
 							<div className="onoffswitch">
-								<input type="checkbox" name="onoffswitch" className="onoffswitch-checkbox" id="myonoffswitch" checked/>
+								<input onChange={this.handleComment} type="checkbox" name="onoffswitch" className="onoffswitch-checkbox" id="myonoffswitch" checked/>
 								<label className="onoffswitch-label" for="myonoffswitch"></label>
 							</div>
 						</div>

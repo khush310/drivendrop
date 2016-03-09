@@ -13,39 +13,39 @@ class FindRide extends React.Component {
 	onToggleSidebar= (e) => {
 		this.setState({active: !this.state.active});
 	};
-	saveFrom= (e) =>{
-	const {store} = this.props;
-	store.cursor(["currentRide", "from"]).update(function() {
-		return e.target.value;
-	});
-};
-	saveTo=(e) =>{
+	saveSrc= (e) =>{
 		const {store} = this.props;
-		store.cursor(["currentRide", "to"]).update(function () {
+		store.cursor(["search", "src"]).update(function() {
+			return e.target.value;
+		});
+	};
+	saveDestination=(e) =>{
+		const {store} = this.props;
+		store.cursor(["search", "destination"]).update(function () {
 			return e.target.value;
 		})
 	};
 
 	render(){
-		let classes = classnames('stage findride', {active: this.state.active});
+		let classes = classnames('stage', 'findride', {active: this.state.active});
 		const {store} = this.props;
 		const ride = store.cursor(["currentRide"]).deref();
 		return (
 			<div className={classes}>
 				<Header title="Find a Ride"></Header>
 				<section className="findsection">
-					<ul id="droplist">
+					<ul id="findlist">
 						<li id="selectFrom">
 							<div className="lefticons">
 								<img className="circledest" src="/_assets/images/circleyellow.png" />
 							</div>
-							<input onChange={this.saveFrom} type="text" name="from" placeholder="From" id="from" />
+							<input onChange={this.saveSrc} type="text" name="from" placeholder="From" id="from" />
 						</li>
 						<li id="selectTo">
 							<div className="lefticons">
 								<img className="circledest" src="/_assets/images/circleblue.png" />
 							</div>
-							<input onChange={this.saveTo} type="text" name="to" placeholder="To" id="to" />
+							<input onChange={this.saveDestination} type="text" name="to" placeholder="To" id="to" />
 						</li>
 						<li id="selecTime">
 							<div className="lefticons">
@@ -56,7 +56,7 @@ class FindRide extends React.Component {
 									</g>
 								</svg>
 							</div>
-							<div className="selecttr">Select Time</div>
+							<input className="selecttr" type="datetime-local" placeholder="Select Time" name="usr_time" />
 						</li>
 						<li id="selectWomen">
 							<div className="lefticons">
@@ -75,11 +75,12 @@ class FindRide extends React.Component {
 							</div>
 						</li>
 					</ul>
+					<Link className="button" id="searchbtn" to="/searchresults">Search</Link>
 				</section>
 				<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
 				<Sidebar currentpage="Switch to Offering" currentlink="/offerride"></Sidebar>
 			</div>
 		)
 	}
-}
+};
 export default FindRide;

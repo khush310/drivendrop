@@ -15,19 +15,19 @@ class OfferRide extends React.Component {
 	};
 	handleFrom= (e) =>{
 		const {store} = this.props;
-		store.cursor(["currentRide", "from"]).update(function() {
+		store.cursor(["offer", "from"]).update(function() {
 			return e.target.value;
 		});
 	};
 	handleTo=(e) =>{
 		const {store} = this.props;
-		store.cursor(["currentRide", "to"]).update(function () {
+		store.cursor(["offer", "to"]).update(function () {
 			return e.target.value;
 		})
 	};
-	handleSeats=(e) =>{
+	handleTime=(e) =>{
 		const {store} = this.props;
-		store.cursor(["currentRide", "seats"]).update(function () {
+		store.cursor(["offer", "time"]).update(function () {
 			return e.target.value;
 		})
 	};
@@ -38,21 +38,20 @@ class OfferRide extends React.Component {
 		const ride = store.cursor(["currentRide"]).deref();
 		return (
 				<div className={classes}>
-					<Header onToggleSidebar={this.onToggleSidebar}></Header>
-					<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
+					<Header title="Offer a Ride"></Header>
 					<section className="selectdrive " id="drivebgd">
 						<ul>
 							<li id="selectFrom">
 								<div className="lefticons">
 									<img className="circledest" src="/_assets/images/circleyellow.png" />
 								</div>
-								<input onChange={this.saveFrom} type="text" name="from" placeholder="From" id="from" />
+								<input onChange={this.handleFrom} type="text" name="from" placeholder="From" id="from" />
 							</li>
 							<li id="selectTo">
 								<div className="lefticons">
 									<img className="circledest" src="/_assets/images/circleblue.png" />
 								</div>
-								<input onChange={this.saveTo} type="text" name="to" placeholder="To" id="to" />
+								<input onChange={this.handleTo} type="text" name="to" placeholder="To" id="to" />
 							</li>
 							<li id="selecTime">
 								<div className="lefticons">
@@ -63,11 +62,13 @@ class OfferRide extends React.Component {
 										</g>
 									</svg>
 								</div>
-								<input className="selecttr" type="datetime-local" placeholder="Select Time" name="usr_time" />
+								<input onChange={this.handleTime} className="selecttr" type="datetime-local" placeholder="Select Time" name="usr_time" />
 							</li>
 						</ul>
 						<button className="continue"><Link to="/offerride2" >Continue</Link></button>
 					</section>
+					<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
+					<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
 				</div>
 		)
 	};

@@ -12,7 +12,6 @@ class Home extends React.Component {
 	};
 	onToggleSidebar= (e) => {
 		this.setState({active: !this.state.active});
-
 	};
 
 	handleClick = (e) => {

@@ -3,9 +3,24 @@ import Immutable from "immutable";
 
 export function createStore() {
 	const state = Immutable.Map({
+		offer: Immutable.Map({
+			from: null,
+			to: null,
+			time: null,
+			seats_available: null,
+			women: true,
+			return: true,
+			comments: null
+		}),
+		search: Immutable.Map({
+			src: "paschim vihar",
+			destination: "punjabi bagh",
+			results: "14"
+		}),
 		profileUser: Immutable.Map({
 			name: "Khushboo Verma",
-			age: 28
+			age: 28,
+			img: "/_assets/images/me.jpg"
 		}),
 		otherUsers: Immutable.Map({
 			user1:{
@@ -32,6 +47,24 @@ export function createStore() {
 				mutual_friends: 10,
 				rating: 4,
 				seats_available: 3,
+				depart_location: "Defence Colony",
+				departure_time: "11:30"
+			},
+			user4: {
+				name: "Kusum",
+				age: "50",
+				mutual_friends: 2,
+				rating: 2,
+				seats_available: 1,
+				depart_location: "Defence Colony",
+				departure_time: "11:30"
+			},
+			user5: {
+				name: "Krishan Lal",
+				age: "52",
+				mutual_friends: 25,
+				rating: 5,
+				seats_available: 2,
 				depart_location: "Defence Colony",
 				departure_time: "11:30"
 			}
