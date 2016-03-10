@@ -51,23 +51,13 @@ class FindRide extends React.Component {
 						</li>
 						<li id="selecTime">
 							<div className="lefticons">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-									<g stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none">
-										<circle cx="12" cy="12" r="11.5" />
-										<path d="M11.5 6.5v5.5l6 5.5" />
-									</g>
-								</svg>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><circle cx="12" cy="12" r="11.5" /><path d="M11.5 6.5v5.5l6 5.5" /></g></svg>
 							</div>
 							<input className="selecttr" type="time" placeholder="hrs:mins" name="usr_time" />
 						</li>
 						<li id="selectWomen">
 							<div className="lefticons">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-									<g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291">
-										<circle cx="11.5" cy="4" r="3.5" />
-										<path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z" />
-									</g>
-								</svg>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291"><circle cx="11.5" cy="4" r="3.5" /><path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z" /></g></svg>
 							</div>
 							<div className="selecttr">Women only
 								<div className="onoffswitch">
