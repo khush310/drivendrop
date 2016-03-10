@@ -304,6 +304,7 @@ input {
     transition: border 0.3s;
     border-bottom: 1px solid rgba(61, 61, 61, 0.67) !important;
     border: none;
+    border-radius: 0;
     background: rgba(255, 0, 0, 0);
 }
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -378,7 +379,7 @@ li {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-
+    align-items: center;
 }
 .lefticons {
     width: 19%;
@@ -389,10 +390,10 @@ li {
 .selecttr{
     width: 75%;
     text-align: left;
-    line-height: 3em;
     font-size: 1.3em;
     border-bottom: 1px solid rgba(61, 61, 61, 0.67);
     color: #FFFFFF;
+    padding-left: 8px;
 }
 li h3 {
     margin: 0;
@@ -417,8 +418,10 @@ li h3 {
     margin-top: 10px;
     width: 86%;
     height: 60%;
-    flex: 0;
     background: rgba(158, 158, 158, 0.5);
+}
+#drivebgd{
+    flex: 0;
 }
 .continue{
     width: 70%;
