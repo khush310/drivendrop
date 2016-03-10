@@ -8,6 +8,14 @@ import {createStore} from "./src/store";
 var app = express();
 app.use("/_assets", express.static("./public"));
 
+export function getBundleURL(){
+  if (process.env.NODE_ENV == "production"){
+    return "/_assets/bundle.js"
+  } else {
+    return "http://localhost:5000/static/editor.js"
+  }
+}
+
 export function compileToHtml(string){
     const response = `
         <html>
@@ -22,7 +30,7 @@ export function compileToHtml(string){
                 <div id="wrapper" role="main" style="width: 100%; height: 100%;">
                     ${string}
                 </div>
-                <script src="http://localhost:5000/static/editor.js" type="text/javascript" ></script>
+                <script src=${getBundleURL()} type="text/javascript" ></script>
             </body>
         </html>
       `;

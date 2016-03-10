@@ -20,10 +20,10 @@ export function createStore() {
 		profileUser: Immutable.Map({
 			name: "Khushboo Verma",
 			age: 28,
-			img: "/_assets/images/me.jpg"
+			img: "/_assets/images/khush.png"
 		}),
 		otherUsers: Immutable.Map({
-			user1:{
+			user1: Immutable.Map({
 				name: "Khushboo",
 				age: "28",
 				mutual_friends: 8,
@@ -31,8 +31,8 @@ export function createStore() {
 				seats_available: 2,
 				depart_location: "Paschim Vihar",
 				departure_time: "07:40"
-			},
-			user2: {
+			}),
+			user2: Immutable.Map({
 				name: "Rohit",
 				age: "25",
 				mutual_friends: 5,
@@ -40,8 +40,8 @@ export function createStore() {
 				seats_available: 2,
 				depart_location: "Rohini",
 				departure_time: "09:15"
-			},
-			user3: {
+			}),
+			user3: Immutable.Map({
 				name: "Marco",
 				age: "29",
 				mutual_friends: 10,
@@ -49,8 +49,8 @@ export function createStore() {
 				seats_available: 3,
 				depart_location: "Defence Colony",
 				departure_time: "11:30"
-			},
-			user4: {
+			}),
+			user4: Immutable.Map({
 				name: "Kusum",
 				age: "50",
 				mutual_friends: 2,
@@ -58,8 +58,8 @@ export function createStore() {
 				seats_available: 1,
 				depart_location: "Defence Colony",
 				departure_time: "11:30"
-			},
-			user5: {
+			}),
+			user5: Immutable.Map({
 				name: "Krishan Lal",
 				age: "52",
 				mutual_friends: 25,
@@ -67,7 +67,7 @@ export function createStore() {
 				seats_available: 2,
 				depart_location: "Defence Colony",
 				departure_time: "11:30"
-			}
+			})
 		}),
 		currentRide: Immutable.Map({
 			from: null,

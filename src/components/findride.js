@@ -1,4 +1,5 @@
 import React from "react";
+import BurgerMenu from 'react-burger-menu';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import Header from "./header.js";
@@ -30,6 +31,7 @@ class FindRide extends React.Component {
 		let classes = classnames('stage', 'findride', {active: this.state.active});
 		const {store} = this.props;
 		const ride = store.cursor(["currentRide"]).deref();
+		const Menu = BurgerMenu.slide;
 		return (
 			<div className={classes}>
 				<Header title="Find a Ride"></Header>
@@ -78,7 +80,7 @@ class FindRide extends React.Component {
 					<Link className="button" id="searchbtn" to="/searchresults">Search</Link>
 				</section>
 				<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
-				<Sidebar currentpage="Switch to Offering" currentlink="/offerride"></Sidebar>
+				<Sidebar currentpage="Switch to Offering" store={this.props.store} currentlink="/offerride"></Sidebar>
 			</div>
 		)
 	}

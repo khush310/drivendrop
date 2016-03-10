@@ -29,7 +29,7 @@ class SearchResults extends React.Component {
 								</div>
 								{users.map(function(user){
 									return(<div className="post">
-													<div className="time">{user.departure_time}</div>
+													<div className="time">{user.get("departure_time")}</div>
 													<div className="seats">{user.seats_available} seats available</div>
 													<div className="minidp"><img src="/_assets/images/user.png" /></div>
 													<div className="leavingfrom">Leaving from {user.depart_location}</div>

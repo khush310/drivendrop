@@ -9,8 +9,8 @@ module.exports = {
 		'./src/client'
 	],
 	output: {
-		path: path.join(__dirname, "..", "..", "..", "dist", "dnd"),
-		filename: 'editor.js',
+		path: path.join(__dirname, "..", "..", "..", "public"),
+		filename: 'bundle.js',
 		publicPath: 'http://localhost:5000/static/'
 	},
 	plugins: [

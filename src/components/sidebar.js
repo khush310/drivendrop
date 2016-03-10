@@ -5,9 +5,11 @@ class Sidebar extends React.Component {
 		super(props);
 	};
 	render(){
+		const {store} = this.props;
+		const user = store.cursor(["profileUser"]).deref();
 		return (
 			<div className="sidebar">
-				<div className="myprofile"><a href="#"><img src="/_assets/images/khush.png" /></a></div>
+				<div className="myprofile"><a href="#"><img src={user.get("img")} /></a></div>
 				<ul>
 					<li className="settings"><a href="#">Settings</a></li>
 					<li className="invite"><a href="#">Invites Friends</a></li>
