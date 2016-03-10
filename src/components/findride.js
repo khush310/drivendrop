@@ -56,7 +56,7 @@ class FindRide extends React.Component {
 									</g>
 								</svg>
 							</div>
-							<input className="selecttr" type="datetime-local" placeholder="Select Time" name="usr_time" />
+							<input className="selecttr" type="time" placeholder="Select Time" name="usr_time" />
 						</li>
 						<li id="selectWomen">
 							<div className="lefticons">
