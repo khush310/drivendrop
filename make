@@ -1,0 +1,1 @@
+./node_modules/.bin/webpack --config build/webpack/production/config.js
