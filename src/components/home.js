@@ -1,9 +1,6 @@
 import React from "react";
 import Header from "./header";
-import Sidebar from "./sidebar";
-import Footer from "./footer";
 import { Link } from 'react-router';
-import classnames from 'classnames';
 
 class Home extends React.Component {
 	constructor(props) {
@@ -22,12 +19,10 @@ class Home extends React.Component {
 	};
 
 	render = () => {
-		let classes = classnames('stage', {active: this.state.active});
 		const {store} = this.props;
 		const name = store.cursor(["currentUser", "name"]).deref();
 		return (
-			<div className={classes} id="opt">
-				<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
+			<div className="stage home" id="opt">
 				<div className="options">
 					<div className="button dndopt" id="optDropped">
 						<Link to='/findride' type="passenger">Find a ride</Link>
@@ -40,5 +35,4 @@ class Home extends React.Component {
 		)
 	};
 }
-
 export default Home;
