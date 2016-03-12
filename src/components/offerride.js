@@ -34,8 +34,6 @@ class OfferRide extends React.Component {
 
 	render(){
 		let classes = classnames('stage', 'offerheader', {active: this.state.active});
-		const {store} = this.props;
-		const ride = store.cursor(["currentRide"]).deref();
 		return (
 				<div className={classes}>
 					<Header title="Offer a Ride"></Header>
@@ -55,20 +53,15 @@ class OfferRide extends React.Component {
 							</li>
 							<li id="selecTime">
 								<div className="lefticons">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-										<g stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none">
-											<circle cx="12" cy="12" r="11.5" />
-											<path d="M11.5 6.5v5.5l6 5.5" />
-										</g>
-									</svg>
+									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><circle cx="12" cy="12" r="11.5" /><path d="M11.5 6.5v5.5l6 5.5" /></g></svg>
 								</div>
 								<input onChange={this.handleTime} className="selecttr" type="datetime-local" placeholder="Select Time" name="usr_time" />
 							</li>
 						</ul>
 						<button className="continue"><Link to="/offerride2" >Continue</Link></button>
 					</section>
+					<Sidebar currentpage="Switch to Finding" store={this.props.store} currentlink="/findride" previouslink="/offerride"></Sidebar>
 					<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
-					<Sidebar currentpage="Switch to Finding" store={this.props.store} currentlink="/findride"></Sidebar>
 				</div>
 		)
 	};

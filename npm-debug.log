@@ -1,112 +1,40 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/usr/local/Cellar/node/4.1.2/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
-1 verbose cli   'install',
-1 verbose cli   'webpack-g' ]
+1 verbose cli   'run',
+1 verbose cli   'start' ]
 2 info using npm@2.14.6
 3 info using node@v4.1.2
-4 verbose install initial load of /Users/khush/Documents/DrivenDrop/package.json
-5 warn package.json drivendrop@1.0.0 No description
-6 warn package.json drivendrop@1.0.0 No repository field.
-7 warn package.json drivendrop@1.0.0 No README data
-8 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/babel/package.json
-9 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/babel-cli/package.json
-10 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/babel-core/package.json
-11 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/babel-eslint/package.json
-12 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/babel-loader/package.json
-13 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/babel-plugin-transform-react-jsx/package.json
-14 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/babel-preset-es2015/package.json
-15 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/babel-preset-stage-0/package.json
-16 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/babel-preset-stage-3/package.json
-17 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/classnames/package.json
-18 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/css-loader/package.json
-19 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/express/package.json
-20 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/immstruct/package.json
-21 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/immutable/package.json
-22 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/json-loader/package.json
-23 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/react/package.json
-24 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/react-burger-menu/package.json
-25 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/react-dom/package.json
-26 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/react-hot-loader/package.json
-27 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/react-router/package.json
-28 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/react-sidebar/package.json
-29 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/style-loader/package.json
-30 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/webpack/package.json
-31 verbose installManyTop reading scoped package data from /Users/khush/Documents/DrivenDrop/node_modules/webpack-dev-server/package.json
-32 verbose readDependencies loading dependencies from /Users/khush/Documents/DrivenDrop/package.json
-33 silly cache add args [ 'webpack-g', null ]
-34 verbose cache add spec webpack-g
-35 silly cache add parsed spec Result {
-35 silly cache add   raw: 'webpack-g',
-35 silly cache add   scope: null,
-35 silly cache add   name: 'webpack-g',
-35 silly cache add   rawSpec: '',
-35 silly cache add   spec: '*',
-35 silly cache add   type: 'range' }
-36 silly addNamed webpack-g@*
-37 verbose addNamed "*" is a valid semver range for webpack-g
-38 silly addNameRange { name: 'webpack-g', range: '*', hasData: false }
-39 silly mapToRegistry name webpack-g
-40 silly mapToRegistry using default registry
-41 silly mapToRegistry registry https://registry.npmjs.org/
-42 silly mapToRegistry uri https://registry.npmjs.org/webpack-g
-43 verbose addNameRange registry:https://registry.npmjs.org/webpack-g not in flight; fetching
-44 verbose request uri https://registry.npmjs.org/webpack-g
-45 verbose request no auth needed
-46 info attempt registry request try #1 at 8:29:32 PM
-47 verbose request id 701270719a257ca8
-48 http request GET https://registry.npmjs.org/webpack-g
-49 http 404 https://registry.npmjs.org/webpack-g
-50 verbose headers { 'content-type': 'application/json',
-50 verbose headers   'cache-control': 'max-age=0',
-50 verbose headers   'content-length': '2',
-50 verbose headers   'accept-ranges': 'bytes',
-50 verbose headers   date: 'Thu, 10 Mar 2016 19:29:33 GMT',
-50 verbose headers   via: '1.1 varnish',
-50 verbose headers   age: '0',
-50 verbose headers   connection: 'keep-alive',
-50 verbose headers   'x-served-by': 'cache-fra1244-FRA',
-50 verbose headers   'x-cache': 'MISS',
-50 verbose headers   'x-cache-hits': '0',
-50 verbose headers   'x-timer': 'S1457638173.078830,VS0,VE434' }
-51 silly get cb [ 404,
-51 silly get   { 'content-type': 'application/json',
-51 silly get     'cache-control': 'max-age=0',
-51 silly get     'content-length': '2',
-51 silly get     'accept-ranges': 'bytes',
-51 silly get     date: 'Thu, 10 Mar 2016 19:29:33 GMT',
-51 silly get     via: '1.1 varnish',
-51 silly get     age: '0',
-51 silly get     connection: 'keep-alive',
-51 silly get     'x-served-by': 'cache-fra1244-FRA',
-51 silly get     'x-cache': 'MISS',
-51 silly get     'x-cache-hits': '0',
-51 silly get     'x-timer': 'S1457638173.078830,VS0,VE434' } ]
-52 verbose stack Error: Registry returned 404 for GET on https://registry.npmjs.org/webpack-g
-52 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
-52 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:242:14)
-52 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
-52 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
-52 verbose stack     at emitTwo (events.js:87:13)
-52 verbose stack     at Request.emit (events.js:172:7)
-52 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1063:14)
-52 verbose stack     at emitOne (events.js:82:20)
-52 verbose stack     at Request.emit (events.js:169:7)
-52 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
-53 verbose statusCode 404
-54 verbose pkgid webpack-g
-55 verbose cwd /Users/khush/Documents/DrivenDrop
-56 error Darwin 15.3.0
-57 error argv "/usr/local/Cellar/node/4.1.2/bin/node" "/usr/local/bin/npm" "install" "webpack-g"
-58 error node v4.1.2
-59 error npm  v2.14.6
-60 error code E404
-61 error 404 Registry returned 404 for GET on https://registry.npmjs.org/webpack-g
-61 error 404
-61 error 404 'webpack-g' is not in the npm registry.
-61 error 404 You should bug the author to publish it (or use the name yourself!)
-61 error 404 It was specified as a dependency of 'drivendrop'
-61 error 404
-61 error 404 Note that you can also install from a
-61 error 404 tarball, folder, http url, or git url.
-62 verbose exit [ 1, true ]
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info prestart drivendrop@1.0.0
+6 info start drivendrop@1.0.0
+7 verbose unsafe-perm in lifecycle true
+8 info drivendrop@1.0.0 Failed to exec start script
+9 verbose stack Error: drivendrop@1.0.0 start: `babel-node index.js`
+9 verbose stack Exit status 1
+9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:214:16)
+9 verbose stack     at emitTwo (events.js:87:13)
+9 verbose stack     at EventEmitter.emit (events.js:172:7)
+9 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+9 verbose stack     at emitTwo (events.js:87:13)
+9 verbose stack     at ChildProcess.emit (events.js:172:7)
+9 verbose stack     at maybeClose (internal/child_process.js:818:16)
+9 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+10 verbose pkgid drivendrop@1.0.0
+11 verbose cwd /Users/khush/Documents/DrivenDrop
+12 error Darwin 15.3.0
+13 error argv "/usr/local/Cellar/node/4.1.2/bin/node" "/usr/local/bin/npm" "run" "start"
+14 error node v4.1.2
+15 error npm  v2.14.6
+16 error code ELIFECYCLE
+17 error drivendrop@1.0.0 start: `babel-node index.js`
+17 error Exit status 1
+18 error Failed at the drivendrop@1.0.0 start script 'babel-node index.js'.
+18 error This is most likely a problem with the drivendrop package,
+18 error not with npm itself.
+18 error Tell the author that this fails on your system:
+18 error     babel-node index.js
+18 error You can get their info via:
+18 error     npm owner ls drivendrop
+18 error There is likely additional logging output above.
+19 verbose exit [ 1, true ]

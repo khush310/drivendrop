@@ -12,7 +12,7 @@ export function getBundleURL(){
   if (process.env.NODE_ENV == "production"){
     return "/_assets/bundle.js"
   } else {
-    return "http://localhost:5000/static/editor.js"
+    return "http://localhost:5000/static/bundle.js"
   }
 }
 

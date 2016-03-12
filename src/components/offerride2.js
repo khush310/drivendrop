@@ -20,17 +20,21 @@ class OfferRide2 extends React.Component {
 			return e.target.value;
 		})
 	};
-	handleComment = (e) => {
+	handleReturn = (e) => {
 		const {store} = this.props;
-		store.cursor(["offer", "comments"]).update(function () {
+		store.cursor(["offer", "return"]).update(function () {
+			return e.target.value;
+		})
+	};
+	handlewomensafety = (e) => {
+		const {store} = this.props;
+		store.cursor(["offer", "women"]).update(function () {
 			return e.target.value;
 		})
 	};
 
 	render() {
 		let classes = classnames('stage', 'offerheader', {active: this.state.active});
-		const {store} = this.props;
-		const ride = store.cursor(["currentRide"]).deref();
 		return (<div className={classes}>
 			<Link to="/offerride"><Header title="Back"></Header></Link>
 			<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
@@ -38,30 +42,17 @@ class OfferRide2 extends React.Component {
 				<ul>
 					<li id="selectSeats">
 						<div className="lefticons">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-								<g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none">
-									<path
-										d="M6 16.187v2.181l-3.941 1.412c-.944.338-1.559 1.231-1.559 2.231v1.489h15v-1.489c0-1-.616-1.893-1.559-2.231l-3.941-1.412v-2.306"/>
-									<ellipse cx="7.901" cy="12.051" rx="3.947" ry="4.739"/>
-									<path d="M11.817 11.625l-.374.033c-1.345.259-2.208-.229-2.949-1.524-.443.852-1.831 1.524-2.972 1.524-.562 0-1.045-.115-1.528-.369"/>
-									<path strokeLinecap="round" d="M18.031 23.5h3.469v-1.489c0-1-.616-1.893-1.559-2.231l-3.941-1.412v-2.306M13.901 7.315c2.18 0 3.947 2.121 3.947 4.736 0 2.617-1.768 4.739-3.947 4.739M17.817 11.625l-.374.033c-1.345.259-2.208-.229-2.949-1.524M17.521 4.5h6M20.5 1.5v6.016"/>
-								</g>
-							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path d="M6 16.187v2.181l-3.941 1.412c-.944.338-1.559 1.231-1.559 2.231v1.489h15v-1.489c0-1-.616-1.893-1.559-2.231l-3.941-1.412v-2.306"/><ellipse cx="7.901" cy="12.051" rx="3.947" ry="4.739"/><path d="M11.817 11.625l-.374.033c-1.345.259-2.208-.229-2.949-1.524-.443.852-1.831 1.524-2.972 1.524-.562 0-1.045-.115-1.528-.369"/><path strokeLinecap="round" d="M18.031 23.5h3.469v-1.489c0-1-.616-1.893-1.559-2.231l-3.941-1.412v-2.306M13.901 7.315c2.18 0 3.947 2.121 3.947 4.736 0 2.617-1.768 4.739-3.947 4.739M17.817 11.625l-.374.033c-1.345.259-2.208-.229-2.949-1.524M17.521 4.5h6M20.5 1.5v6.016"/></g></svg>
 						</div>
 						<input onChange={this.handleSeats} type="number" name="numberofseats" placeholder="No. of seats available" id="numseats"/>
 					</li>
 					<li id="selectWomen">
 						<div className="lefticons">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-								<g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291">
-									<circle cx="11.5" cy="4" r="3.5"/>
-									<path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z"/>
-								</g>
-							</svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291"><circle cx="11.5" cy="4" r="3.5"/><path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z"/></g></svg>
 						</div>
 						<div className="selecttr">Women only
 							<div className="onoffswitch">
-								<input type="checkbox" name="onoffswitch" className="onoffswitch-checkbox" id="myonoffswitch" checked/>
+								<input type="checkbox" onChange={this.handlewomensafety} name="onoffswitch" className="onoffswitch-checkbox" id="myonoffswitch" checked/>
 								<label className="onoffswitch-label" for="myonoffswitch"></label>
 							</div>
 						</div>
@@ -72,7 +63,7 @@ class OfferRide2 extends React.Component {
 						</div>
 						<div className="selecttr">Return
 							<div className="onoffswitch">
-								<input onChange={this.handleComment} type="checkbox" name="onoffswitch" className="onoffswitch-checkbox" id="myonoffswitch" checked/>
+								<input onChange={this.handleReturn} type="checkbox" name="onoffswitch" className="onoffswitch-checkbox" id="myonoffswitch" checked/>
 								<label className="onoffswitch-label" for="myonoffswitch"></label>
 							</div>
 						</div>
@@ -85,6 +76,8 @@ class OfferRide2 extends React.Component {
 					<Link to="/published" notification="published">Publish</Link>
 				</button>
 			</section>
+			<Sidebar currentpage="Switch to Finding" store={this.props.store} currentlink="/findride" previouslink="/offerride"></Sidebar>
+			<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
 		</div>)
 	};
 }

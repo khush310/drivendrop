@@ -12,23 +12,17 @@ body {
     text-align: center;
     overflow: hidden;
 }
-#landing {
-    overflow: hidden;
-}
-
 .stage {
     height: 100%;
     width: 100%;
-    /*overflow: hidden;*/
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     -webkit-transition: -webkit-transform 0.3s ease-out;
 }
-.offerheader{
-    background: url(../images/blurrcity.jpg) no-repeat;
-    background-size: cover;
+#landing {
+    overflow: hidden;
 }
 .topsection {
     width: 100%;
@@ -38,9 +32,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-.logoimg {
-
-}
 .bottomsection {
     height: 45%;
     width: 100vw;
@@ -48,50 +39,22 @@ body {
     color: rgb(66, 66, 66);
     position: relative;
 }
-a {
-    width: 100%;
-    display: block;
-    text-decoration: none;
-    color: black;
-}
-.intro {
-    font-size: 10vw;
-    line-height: 17vh;
-}
-footer {
-    width: 100%;
-    height: 10%;
-    cursor: pointer;
-    font-size: 1.5em;
-    color: rgb(239, 239, 239);
-    border-top: 1px solid rgba(0, 0, 0, 0.52);
-}
-#drive, #drop{
-    width: 50%;
-    height: 100%;
-}
-#drive{
-    float: left;
-    border-right: 1px solid rgba(0, 0, 0, 0.86);
-}
-#drop{
-    float: right;
-    border-left: 1px solid rgba(0, 0, 0, 0.86);
-}
-.howitworks {
-    line-height: 9vh;
-    background-color: rgb(51, 51, 51);
-    color: rgb(239, 239, 239);
-}
-.howitworks a {
-    font-size: 6vw;
-}
 .textline1 {
     width: 100%;
     height: 25%;
     position: absolute;
     line-height: 10vh;
     font-size: 6vw;
+}
+.logotxt {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+    font-size: 10vw;
+    color: rgb(0, 204, 214);
 }
 .desc {
     width: 90%;
@@ -104,16 +67,85 @@ footer {
     font-size: 6vw;
     color: rgb(66, 66, 66);
 }
-.logotxt {
+footer {
     width: 100%;
-    height: 20%;
-    position: absolute;
-    top: 0;
-    bottom: 15%;
-    margin: auto;
-    font-size: 10vw;
-    color: rgb(0, 204, 214);
+    height: 10%;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: rgb(239, 239, 239);
+    border-top: 1px solid rgba(0, 0, 0, 0.52);
 }
+.howitworks {
+    line-height: 9vh;
+    background-color: rgb(51, 51, 51);
+    color: rgb(239, 239, 239);
+}
+.howitworks a {
+    font-size: 6vw;
+}
+/*******END OF TUTORIAL 1*****START OF TUTORIAL 2*****/
+.intro {
+    font-size: 10vw;
+    line-height: 17vh;
+}
+/*******END OF TUTORIAL 2 AND 3*****START OF HOME*****/
+
+#opt {
+    background: url(../images/highway.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+    justify-content: center;
+    align-items: initial;
+}
+.options a{
+    width: 100%;
+    font-size: 5vw;
+    font-weight: bolder;
+}
+.button {
+    border-radius: 9vw;
+    text-align: center;
+    line-height: 9vh;
+    cursor: pointer;
+}
+.dndopt {
+    margin: 1em;
+    justify-content: center;
+    display: flex;
+}
+
+.offerheader{
+    background: url(../images/blurrcity.jpg) no-repeat;
+    background-size: cover;
+}
+
+a {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+#drive, #drop{
+    width: 50%;
+    height: 100%;
+}
+#drive{
+    float: left;
+    border-right: 1px solid rgba(0, 0, 0, 0.86);
+}
+#drop{
+    float: right;
+    border-left: 1px solid rgba(0, 0, 0, 0.86);
+}
+
+
 #DNDtitle {
     width: 100%;
     height: 25%;
@@ -133,12 +165,6 @@ footer {
 }
 .DNDlogo img {
     width: 100%;
-}
-.button {
-    border-radius: 9vw;
-    text-align: center;
-    line-height: 9vh;
-    cursor: pointer;
 }
 #searchbtn{
     width: 80%;
@@ -162,11 +188,6 @@ footer {
 }
 /*****DND HOME PAGE*****/
 
-#opt {
-    background: url(../images/highway.jpg) no-repeat;
-    background-position: center;
-    background-size: cover;
-}
 .homeheader {
     width: 100%;
     height: 10%;
@@ -257,24 +278,8 @@ footer {
     display: flex;
     flex-direction: row;
 }
-footer svg g:hover{
+footer svg:hover g{
     stroke: #00c5d1;
-}
-.options {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex: 0.8;
-    justify-content: center;
-    align-items: initial;
-}
-.options a{
-    width: 100%;
-    font-size: 5vw;
-    font-weight: bolder;
-}
-.dndopt {
-    margin: 1em;
 }
 #optDrive {
     background: rgb(0, 197, 209);
@@ -611,4 +616,36 @@ li h3 {
 }
 .rating img {
     width: 100%;
+}
+
+.close, .edit{
+    width:50%;
+    font-size: 1.2em;
+    float: left;
+    padding:0 2em;
+}
+.edit{
+    text-align: right;
+}
+.close{
+    text-align: left;
+}
+.aboutsection{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 1em;
+}
+.name{
+    font-size: 1.5em;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-top:1em;
+}
+.abouttext{
+ text-align: left;
 }

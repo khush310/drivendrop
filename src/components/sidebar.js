@@ -9,9 +9,13 @@ class Sidebar extends React.Component {
 		const user = store.cursor(["profileUser"]).deref();
 		return (
 			<div className="sidebar">
-				<div className="myprofile"><a href="#"><img src={user.get("img")} /></a></div>
+				<div className="myprofile">
+					<Link to="/profile" store={this.props.store}>
+						<img src={user.get("img")} />
+					</Link>
+				</div>
 				<ul>
-					<li className="settings"><a href="#">Settings</a></li>
+					<li className="settings"><Link to="/settings">Settings</Link></li>
 					<li className="invite"><a href="#">Invites Friends</a></li>
 				</ul>
 				<div className="switchto"><Link to={this.props.currentlink}>{this.props.currentpage}</Link></div>

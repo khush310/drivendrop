@@ -16,22 +16,31 @@ class FindRide extends React.Component {
 	};
 	saveSrc= (e) =>{
 		const {store} = this.props;
-		store.cursor(["search", "src"]).update(function() {
+		store.cursor(["findRide", "from"]).update(function() {
 			return e.target.value;
 		});
 	};
 	saveDestination=(e) =>{
 		const {store} = this.props;
-		store.cursor(["search", "destination"]).update(function () {
+		store.cursor(["findRide", "to"]).update(function () {
 			return e.target.value;
 		})
 	};
-
-	render(){
-		let classes = classnames('stage', 'findride', {active: this.state.active});
+	selectTime = (e) =>{
 		const {store} = this.props;
-		const ride = store.cursor(["currentRide"]).deref();
-		const Menu = BurgerMenu.slide;
+		store.cursor(["findRide", "time"]).update(function () {
+			return e.target.value;
+		})
+	};
+	womenonly = (e) =>{
+		const {store} = this.props;
+		store.cursor(["findRide", "women"]).update(function () {
+			return e.target.value;
+		})
+	}
+	render(){
+		const {store} = this.props;
+		let classes = classnames('stage', 'findride', {active: this.state.active});
 		return (
 			<div className={classes}>
 				<Header title="Find a Ride"></Header>
@@ -53,7 +62,7 @@ class FindRide extends React.Component {
 							<div className="lefticons">
 								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><circle cx="12" cy="12" r="11.5" /><path d="M11.5 6.5v5.5l6 5.5" /></g></svg>
 							</div>
-							<input className="selecttr" type="time" placeholder="hrs:mins" name="usr_time" />
+							<input onChange={this.selectTime} className="selecttr" type="time" placeholder="hrs:mins" name="usr_time" />
 						</li>
 						<li id="selectWomen">
 							<div className="lefticons">
@@ -61,7 +70,7 @@ class FindRide extends React.Component {
 							</div>
 							<div className="selecttr">Women only
 								<div className="onoffswitch">
-									<input type="checkbox" name="onoffswitch" className="onoffswitch-checkbox" id="myonoffswitch" checked />
+									<input onChange={this.womenonly} value={store.cursor(["findRide", "women"]).deref()} type="checkbox" name="onoffswitch" className="onoffswitch-checkbox" checked={store.cursor(["findRide", "women"]).deref()} id="myonoffswitch" />
 									<label className="onoffswitch-label" for="myonoffswitch"></label>
 								</div>
 							</div>
@@ -70,7 +79,7 @@ class FindRide extends React.Component {
 					<Link className="button" id="searchbtn" to="/searchresults">Search</Link>
 				</section>
 				<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
-				<Sidebar currentpage="Switch to Offering" store={this.props.store} currentlink="/offerride"></Sidebar>
+				<Sidebar currentpage="Switch to Offering" store={this.props.store} currentlink="/offerride" previouslink="/findride"></Sidebar>
 			</div>
 		)
 	}
