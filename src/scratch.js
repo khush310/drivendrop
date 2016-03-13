@@ -121,7 +121,7 @@ this is header
 <Header onToggleSidebar={this.onToggleSidebar}  id="homescreen"></Header>
 
 
-
+footer
 	<div className="headersections" id="profileicon" onClick={this.props.onToggleSidebar}>
 		<svg className="icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path d="M9.5 13.281v2.719l-5.009 1.789c-1.194.427-1.991 1.558-1.991 2.825v1.886h19v-1.886c0-1.268-.797-2.398-1.991-2.825l-5.009-1.789v-2.906" /><ellipse cx="11.875" cy="8" rx="5" ry="6" /><path d="M16.828 7.453l-.453.047c-1.703.328-2.797-.289-3.734-1.93-.563 1.078-2.322 1.93-3.766 1.93-.711 0-1.323-.146-1.936-.466" /></g></svg>
 	</div>
@@ -137,3 +137,7 @@ this is header
 	<div className="headersections" id="passage">
 		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path strokeLinecap="round" d="M7.5 5.5v16M14.5 10.5v-10M11.497 18.645l-3.997 2.855-7-5v-16l7 5 7-5 7 5v7"/><circle cx="17.305" cy="17.307" r="3.805"/><path strokeLinecap="round" d="M20 20l3.5 3.5"/></g></svg>
 	</div>
+
+		findride.js
+	<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
+

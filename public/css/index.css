@@ -122,12 +122,24 @@ footer {
 /****offer ride*****/
 
 .searchride, .offerride{
-    width:50%;
+    width: 50%;
     float: left;
     text-align: center;
+    border: 1px solid rgba(3, 2, 2, 0.22);
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
 }
-.findride{
-
+.searchride svg, .offerride svg{
+    width:32%;
+}
+.searchride:hover g, .offerride:hover g, .offerride:hover path, .offerride:hover line, .offerride:hover rect, .offerride:hover circle {
+    stroke: #00c5d1;
+}
+.searchride:hover, .offerride:hover{
+    color: rgb(0, 204, 214);
 }
 .offerheader{
     background: url(../images/blurrcity.jpg) no-repeat;
@@ -236,12 +248,12 @@ a {
 svg {
     width: 60%;
     height: 60%;
-    position: absolute;
+    /*position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    margin: auto;
+    margin: auto;*/
 }
 textarea{
     width: 88%;
@@ -277,7 +289,7 @@ textarea{
     color: rgb(0, 204, 214);
 }
 footer {
-    width: 100%;
+    /*width: 100%;
     position: absolute;
     height: 10%;
     bottom: 0;
@@ -285,11 +297,15 @@ footer {
     background: rgba(251, 251, 251, 1);
     line-height: 9vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;*/
+    width: 100%;
+    cursor: pointer;
+    background: rgba(66,66,66,1);
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
-footer svg:hover g{
-    stroke: #00c5d1;
-}
+
 #optDrive {
     background: rgb(0, 197, 209);
 }
@@ -592,7 +608,8 @@ li h3 {
     text-align: left;
     font-size: 0.7em;
     margin: 0 1.5em 0 0;
-    float: right;
+    float: right
+;
 }
 .seats {
     width: 64%;

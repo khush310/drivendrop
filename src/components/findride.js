@@ -78,7 +78,6 @@ class FindRide extends React.Component {
 					</ul>
 					<Link className="button" id="searchbtn" to="/searchresults">Search</Link>
 				</section>
-				<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
 				<Sidebar currentpage="Switch to Offering" store={this.props.store} currentlink="/offerride" previouslink="/findride"></Sidebar>
 			</div>
 		)

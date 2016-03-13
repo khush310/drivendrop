@@ -23,7 +23,7 @@ class App extends React.Component {
 		const {store} = this.props;
 		const activeSidebar = store.cursor(["temp", "ui", "activesidebar"]).deref();
 		return (
-			<div style={{width: '100%', height: '100%'}}>
+			<div style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
 				{this.props.children}
 				{activeSidebar ? <Sidebar></Sidebar>:""}
 				<Footer></Footer>

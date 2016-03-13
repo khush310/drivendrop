@@ -61,7 +61,6 @@ class OfferRide extends React.Component {
 						<button className="continue"><Link to="/offerride2" >Continue</Link></button>
 					</section>
 					<Sidebar currentpage="Switch to Finding" store={this.props.store} currentlink="/findride" previouslink="/offerride"></Sidebar>
-					<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
 				</div>
 		)
 	};
