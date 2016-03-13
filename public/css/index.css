@@ -135,10 +135,10 @@ footer {
 .searchride svg, .offerride svg{
     width:32%;
 }
-.searchride:hover g, .offerride:hover g, .offerride:hover path, .offerride:hover line, .offerride:hover rect, .offerride:hover circle {
+.searchride:hover g, .offerride:hover g, .offerride:hover path, .offerride:hover line, .offerride:hover rect, .offerride:hover circle, .searchride:active g, .offerride:active g, .offerride:active path, .offerride:active line, .offerride:active rect, .offerride:active circle{
     stroke: #00c5d1;
 }
-.searchride:hover, .offerride:hover{
+.searchride:hover, .offerride:hover, .searchride:active, .offerride:active{
     color: rgb(0, 204, 214);
 }
 .offerheader{
