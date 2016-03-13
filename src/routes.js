@@ -11,8 +11,6 @@ import SearchResults from "./components/searchresults.js";
 import Profile from "./components/profile.js";
 import Settings from "./components/settings.js";
 
-
-
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -22,11 +20,13 @@ class App extends React.Component {
 		this.setState({active: false})
 	};
 	render() {
+		const {store} = this.props;
 		const activeSidebar = store.cursor(["temp", "ui", "activesidebar"]).deref();
 		return (
 			<div style={{width: '100%', height: '100%'}}>
 				{this.props.children}
 				{activeSidebar ? <Sidebar></Sidebar>:""}
+				<Footer></Footer>
 			</div>
 		)
 	}
