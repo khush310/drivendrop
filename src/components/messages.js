@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router';
-class Sidebar extends React.Component {
+class Messages extends React.Component {
 	constructor(props) {
 		super(props);
 	};
@@ -8,7 +8,7 @@ class Sidebar extends React.Component {
 		const {store} = this.props;
 		const user = store.cursor(["profileUser"]).deref();
 		return (
-			<div className="sidebar">
+			<div className="messages">
 				<div className="myprofile">
 					<Link to="/profile" store={this.props.store}>
 						<img src={user.get("img")} />
@@ -22,4 +22,4 @@ class Sidebar extends React.Component {
 		)
 	};
 }
-export default Sidebar;
+export default Messages;

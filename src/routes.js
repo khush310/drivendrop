@@ -1,6 +1,9 @@
 import React from "react";
 import { Router, Route, Link, browserHistory } from 'react-router';
+import classnames from "classnames";
+
 import TutorialStep from "./components/tutorialscreen.js";
+import Header from "./components/header.js";
 import Home from "./components/home.js";
 import OfferRide from "./components/offerride.js";
 import OfferRide2 from "./components/offerride2.js";
@@ -10,22 +13,27 @@ import Footer from "./components/footer.js";
 import SearchResults from "./components/searchresults.js";
 import Profile from "./components/profile.js";
 import Settings from "./components/settings.js";
+import Messages from "./components/messages.js";
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {active: false};
 	};
-	handleSwitch= (e) => {
-		this.setState({active: false})
+	toggleLeft = (e) => {
+		this.setState({active: !this.state.active});
+	};
+	toggleRight= (e) => {
+		this.setState({active: !this.state.active});
 	};
 	render() {
 		const {store} = this.props;
-		const activeSidebar = store.cursor(["temp", "ui", "activesidebar"]).deref();
+		let classes = classnames("wrapper", {active: this.state.active});
 		return (
-			<div style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+			<div  className={classes} style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+				<Header title="Offer a Ride" ontoggleLeft={this.toggleLeft}></Header>
 				{this.props.children}
-				{activeSidebar ? <Sidebar></Sidebar>:""}
+				<Sidebar store={this.props.store}></Sidebar>
 				<Footer></Footer>
 			</div>
 		)

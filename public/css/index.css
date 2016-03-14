@@ -19,7 +19,6 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 #landing {
     overflow: hidden;
@@ -282,7 +281,7 @@ textarea{
     margin-bottom: 20px;
 }
 .current{
-    width: 100%;
+    width: 50%;
     float: left;
     font-size: 6.5vw;
     font-weight: bold;
@@ -498,10 +497,11 @@ li h3 {
 .route {
     background: #00C5D1;
 }
-.stage.active{
+.wrapper.active{
     -webkit-transform: translateX(65%);
+}
+.wrapper{
     -webkit-transition: -webkit-transform 0.3s ease-out;
-
 }
 .sidebar {
     position: absolute;

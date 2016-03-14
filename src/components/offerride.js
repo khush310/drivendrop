@@ -4,15 +4,14 @@ import Sidebar from "./sidebar";
 import Footer from "./footer";
 import {Link} from "react-router";
 import classnames from "classnames";
+import {baseButtonStyle, fancyButtonStyle} from "../stylesheets/button";
 
 class OfferRide extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {active: false};
 	};
-	onToggleSidebar= (e) => {
-		this.setState({active: !this.state.active});
-	};
+
 	handleFrom= (e) =>{
 		const {store} = this.props;
 		store.cursor(["offer", "from"]).update(function() {
@@ -33,10 +32,10 @@ class OfferRide extends React.Component {
 	};
 
 	render(){
-		let classes = classnames('stage', 'offerheader', {active: this.state.active});
+		const btnstyle = Object.assign({}, baseButtonStyle, fancyButtonStyle);
+		let classes = classnames('stage', 'offerheader');
 		return (
 				<div className={classes}>
-					<Header title="Offer a Ride"></Header>
 					<section className="selectdrive " id="drivebgd">
 						<ul>
 							<li id="selectFrom">
@@ -60,7 +59,6 @@ class OfferRide extends React.Component {
 						</ul>
 						<button className="continue"><Link to="/offerride2" >Continue</Link></button>
 					</section>
-					<Sidebar currentpage="Switch to Finding" store={this.props.store} currentlink="/findride" previouslink="/offerride"></Sidebar>
 				</div>
 		)
 	};

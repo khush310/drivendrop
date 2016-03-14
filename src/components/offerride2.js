@@ -36,9 +36,7 @@ class OfferRide2 extends React.Component {
 	render() {
 		let classes = classnames('stage', 'offerheader', {active: this.state.active});
 		return (<div className={classes}>
-			<Link to="/offerride"><Header title="Back"></Header></Link>
-			<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
-			<section className="selectdrive offersection2 " id="drivebgd">
+			<section className="offersection2">
 				<ul>
 					<li id="selectSeats">
 						<div className="lefticons">
@@ -76,7 +74,7 @@ class OfferRide2 extends React.Component {
 					<Link to="/published" notification="published">Publish</Link>
 				</button>
 			</section>
-			<Sidebar currentpage="Switch to Finding" store={this.props.store} currentlink="/findride" previouslink="/offerride"></Sidebar>
+
 		</div>)
 	};
 }

@@ -141,3 +141,30 @@ footer
 		findride.js
 	<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
 
+
+offerride.js
+	<Header title="Offer a Ride" onclick={onToggleSidebar}></Header>
+
+		routes.js
+handleSwitch= (e) => {
+	this.setState({active: false})
+};
+
+offerride.js
+<Sidebar currentpage="Switch to Finding" store={this.props.store} currentlink="/findride" previouslink="/offerride"></Sidebar>
+
+
+
+
+	<Link to={this.props.currentlink}>{this.props.currentpage}</Link>
+
+
+offerride2
+<Sidebar currentpage="Switch to Finding" store={this.props.store} currentlink="/findride" previouslink="/offerride"></Sidebar>
+	<Sidebar currentpage="Switch to Finding" currentlink="/findride"></Sidebar>
+
+	routes.js		/*const activeSidebar = store.cursor(["temp", "ui", "activesidebar"]).deref();*/
+
+
+findride
+<Sidebar currentpage="Switch to Offering" store={this.props.store} currentlink="/offerride" previouslink="/findride"></Sidebar>

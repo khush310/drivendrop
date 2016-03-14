@@ -43,7 +43,6 @@ class FindRide extends React.Component {
 		let classes = classnames('stage', 'findride', {active: this.state.active});
 		return (
 			<div className={classes}>
-				<Header title="Find a Ride"></Header>
 				<section className="findsection">
 					<ul id="findlist">
 						<li id="selectFrom">
@@ -78,7 +77,6 @@ class FindRide extends React.Component {
 					</ul>
 					<Link className="button" id="searchbtn" to="/searchresults">Search</Link>
 				</section>
-				<Sidebar currentpage="Switch to Offering" store={this.props.store} currentlink="/offerride" previouslink="/findride"></Sidebar>
 			</div>
 		)
 	}
