@@ -8,7 +8,7 @@ class Sidebar extends React.Component {
 		const {store} = this.props;
 		const user = store.cursor(["profileUser"]).deref();
 		return (
-			<div className="sidebar">
+			<div className="sidebar" style={{left:'-65%!important'}}>
 				<div className="myprofile">
 					<Link to="/profile" store={this.props.store}>
 						<img src={user.get("img")} />

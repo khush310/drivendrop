@@ -497,26 +497,28 @@ li h3 {
 .route {
     background: #00C5D1;
 }
-.wrapper.active{
+.wrapper.leftactive{
     -webkit-transform: translateX(65%);
 }
 .wrapper{
     -webkit-transition: -webkit-transform 0.3s ease-out;
 }
-.sidebar {
+.wrapper.rightactive{
+    -webkit-transform: translateX(-65%);
+}
+.messages, .sidebar{
     position: absolute;
-    left: -65% !important;
     top: 0;
     background: rgb(239, 239, 239);
     height: 100%;
     width: 65%;
-    float: left;
+}
+    /*float: left;
     overflow: hidden;
     display: flex;
     flex-direction:column;
     justify-content: center;
-    text-align: center;
-}
+    text-align: center;*/
 .sidebar .myprofile{
     height: 22%;
     width: 60%;
@@ -674,4 +676,15 @@ li h3 {
 }
 .abouttext{
  text-align: left;
+}
+
+.messagealert{
+    border: 1px solid rgb(0, 197, 209);
+    width: 90%;
+    flex: 0.3;
+    margin: 1em;
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    border-radius:15px;
+    background: white;
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from 'react-router';
+import {center} from "../stylesheets/center";
 class Messages extends React.Component {
 	constructor(props) {
 		super(props);
@@ -7,17 +8,17 @@ class Messages extends React.Component {
 	render(){
 		const {store} = this.props;
 		const user = store.cursor(["profileUser"]).deref();
+		const messagestyle = Object.assign({right: "-65%!important", flexDirection: "column"}, center);
 		return (
-			<div className="messages">
-				<div className="myprofile">
-					<Link to="/profile" store={this.props.store}>
-						<img src={user.get("img")} />
-					</Link>
+			<div className="messages" style={messagestyle}>
+				<div className="messagealert">
+					<div>	Messages</div>
+					<div>No unread Messages</div>
 				</div>
-				<ul>
-					<li className="settings"><Link to="/settings">Settings</Link></li>
-					<li className="invite"><a href="#">Invites Friends</a></li>
-				</ul>
+				<div className="messagealert">
+					<div>Notifications</div>
+					<div>No new notifications</div>
+				</div>
 			</div>
 		)
 	};

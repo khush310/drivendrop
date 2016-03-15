@@ -18,22 +18,23 @@ import Messages from "./components/messages.js";
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {active: false};
+		this.state = {active: false, check: false};
 	};
 	toggleLeft = (e) => {
 		this.setState({active: !this.state.active});
 	};
 	toggleRight= (e) => {
-		this.setState({active: !this.state.active});
+		this.setState({check: !this.state.check});
 	};
 	render() {
 		const {store} = this.props;
-		let classes = classnames("wrapper", {active: this.state.active});
+		let classes = classnames("wrapper", {leftactive: this.state.active}, {rightactive: this.state.check});
 		return (
 			<div  className={classes} style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-				<Header title="Offer a Ride" ontoggleLeft={this.toggleLeft}></Header>
+				<Header title="Offer a Ride" ontoggleLeft={this.toggleLeft} ontoggleRight={this.toggleRight}></Header>
 				{this.props.children}
 				<Sidebar store={this.props.store}></Sidebar>
+				<Messages store={this.props.store}></Messages>
 				<Footer></Footer>
 			</div>
 		)
@@ -49,7 +50,6 @@ const routingTree = (
 		<Route path="/findride" component={FindRide} />
 		<Route path="/searchresults" component={SearchResults} />
 		<Route path="/profile" component={Profile} />
-		<Route path="/settings" component={Settings} />
 	</Route>
 );
 export default routingTree;
