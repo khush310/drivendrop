@@ -51,7 +51,8 @@ export function createStore() {
 				rating: 3,
 				seats_available: 2,
 				depart_location: "Paschim Vihar",
-				departure_time: "07:40"
+				departure_time: "07:40",
+				aadharverified: "138uruf0w9u"
 			}),
 			user2: Immutable.Map({
 				name: "Rohit",
@@ -61,7 +62,8 @@ export function createStore() {
 				rating: 5,
 				seats_available: 2,
 				depart_location: "Rohini",
-				departure_time: "09:15"
+				departure_time: "09:15",
+				aadharverified: null
 			}),
 			user3: Immutable.Map({
 				name: "Marco",
@@ -71,7 +73,8 @@ export function createStore() {
 				rating: 4,
 				seats_available: 3,
 				depart_location: "Defence Colony",
-				departure_time: "11:30"
+				departure_time: "11:30",
+				aadharverified: "1208u49283u5"
 			}),
 			user4: Immutable.Map({
 				name: "Kusum",
@@ -81,7 +84,8 @@ export function createStore() {
 				rating: 2,
 				seats_available: 1,
 				depart_location: "Defence Colony",
-				departure_time: "11:30"
+				departure_time: "11:30",
+				aadharverified: null
 			}),
 			user5: Immutable.Map({
 				name: "Krishan Lal",
@@ -91,7 +95,8 @@ export function createStore() {
 				rating: 5,
 				seats_available: 2,
 				depart_location: "Defence Colony",
-				departure_time: "11:30"
+				departure_time: "11:30",
+				aadharverified: "1084u392845"
 			})
 		})
 	});

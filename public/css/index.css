@@ -681,7 +681,7 @@ li h3 {
 .messagealert{
     border: 1px solid rgb(0, 197, 209);
     width: 90%;
-    flex: 0.3;
+    flex: 0.25;
     margin: 1em;
     -webkit-border-radius:15px;
     -moz-border-radius:15px;

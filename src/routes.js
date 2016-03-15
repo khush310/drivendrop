@@ -14,6 +14,8 @@ import SearchResults from "./components/searchresults.js";
 import Profile from "./components/profile.js";
 import Settings from "./components/settings.js";
 import Messages from "./components/messages.js";
+import Inbox from "./components/inbox.js";
+import Notifications from "./components/notifications.js";
 
 class App extends React.Component {
 	constructor(props) {

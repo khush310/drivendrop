@@ -3,8 +3,7 @@ import BurgerMenu from 'react-burger-menu';
 import { Link } from 'react-router';
 import classnames from 'classnames';
 import Header from "./header.js";
-import Footer from "./footer.js";
-import Sidebar from "./sidebar";
+
 
 class FindRide extends React.Component {
 	constructor(props) {
