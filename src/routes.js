@@ -22,7 +22,7 @@ const routingTree = (
 			<Route path="searchresults" component={SearchResults} />
 			<Route path="profile" component={Profile} />
 			<Route path="notifications" component={Notifications} />
-			<Route path="chat" component={Chats} />
+			<Route path="chats" component={Chats} />
 		</Route>
 		<Route path="tutorial/:step" component={TutorialStep} />
 		<Route path="home" component={Home} />
