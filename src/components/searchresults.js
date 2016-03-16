@@ -21,7 +21,6 @@ class SearchResults extends React.Component {
 		const search = store.cursor(["search"]).deref();
 
 		return (<div className={classes}>
-							<Header title={search.get("destination")}></Header>
 							<section className="posts">
 								<div className="extrainfo">
 									<p className="filter">More Filters</p>
@@ -44,9 +43,7 @@ class SearchResults extends React.Component {
 												</div>)
 								})}
 						</section>
-						<Footer onToggleSidebar={this.onToggleSidebar} type="passenger"></Footer>
-						<Sidebar store={this.props.store} currentpage="Switch to Offering" currentlink="/offerride"></Sidebar>
-					</div>
+			</div>
 					)
 	}
 }

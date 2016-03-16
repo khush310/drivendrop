@@ -25,6 +25,7 @@ export function compileToHtml(string){
                 <title>drivendrop</title>
                 <link href="/_assets/css/index.css" rel="stylesheet" type="text/css"> </link>
                 <link href='https://fonts.googleapis.com/css?family=Handlee|Short+Stack|Work+Sans:400,700|Quicksand:400,700|Indie+Flower|Raleway+Dots|Just+Me+Again+Down+Here|Bubbler+One' rel='stylesheet' type='text/css'>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
             </head>
             <body style="overflow: hidden;">
                 <div id="wrapper" role="main" style="width: 100%; height: 100%;">

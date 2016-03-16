@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from 'react-router';
+import {center} from "../stylesheets/center";
 
 class Footer extends React.Component {
 	render() {
-		return (<footer>
+		const stylefooter = Object.assign({width: "100%", height: "11%", cursor: "pointer", background: "rgb(66, 66, 66)"}, center);
+		return (<footer style={stylefooter}>
 				<Link className="searchride" to="/public/findride">
 					Search
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#fff" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path strokeLinecap="round" d="M7.5 5.5v16M14.5 10.5v-10M11.497 18.645l-3.997 2.855-7-5v-16l7 5 7-5 7 5v7"/><circle cx="17.305" cy="17.307" r="3.805"/><path strokeLinecap="round" d="M20 20l3.5 3.5"/></g></svg>

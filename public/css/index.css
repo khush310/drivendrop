@@ -66,14 +66,13 @@ body {
     font-size: 6vw;
     color: rgb(66, 66, 66);
 }
-footer {
-    width: 100%;
-    height: 10%;
+/*footer {
+    height: 12%;
     cursor: pointer;
     font-size: 1.5em;
     color: rgb(239, 239, 239);
     border-top: 1px solid rgba(0, 0, 0, 0.52);
-}
+}*/
 .howitworks {
     line-height: 9vh;
     background-color: rgb(51, 51, 51);
@@ -124,8 +123,7 @@ footer {
     width: 50%;
     float: left;
     text-align: center;
-    border: 1px solid rgba(3, 2, 2, 0.22);
-    height: 100%;
+    border-left: 1px solid rgba(3, 2, 2, 0.22);
     justify-content: center;
     display: flex;
     align-items: center;
@@ -688,4 +686,12 @@ li h3 {
     -webkit-border-radius:15px;
     -moz-border-radius:15px;
     border-radius:15px;
+}
+.otherinfo{
+    width: 100%;
+    height:7%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(66, 66, 66, 0.5);
+    justify-content: space-around;
 }

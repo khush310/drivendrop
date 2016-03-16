@@ -28,20 +28,36 @@ export function createStore() {
 	});
 	const message4 = Immutable.Map({
 		id: "4",
-		name: "bholu",
+		from: "bholu",
+		userpic: "/_assets/images/user.png",
 		type: "request",
 		msg: "hi i am a nice guy"
 	});
 	const message5 = Immutable.Map({
 		id: "5",
-		name: "gora",
+		from: "gora",
+		userpic: "/_assets/images/user.png",
 		type: "request",
+		msg: "ola!a nice guy"
+	});
+	const message6 = Immutable.Map({
+		id: "6",
+		from: "Shabri",
+		userpic: "/_assets/images/user.png",
+		type: "accept",
+		msg: "ola!a nice guy"
+	});
+	const message7 = Immutable.Map({
+		id: "7",
+		from: "Namo",
+		userpic: "/_assets/images/user.png",
+		type: "accept",
 		msg: "ola!a nice guy"
 	});
 	const messcounter = Immutable.Map({
 		uread: 2
 	});
-	const messlist = Immutable.List([message1, message2, message3, message4, message5]);
+	const messlist = Immutable.List([message1, message5, message3, message2, message6, message4,message7]);
 	const state = Immutable.Map({
 		profileUser: Immutable.Map({
 			name: "Khushboo Verma",

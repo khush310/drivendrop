@@ -23,7 +23,7 @@ class App extends React.Component {
 			<div  className={classes} style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
 				<Header title="Offer a Ride" ontoggleLeft={this.toggleLeft} ontoggleRight={this.toggleRight}></Header>
 				{this.props.children}
-				<Sidebar store={this.props.store}></Sidebar>
+				<Sidebar store={this.props.store} ontoggle={this.toggleLeft}></Sidebar>
 				<Messages store={this.props.store} ontoggle={this.toggleRight}></Messages>
 				<Footer></Footer>
 			</div>

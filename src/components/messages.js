@@ -10,7 +10,6 @@ class Messages extends React.Component {
 	};
 	render(){
 		const {store} = this.props;
-		const user = store.cursor(["profileUser"]).deref();
 		const mess = store.cursor(["messages"]).deref();
 		const noti = store.cursor(["notifications"]).deref();
 		return (

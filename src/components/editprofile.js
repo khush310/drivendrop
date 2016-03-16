@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from 'react-router';
 import {center} from "../stylesheets/center";
-class Profile extends React.Component {
+class EditProfile extends React.Component {
 	render(){
 		const {store} = this.props;
 		const user = store.cursor(["profileUser"]).deref();
 		return (
-			<div className="stage profile" style={{paddingTop: "1em", color: "rgba(61, 61, 61, 0.8)"}}>
+			<div className="stage profile" style={{paddingTop: "1em", color: "rgb(111, 110, 110)"}}>
 				<div style={{width: "25%", borderRadius: "30px", overflow: "hidden", border: "2px solid #00c5d1"}}><img src={user.get("img")} style={{width: "100%"}} /></div>
 				<div className="aboutsection" style={{width: "80%", marginTop: "1em"}}>
-					<div className="name" style={{fontSize: "1.5em", fontWeight: "bold", paddingBottom: "0.5em", width: "100%"}}>{user.get("name")}</div>
+					<div className="name" style={{fontSize: "2em", fontWeight: "bold", paddingBottom: "0.5em", width: "100%"}}>{user.get("name")}</div>
 					<div className="abouttitle" style={{fontWeight:"bold", paddingLeft: "0.8em"}}>About</div>
 					<div style={{marginTop:"0.5em", marginBottom: "1em", border: "1px solid rgba(158, 158, 158, 0.86)", padding: "0.6em", borderRadius:"5px", borderStyle:"outset"}}>
 						<div className="abouttext">{user.get("about")}</div>
@@ -30,11 +30,11 @@ class Profile extends React.Component {
 						<i className="fa fa-2x fa-check-circle-o" style={{color: "#FFD900"}}></i>
 					</div>
 					<div style={{height:"7%", width: "100%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "1.5em", background: "rgb(0, 197, 207)", borderRadius: "15px"}}>
-						<Link to="/home" style={{fontWeight: "normal", color: "white", fontSize:"1.2em"}}>Edit Profile</Link>
+						<Link to="/public/editprofile" style={{fontWeight: "normal", color: "white", fontSize:"1.2em"}}>Edit Profile</Link>
 					</div>
 				</div>
 			</div>
 		)
 	};
 }
-export default Profile;
+export default EditProfile;
