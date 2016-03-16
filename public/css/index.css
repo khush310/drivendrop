@@ -679,12 +679,13 @@ li h3 {
 }
 
 .messagealert{
-    border: 1px solid rgb(0, 197, 209);
     width: 90%;
-    flex: 0.25;
+    height:25%;
     margin: 1em;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
     -webkit-border-radius:15px;
     -moz-border-radius:15px;
     border-radius:15px;
-    background: white;
 }

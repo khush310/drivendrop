@@ -25,10 +25,10 @@ class Home extends React.Component {
 			<div className="stage home" id="opt">
 				<div className="options">
 					<div className="button dndopt" id="optDropped">
-						<Link to='/findride' type="passenger">Find a ride</Link>
+						<Link to='/public/findride' type="passenger">Find a ride</Link>
 					</div>
 					<div className="button dndopt" id="optDrive">
-						<Link to='/offerride' type="driver">Offer a ride</Link>
+						<Link to='/public/offerride' type="driver">Offer a ride</Link>
 					</div>
 				</div>
 			</div>

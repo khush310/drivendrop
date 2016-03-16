@@ -74,7 +74,7 @@ class FindRide extends React.Component {
 							</div>
 						</li>
 					</ul>
-					<Link className="button" id="searchbtn" to="/searchresults">Search</Link>
+					<Link className="button" id="searchbtn" to="/public/searchresults">Search</Link>
 				</section>
 			</div>
 		)

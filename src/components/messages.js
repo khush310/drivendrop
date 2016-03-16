@@ -1,25 +1,31 @@
 import React from "react";
 import { Link } from 'react-router';
-import {center} from "../stylesheets/center";
-
 
 class Messages extends React.Component {
 	constructor(props) {
 		super(props);
 	};
+	toggleBack = (e) => {
+		this.props.ontoggle();
+	};
 	render(){
 		const {store} = this.props;
 		const user = store.cursor(["profileUser"]).deref();
-		const messagestyle = Object.assign({right: "-65%!important", flexDirection: "column"}, center);
+		const mess = store.cursor(["messages"]).deref();
+		const noti = store.cursor(["notifications"]).deref();
 		return (
-			<div className="messages" style={messagestyle}>
-				<div className="messagealert" style={{background:"rgb(0, 197, 209)", overflow: "hidden", display: "flex", flexDirection:"column"}}>
+			<div className="messages" style={{right: "-65%!important", flexDirection: "column", display: "flex", alignItems: "center", justifyContent: "flex-start"}}>
+				<div className="messagealert">
 					<div style={{fontWeight: "bold", padding: "1em", fontSize: "1.3em", color: "rgb(0, 197, 209)", background: "white"}}>	Messages</div>
-					<Link to="/inbox" style={{paddingTop: "1em", color: "white", flex: "0.8"}}>No unread Messages</Link>
+					<Link onClick={this.toggleBack} to="/public/chats" style={{paddingTop: "1em", color: "white", flex: "0.7", background: "rgb(0, 197, 209)", borderBottomLeftRadius: "20px", borderBottomRightRadius: "20px"}}>
+						{mess.get("count")} unread Messages
+					</Link>
 				</div>
-				<div className="messagealert" style={{background:"rgb(0, 197, 209)", overflow: "hidden"}}>
+				<div className="messagealert">
 					<div style={{fontWeight: "bold", padding: "1em", fontSize: "1.3em", color: "rgb(0, 197, 209)", background: "white"}}>Notifications</div>
-					<Link to="/notifications" style={{paddingTop: "1em", color: "white"}}>No new notifications</Link>
+					<Link onClick={this.toggleBack} to="/public/notifications" style={{paddingTop: "1em", color: "white", flex: "0.7", background: "rgb(0, 197, 209)", borderBottomLeftRadius: "20px", borderBottomRightRadius: "20px"}}>
+						{noti.get("count")} new notifications
+					</Link>
 				</div>
 			</div>
 		)

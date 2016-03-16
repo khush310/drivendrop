@@ -2,6 +2,46 @@ import immstruct from "immstruct";
 import Immutable from "immutable";
 
 export function createStore() {
+	const message1 = Immutable.Map({
+		id: "1",
+		from: "pawan",
+		userpic: "/_assets/images/user.png",
+		to: "me",
+		type: "message",
+		msg: "hi oanvkjsndvjshbvjhsbv;ihbv;hdbv;kjvkhfbd"
+	});
+	const message2 = Immutable.Map({
+		id: "2",
+		from: "sapna",
+		to: "me",
+		userpic: "/_assets/images/user.png",
+		type: "message",
+		msg: "snvkjsnbvsjb shvkjsndvjshbvjhsbv;ihbv;hdbv;kjvkhfbd"
+	});
+	const message3 = Immutable.Map({
+		id: "3",
+		from: "damru",
+		to: "me",
+		userpic: "/_assets/images/user.png",
+		type: "message",
+		msg: "snvkjsnbknjkjshbvjhsbv;ihbv;hdbv;kjvkhfbd"
+	});
+	const message4 = Immutable.Map({
+		id: "4",
+		name: "bholu",
+		type: "request",
+		msg: "hi i am a nice guy"
+	});
+	const message5 = Immutable.Map({
+		id: "5",
+		name: "gora",
+		type: "request",
+		msg: "ola!a nice guy"
+	});
+	const messcounter = Immutable.Map({
+		uread: 2
+	});
+	const messlist = Immutable.List([message1, message2, message3, message4, message5]);
 	const state = Immutable.Map({
 		profileUser: Immutable.Map({
 			name: "Khushboo Verma",
@@ -38,6 +78,13 @@ export function createStore() {
 			src: "paschim vihar",
 			destination: "punjabi bagh",
 			results: "14"
+		}),
+		messages: Immutable.Map({
+			counters: messcounter,
+			list: messlist
+		}),
+		notifications: Immutable.Map({
+			count: "2"
 		}),
 		wallet: Immutable.Map({
 

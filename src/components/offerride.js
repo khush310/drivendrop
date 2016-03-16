@@ -57,7 +57,7 @@ class OfferRide extends React.Component {
 								<input onChange={this.handleTime} className="selecttr" type="datetime-local" placeholder="Select Time" name="usr_time" />
 							</li>
 						</ul>
-						<button className="continue"><Link to="/offerride2" >Continue</Link></button>
+						<button className="continue"><Link to="/public/offerride2" >Continue</Link></button>
 					</section>
 				</div>
 		)
