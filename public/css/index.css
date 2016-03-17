@@ -714,9 +714,13 @@ li h3 {
     padding: 0.5em 0.8em;
 }
 .editinfo span{
-    width: 35%;
+    width: 40%;
     display: block;
     height: 100%;
     text-align: left;
     font-size: 1.2em
+}
+.editinfo input{
+    border: none;
+    font-size:1em;
 }
