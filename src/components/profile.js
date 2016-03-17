@@ -30,7 +30,7 @@ class Profile extends React.Component {
 						<i className="fa fa-2x fa-check-circle-o" style={{color: "#FFD900"}}></i>
 					</div>
 					<div style={{height:"7%", width: "100%", display: "flex", justifyContent: "center", alignItems: "center", marginTop: "1.5em", background: "rgb(0, 197, 207)", borderRadius: "15px"}}>
-						<Link to="/public/editprofile" style={{fontWeight: "normal", color: "white", fontSize:"1.2em"}}>Edit Profile</Link>
+						<Link to="/public/editprofile/:username" style={{fontWeight: "normal", color: "white", fontSize:"1.2em"}}>Edit Profile</Link>
 					</div>
 				</div>
 			</div>
