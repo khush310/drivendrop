@@ -60,7 +60,9 @@ export function createStore() {
 	const messlist = Immutable.List([message1, message5, message3, message2, message6, message4,message7]);
 	const state = Immutable.Map({
 		profileUser: Immutable.Map({
-			name: "Khushboo Verma",
+			name: "Khushboo",
+			surname: "Verma",
+			gender: "F",
 			age: 28,
 			img: "/_assets/images/khush.png",
 			about: "Add something about yourself to help fellow travellers know you better",

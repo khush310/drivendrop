@@ -21,7 +21,7 @@ export function compileToHtml(string){
         <html>
             <head>
                 <meta charSet='utf-8' />
-                <meta name='viewport' content='width=device-width, initial-scale=1' />
+                <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
                 <title>drivendrop</title>
                 <link href="/_assets/css/index.css" rel="stylesheet" type="text/css"> </link>
                 <link href='https://fonts.googleapis.com/css?family=Handlee|Short+Stack|Work+Sans:400,700|Quicksand:400,700|Indie+Flower|Raleway+Dots|Just+Me+Again+Down+Here|Bubbler+One' rel='stylesheet' type='text/css'>

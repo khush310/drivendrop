@@ -333,17 +333,30 @@ input {
     border-radius: 0;
     background: rgba(255, 0, 0, 0);
 }
-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+input::-webkit-input-placeholder, .otherinfo input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     color: rgb(244, 244, 244);;
 }
-input::-moz-placeholder { /* Firefox 19+ */
+input::-moz-placeholder, .otherinfo input::-moz-placeholder { /* Firefox 19+ */
     color: rgb(244, 244, 244);
 }
-input:-ms-input-placeholder { /* IE 10+ */
+input:-ms-input-placeholder, .otherinfo input:-ms-input-placeholder { /* IE 10+ */
     color: rgb(244, 244, 244);
 }
-input:-moz-placeholder { /* Firefox 18- */
+input:-moz-placeholder, .otherinfo input:-moz-placeholder { /* Firefox 18- */
     color: rgb(244, 244, 244);
+}
+
+.otherinfo input::-webkit-input-placeholder {
+    color: rgb(61, 61, 61);
+}
+.otherinfo input::-moz-placeholder {
+    color: rgb(61, 61, 61);
+}
+.otherinfo input:-ms-input-placeholder {
+    color: rgb(61, 61, 61);
+}
+.otherinfo input:-moz-placeholder {
+    color: rgb(61, 61, 61);
 }
 
 input:focus {
