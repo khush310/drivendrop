@@ -708,3 +708,15 @@ li h3 {
     border-top: 1px solid rgba(66, 66, 66, 0.5);
     justify-content: space-around;
 }
+.editinfo{
+    height:10%;
+    justify-content: flex-start;
+    padding: 0.5em 0.8em;
+}
+.editinfo span{
+    width: 35%;
+    display: block;
+    height: 100%;
+    text-align: left;
+    font-size: 1.2em
+}
