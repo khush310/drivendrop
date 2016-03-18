@@ -1,9 +1,6 @@
 import React from "react";
-import BurgerMenu from 'react-burger-menu';
 import { Link } from 'react-router';
 import classnames from 'classnames';
-import Header from "./header.js";
-
 
 class FindRide extends React.Component {
 	constructor(props) {

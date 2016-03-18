@@ -58,6 +58,44 @@ export function createStore() {
 		uread: 2
 	});
 	const messlist = Immutable.List([message1, message5, message3, message2, message6, message4,message7]);
+	const transaction1 = Immutable.Map({
+		id: "1",
+		from: "person1",
+		to: "person2",
+		amount: 200,
+		date: "march, 11",
+		src: "paschim vihar",
+		destination: "punjabi bagh"
+	});
+	const transaction2 = Immutable.Map({
+		id: "2",
+		from: "person1",
+		to: "person2",
+		amount: 200,
+		date: "march, 7",
+		src: "rohini",
+		destination: "hauz khas"
+	});
+	const transaction3 = Immutable.Map({
+		id: "3",
+		from: "person1",
+		to: "person2",
+		amount: 200,
+		date: "march, 4",
+		src: "khan market",
+		destination: "pitampura"
+	});
+	const transaction4 = Immutable.Map({
+		id: "4",
+		from: "person1",
+		to: "person2",
+		amount: 200,
+		date: "march, 1",
+		src: "ramesh nagar",
+		destination: "indira gandhi airport"
+	});
+
+	const history = Immutable.List([transaction1, transaction2, transaction3, transaction4]);
 	const state = Immutable.Map({
 		profileUser: Immutable.Map({
 			name: "Khushboo",
@@ -65,11 +103,13 @@ export function createStore() {
 			gender: "F",
 			age: 28,
 			img: "/_assets/images/khush.png",
-			about: "Add something about yourself to help fellow travellers know you better",
+			about: "Add something about yourself",
 			phone: "389 888 8851",
 			email: "khush310@gmail.com",
 			reviews: null,
-			cardetails: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum"
+			cardetails: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
+			totalcash: 1000,
+			recenttransactions: history
 		}),
 		offer: Immutable.Map({
 			from: null,
@@ -103,9 +143,6 @@ export function createStore() {
 		}),
 		notifications: Immutable.Map({
 			count: "2"
-		}),
-		wallet: Immutable.Map({
-
 		}),
 		otherUsers: Immutable.Map({
 			user1: Immutable.Map({

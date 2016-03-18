@@ -20,7 +20,7 @@ body {
     justify-content: flex-start;
     align-items: center;
 }
-#landing {
+/*#landing {
     overflow: hidden;
 }
 .topsection {
@@ -38,7 +38,7 @@ body {
     color: rgb(66, 66, 66);
     position: relative;
 }
-.textline1 {
+/*.textline1 {
     width: 100%;
     height: 25%;
     position: absolute;
@@ -66,26 +66,26 @@ body {
     font-size: 6vw;
     color: rgb(66, 66, 66);
 }
-/*footer {
+footer {
     height: 12%;
     cursor: pointer;
     font-size: 1.5em;
     color: rgb(239, 239, 239);
     border-top: 1px solid rgba(0, 0, 0, 0.52);
-}*/
+}
 .howitworks {
     line-height: 9vh;
     background-color: rgb(51, 51, 51);
     color: rgb(239, 239, 239);
-}
+}*/
 .howitworks a {
     font-size: 6vw;
 }
 /*******END OF TUTORIAL 1*****START OF TUTORIAL 2*****/
-.intro {
+/*.intro {
     font-size: 10vw;
     line-height: 17vh;
-}
+}*/
 /*******END OF TUTORIAL 2 AND 3*****START OF HOME*****/
 
 #opt {
@@ -210,8 +210,12 @@ a {
     width: 100%;
     height: 10%;
     line-height: 10vh;
-    background: rgb(251, 251, 251);
+    /*background: rgb(251, 251, 251);*/
     color: rgb(51, 51, 51);
+    border-style: groove;
+    border: none;
+    background: rgba(54, 60, 62, 0.09);
+    border-bottom: 1px solid rgba(66, 66, 66, 0.83);
 }
 #homescreen{
     flex: 0.1;
@@ -328,37 +332,39 @@ input {
     font-size: 6vw;
     color: rgb(244, 244, 244);
     transition: border 0.3s;
-    border-bottom: 1px solid rgba(61, 61, 61, 0.67) !important;
+    border-bottom: 1px solid rgba(61, 61, 61, 0.2);
     border: none;
     border-radius: 0;
     background: rgba(255, 0, 0, 0);
 }
-input::-webkit-input-placeholder, .otherinfo input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+input::-webkit-input-placeholder{ /* Chrome/Opera/Safari */
     color: rgb(244, 244, 244);;
 }
-input::-moz-placeholder, .otherinfo input::-moz-placeholder { /* Firefox 19+ */
+input::-moz-placeholder{ /* Firefox 19+ otherinfo input::-moz-placeholder */
     color: rgb(244, 244, 244);
 }
-input:-ms-input-placeholder, .otherinfo input:-ms-input-placeholder { /* IE 10+ */
+input:-ms-input-placeholder{ /* IE 10+ */
     color: rgb(244, 244, 244);
 }
-input:-moz-placeholder, .otherinfo input:-moz-placeholder { /* Firefox 18- */
+input:-moz-placeholder{ /* Firefox 18- */
     color: rgb(244, 244, 244);
 }
 
-.otherinfo input::-webkit-input-placeholder {
+.editprofile input::-webkit-input-placeholder {
+    color: #FFD900;
+}
+.editprofile input::-moz-placeholder {
+    color: #FFD900;
+}
+.editprofile input:-ms-input-placeholder {
+    color: #FFD900;
+}
+.editprofile input:-moz-placeholder {
+    color: #FFD900;
+}
+.editprofile input{
     color: rgb(61, 61, 61);
 }
-.otherinfo input::-moz-placeholder {
-    color: rgb(61, 61, 61);
-}
-.otherinfo input:-ms-input-placeholder {
-    color: rgb(61, 61, 61);
-}
-.otherinfo input:-moz-placeholder {
-    color: rgb(61, 61, 61);
-}
-
 input:focus {
     outline: none;
 }
@@ -711,16 +717,21 @@ li h3 {
 .editinfo{
     height:10%;
     justify-content: flex-start;
+    border-bottom: 1px solid rgba(66, 66, 66, 0.5);
+    border-top: none;
     padding: 0.5em 0.8em;
 }
 .editinfo span{
     width: 40%;
     display: block;
-    height: 100%;
     text-align: left;
     font-size: 1.2em
 }
 .editinfo input{
-    border: none;
+    border: none !important;
     font-size:1em;
+}
+.heading{
+    font-weight:bold;
+    font-size:1.2em;
 }

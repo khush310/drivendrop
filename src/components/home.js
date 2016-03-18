@@ -1,34 +1,24 @@
 import React from "react";
 import Header from "./header";
 import { Link } from 'react-router';
+import {buttonStyle, buttonLink} from "../stylesheets/button";
+import {center} from "../stylesheets/center";
 
 class Home extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {active: false};
-	};
-	onToggleSidebar= (e) => {
-		this.setState({active: !this.state.active});
-	};
+	render(){
+		const blueButton = Object.assign(buttonStyle, {width: "90%", background:"#00c5d1", margin: "1em"});
+		const yellowButton = Object.assign(buttonStyle, {width: "90%", background:"#ffd900", margin: "1em"});
+		const centered = Object.assign(center, {width: "100%", flex: "0.8", flexDirection:"column"});
+		const linkstyle = Object.assign(buttonLink, {fontSize: "5vw", fontWeight: "bolder"})
 
-	handleClick = (e) => {
-		const {store} = this.props;
-		store.cursor(["currentUser", "name"]).update(function() {
-			return "John Doe"
-		});
-	};
-
-	render = () => {
-		const {store} = this.props;
-		const name = store.cursor(["currentUser", "name"]).deref();
 		return (
 			<div className="stage home" id="opt">
-				<div className="options">
-					<div className="button dndopt" id="optDropped">
-						<Link to='/public/findride' type="passenger">Find a ride</Link>
+				<div style={centered}>
+					<div style={yellowButton}>
+						<Link to='/public/findride' style={linkstyle} type="passenger">Find a ride</Link>
 					</div>
-					<div className="button dndopt" id="optDrive">
-						<Link to='/public/offerride' type="driver">Offer a ride</Link>
+					<div style={blueButton}>
+						<Link to='/public/offerride' style={linkstyle} type="driver">Offer a ride</Link>
 					</div>
 				</div>
 			</div>
