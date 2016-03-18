@@ -5,8 +5,8 @@ class Tutorialscreen extends React.Component {
 	render(){
 		let headline, footer;
 		let step = this.props.params.step;
-		const footerStyle=Object.assign({height:"10%", background:"#00c5d1", display:"flex", alignItems:"center", fontSize:"1.5em"});
-		const lastfooter = Object.assign({height:"10%", background:"#fff", display:"flex", alignItems:"center", fontSize:"1.5em"});
+		const footerStyle={height:"10%", background:"#00c5d1", display:"flex", alignItems:"center", fontSize:"1.5em"};
+		const lastfooter = {height:"10%", background:"#fff", display:"flex", alignItems:"center", fontSize:"1.5em"};
 
 		if (step == "1") {
 			headline = <section style={{height:"100%", background:"#FFE03C", color:"#333333"}}>
@@ -17,7 +17,6 @@ class Tutorialscreen extends React.Component {
 				<div className="logotxt" style={{fontSize:"3em", color:"#3ab0ba"}}>
 					Drive'n'Drop
 				</div>
-				<div style={{color:"#3ab0ba"}}>Kar bhala to ho bhala!</div>
 				<div className="desc" style={{fontSize:"1.3em", padding:"0.8em"}}>
 					Save on your travel! Odd or even day, reach your destination for FREE!
 				</div>

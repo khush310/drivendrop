@@ -168,3 +168,7 @@ offerride2
 
 findride
 <Sidebar currentpage="Switch to Offering" store={this.props.store} currentlink="/offerride" previouslink="/findride"></Sidebar>
+
+
+
+	<div style={{color:"#3ab0ba"}}>Kar bhala to ho bhala!</div>
