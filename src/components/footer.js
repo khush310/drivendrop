@@ -4,7 +4,7 @@ import {center} from "../stylesheets/center";
 
 class Footer extends React.Component {
 	render() {
-		const stylefooter = Object.assign({width: "100%", height: "11%", cursor: "pointer", background: "rgb(66, 66, 66)"}, center);
+		const stylefooter = Object.assign({width: "100%", height: "11%", cursor: "pointer", background: "#333333", border: "1px solid #333333", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.15)"}, center);
 		return (<footer style={stylefooter}>
 				<Link className="searchride" to="/public/findride">
 					Search

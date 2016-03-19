@@ -14,6 +14,7 @@
   "dependencies": {
     "classnames": "^2.2.3",
     "express": "^4.13.4",
+    "google-map-react": "^0.11.1",
     "immstruct": "^2.0.0",
     "immutable": "^3.7.6",
     "react": "^0.14.7",
@@ -35,6 +36,7 @@
     "css-loader": "^0.23.1",
     "json-loader": "^0.5.2",
     "react-hot-loader": "^1.2.7",
+    "react-toggle": "^2.0.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.9.6",
     "webpack-dev-server": "^1.8.2"

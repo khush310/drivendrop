@@ -21,7 +21,7 @@ class Tutorialscreen extends React.Component {
 					Save on your travel! Odd or even day, reach your destination for FREE!
 				</div>
 			</section>;
-			footer = <footer style={footerStyle}><Link to='/tutorial/2' style={{color:"#efefef"}}>How does it work ></Link></footer>;
+			footer = <footer style={footerStyle} className="dndbutton"><Link to='/tutorial/2' style={{color:"#efefef"}}>How does it work ></Link></footer>;
 
 		} else if (step == "2") {
 			headline = <section style={{height:"100%", background:"#fff", color:"#333333"}}>
@@ -33,7 +33,7 @@ class Tutorialscreen extends React.Component {
 					and earn DnD cash! You can use this cash next time you need a ride!
 				</div>
 			</section>;
-			footer = <footer style={footerStyle}><Link to='/tutorial/3'>Continue ></Link></footer>;
+			footer = <footer style={footerStyle} className="dndbutton"><Link to='/tutorial/3'>Continue ></Link></footer>;
 
 		} else {
 			headline = <section style={{height:"100%", background:"#00c5d1", color:"#333333"}}>
@@ -45,7 +45,7 @@ class Tutorialscreen extends React.Component {
 					and use your D'n'D cash! You can also earn this cash by giving a ride next time you are travelling!
 				</div>
 			</section>;
-			footer = <footer style={lastfooter}><Link to='/home' style={{color:"00c5d1"}}>Continue ></Link></footer>;
+			footer = <footer style={lastfooter} className="dndbutton"><Link to='/home' style={{color:"00c5d1"}}>Continue ></Link></footer>;
 		}
 
 		return (

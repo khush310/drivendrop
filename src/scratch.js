@@ -172,3 +172,5 @@ findride
 
 
 	<div style={{color:"#3ab0ba"}}>Kar bhala to ho bhala!</div>
+
+	<label className="onoffswitch-label" for="myonoffswitch"></label>

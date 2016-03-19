@@ -14,6 +14,7 @@ import EditProfile from "./components/editprofile.js";
 import Wallet from "./components/wallet.js";
 import Chats from "./components/chats.js";
 import Notifications from "./components/notifications.js";
+import Map from "./components/map.js";
 
 const routingTree = (
 	<Route path="/" component={SuperApp}>
@@ -27,6 +28,7 @@ const routingTree = (
 			<Route path="notifications" component={Notifications} />
 			<Route path="chats" component={Chats} />
 			<Route path="wallet" component={Wallet} />
+			<Route path="map" component={Map} />
 		</Route>
 		<Route path="tutorial/:step" component={TutorialStep} />
 		<Route path="home" component={Home} />
