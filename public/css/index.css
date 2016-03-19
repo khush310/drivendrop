@@ -129,7 +129,7 @@ footer {
     align-items: center;
     color: #fff;
 }
-.searchride svg, .offerride svg{
+.searchride svg{
     width:32%;
 }
 .searchride:hover g, .offerride:hover g, .offerride:hover path, .offerride:hover line, .offerride:hover rect, .offerride:hover circle, .searchride:active g, .offerride:active g, .offerride:active path, .offerride:active line, .offerride:active rect, .offerride:active circle{
@@ -567,19 +567,19 @@ li h3 {
     color: rgb(239, 239, 239);
 
 }
-.findride {
+/*.findride {
     width: 100%;
     height: 100%;
     background: url(../images/nyc.jpg) no-repeat;
     background-position: center;
 }
-#findlist li{
+#findlist li, #offerlist li{
     height: 25%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}
+}*/
 #droplist li {
     height: 25%;
 }

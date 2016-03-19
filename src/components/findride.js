@@ -36,7 +36,7 @@ class FindRide extends React.Component {
 		store.cursor(["findRide", "women"]).update(function () {
 			return e.target.value;
 		})
-	}
+	};
 	getInitialState =(e) =>{
 		return {
 			womenOnly: false
@@ -52,28 +52,28 @@ class FindRide extends React.Component {
 		const linkStyle = Object.assign({},buttonLink, {fontSize: "5vw", fontWeight: "bolder"});
 		const sectionStyle = Object.assign({},center, {marginTop:"2em", width:"86%", height:"55%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)" });
 
-		return (<div className={classes}>
+		return (<div className={classes} style={{width:"100%", height:"100%", backgroundPosition:"center", background:"url(/_assets/images/nyc.jpg) no-repeat"}}>
 				<section style={sectionStyle}>
 					<ul id="findlist" style={{width: "100%", height: "65%", padding: "0", margin:"0", display: "flex",flexDirection:"column"}}>
-						<li id="selectFrom">
+						<li>
 							<div className="lefticons" style={{marginLeft:"0.5em"}}>
 								<img style={{height: "50%"}} src="/_assets/images/circleyellow.png" />
 							</div>
 							<input onChange={this.saveSrc} type="text" name="from" placeholder="From" id="from" />
 						</li>
-						<li id="selectTo">
+						<li>
 							<div className="lefticons" style={{marginLeft:"0.5em"}}>
 								<img style={{height: "50%"}} src="/_assets/images/circleblue.png" />
 							</div>
 							<input style={{height: "50%"}} onChange={this.saveDestination} type="text" name="to" placeholder="To" id="to" />
 						</li>
-						<li id="selecTime">
+						<li>
 							<div className="lefticons" style={{width:"9%", marginLeft:"0.5em"}}>
 								<svg style={{width:"100%", height:"100%"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><circle cx="12" cy="12" r="11.5" /><path d="M11.5 6.5v5.5l6 5.5" /></g></svg>
 							</div>
-							<input onChange={this.selectTime} className="selecttr" type="time" placeholder="hrs:mins" name="usr_time" />
+							<input className="selecttr" onChange={this.selectTime} type="time" placeholder="hrs:mins" name="usr_time" />
 						</li>
-						<li id="selectWomen">
+						<li>
 							<div className="lefticons" style={{width:"9%", marginLeft:"0.5em"}}>
 								<svg style={{width:"100%", height:"100%"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291"><circle cx="11.5" cy="4" r="3.5" /><path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z" /></g></svg>
 							</div>
