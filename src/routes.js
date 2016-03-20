@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 
 import SuperApp from "./components/superapp.js";
 import App from "./components/app.js";
@@ -31,6 +31,7 @@ const routingTree = (
 			<Route path="map" component={Map} />
 		</Route>
 		<Route path="tutorial/:step" component={TutorialStep} />
+		<IndexRoute component={Home} />
 		<Route path="home" component={Home} />
 	</Route>
 );
