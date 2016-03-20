@@ -34,8 +34,9 @@ class OfferRide extends React.Component {
 
 	render(){
 		let classes = classnames('stage', 'offerheader');
-		const sectionStyle = Object.assign({},center, {marginTop:"2em", width:"86%", height:"60%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)" });
-		const button = Object.assign({},buttonStyle, {width: "75%", background:"rgba(0, 0, 0, 0.8)", margin: "1em", border: "1px solid rgba(0, 0, 0, 0.8)"});
+		const sectionStyle = Object.assign({},center, {marginTop:"2em", width:"86%", height:"50%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)" });
+		const button = Object.assign({},buttonStyle, {width: "75%", background:"rgba(0, 0, 0, 0.8)", border: "1px solid rgba(0, 0, 0, 0.8)"});
+		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "2em"});
 		return (
 				<div className={classes}>
 					<section style={sectionStyle}>
@@ -60,7 +61,7 @@ class OfferRide extends React.Component {
 							</li>
 						</ul>
 						<button className="dndbutton" style={button}>
-							<Link to="/public/offerride2" >Continue</Link>
+							<Link to="/public/offerride2" style={linkStyle} >Continue</Link>
 						</button>
 					</section>
 				</div>

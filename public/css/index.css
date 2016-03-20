@@ -572,14 +572,14 @@ li h3 {
     height: 100%;
     background: url(../images/nyc.jpg) no-repeat;
     background-position: center;
-}
+}*/
 #findlist li, #offerlist li{
     height: 25%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-}*/
+}
 #droplist li {
     height: 25%;
 }
