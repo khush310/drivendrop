@@ -28,7 +28,7 @@ class Profile extends React.Component {
 					<div style={{width:"100%", marginBottom:"1em"}}>
 						<div className="abouttext">
 							<i className="fa fa-quote-left fa-3x fa-pull-left" style={{color:"989898"}}></i>
-							{user.get("about")}jnd;jsnfjsnxj x,fj bxb,jcx,jh jxhfb sjhlbslhdbvsljiusdvhli svlsvsdvksvdkshvskhvs
+							{user.get("about")}
 							<i className="fa fa-quote-right fa-1x fa-pull-right" style={{color:"989898"}}></i>
 						</div>
 					</div>
