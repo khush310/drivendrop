@@ -264,6 +264,7 @@ textarea{
     margin: auto;
     margin-top: 30px;
 }
+/*
 .offersection2{
     margin-top: 10px;
     width: 86%;
@@ -282,7 +283,7 @@ textarea{
 }
 .offersection2 .continue{
     margin-bottom: 20px;
-}
+}*/
 /*.current{
     width: 50%;
     float: left;
@@ -383,14 +384,12 @@ input:focus {
     background-color: transparent;
     border: 0;
     padding: 0;
-
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
 }
@@ -489,7 +488,6 @@ input:focus {
 
 .react-toggle--checked .react-toggle-thumb {
     left: 27px;
-
 }
 
 .togglebtn svg{
@@ -582,12 +580,15 @@ li h3 {
     background: url(../images/nyc.jpg) no-repeat;
     background-position: center;
 }*/
-#findlist li, #offerlist li{
+#findlist li, #offerlist li, #offerlist2 li{
     height: 25%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-end;
+}
+#offerlist2 li{
+    height: 20%;
 }
 #droplist li {
     height: 25%;
@@ -654,7 +655,8 @@ li h3 {
 .switchto a{
     color: rgb(241, 241, 241)
 }
-.sidebar ul{
+/*.sidebar ul{
+    list-style: none;
     height: 30%;
     width:100%;
     position: absolute;
@@ -669,7 +671,7 @@ li h3 {
 }
 .sidebar ul li:focus{
     background: red;
-}
+}*/
 /**** SEARCH RESULTS *****/
 
 .posts {
