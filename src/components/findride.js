@@ -48,9 +48,9 @@ class FindRide extends React.Component {
 	render(){
 		const {store} = this.props;
 		let classes = classnames('stage', 'findride', {active: this.state.active});
-		const blueButton = Object.assign({},buttonStyle, {width: "90%", background:"#00c5d1", margin: "1em", border: "1px solid #00c5d1"});
+		const blueButton = Object.assign({},buttonStyle, {width: "65%", background:"#00c5d1", margin: "2em 0 1em 0", border: "1px solid #00c5d1"});
 		const linkStyle = Object.assign({},buttonLink, {fontSize: "5vw", fontWeight: "bolder"});
-		const sectionStyle = Object.assign({},center, {marginTop:"2em", width:"86%", height:"55%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)", justifyContent:"flex-start"});
+		const sectionStyle = Object.assign({},center, {marginTop:"2em", width:"86%", height:"55%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)"});
 
 		return (<div className={classes} style={{width:"100%", height:"100%", backgroundPosition:"center", background:"url(/_assets/images/nyc.jpg) no-repeat"}}>
 				<section style={sectionStyle}>
