@@ -28,7 +28,7 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src *; script-src *; connect-src *; img-src *; style-src *;
+        <meta http-equiv="Content-Security-Policy" content="default-src unsafe-eval; script-src unsafe-eval; connect-src unsafe-eval; img-src unsafe-eval; style-src unsafe-eval;
 ">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">

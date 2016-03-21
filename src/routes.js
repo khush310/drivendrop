@@ -3,6 +3,7 @@ import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router';
 
 import SuperApp from "./components/superapp.js";
 import App from "./components/app.js";
+import ListingsProvider from "./providers/listings.js";
 import TutorialStep from "./components/tutorialscreen.js";
 import Home from "./components/home.js";
 import OfferRide from "./components/offerride.js";
@@ -22,7 +23,7 @@ const routingTree = (
 			<Route path="offerride" component={OfferRide} />
 			<Route path="offerride2" component={OfferRide2} />
 			<Route path="findride" component={FindRide} />
-			<Route path="searchresults" component={SearchResults} />
+			<Route path="searchresults" component={ListingsProvider} />
 			<Route path="profile/:username" component={Profile}></Route>
 			<Route path="editprofile/:username" component={EditProfile}></Route>
 			<Route path="notifications" component={Notifications} />

@@ -20,11 +20,18 @@ class SearchResults extends React.Component {
 		const users = store.cursor(["otherUsers"]).deref();
 		const search = store.cursor(["search"]).deref();
 
+
 		return (<div className={classes}>
 							<section className="posts">
 								<div className="extrainfo">
 									<p className="filter">More Filters</p>
 									<p className="numberresults">{search.get("results")} rides available</p>
+								</div>
+								<div>{this.props.list.map(function(listing){
+									return(
+										<div>{listing.createdAt}</div>
+									)
+								})}
 								</div>
 								{users.map(function(user){
 									return(<div className="post">

@@ -17,6 +17,8 @@
     "google-map-react": "^0.11.1",
     "immstruct": "^2.0.0",
     "immutable": "^3.7.6",
+    "parse": "^1.8.1",
+    "parse-react": "^0.5.1",
     "react": "^0.14.7",
     "react-burger-menu": "^1.5.6",
     "react-dom": "^0.14.7",
