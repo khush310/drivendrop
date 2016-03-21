@@ -94,8 +94,17 @@ export function createStore() {
 		src: "ramesh nagar",
 		destination: "indira gandhi airport"
 	});
+	const transaction5 = Immutable.Map({
+		id: "4",
+		from: "person1",
+		to: "person2",
+		amount: 200,
+		date: "march, 1",
+		src: "ramesh nagar",
+		destination: "indira gandhi airport"
+	});
 
-	const history = Immutable.List([transaction1, transaction2, transaction3, transaction4]);
+	const history = Immutable.List([transaction1, transaction2, transaction3, transaction4, transaction5]);
 	const state = Immutable.Map({
 		profileUser: Immutable.Map({
 			name: "Khushboo",

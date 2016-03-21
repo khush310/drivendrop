@@ -44,7 +44,7 @@ class EditProfile extends React.Component {
 	render(){
 		const {store} = this.props;
 		const user = store.cursor(["profileUser"]).deref();
-		const nameStyle = {display:"flex", width:"90%", borderBottom:"1px solid rgba(66, 66, 66, 0.5)", justifyContent:"space-around", alignItems:"center", height:"40px"};
+		const nameStyle = {display:"flex", width:"85%", borderBottom:"1px solid rgba(66, 66, 66, 0.5)", justifyContent:"space-around", alignItems:"center", height:"60px"};
 		const inputStyle = {width:"60%", borderBottom:"none"};
 		const button=Object.assign({},buttonStyle,{height:"7%", width: "80%", margin: "1.5em 0", background: "#00c5d1", borderRadius: "40px", border:"#00c5d1"});
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
@@ -52,7 +52,7 @@ class EditProfile extends React.Component {
 		return (
 			<div className="stage editprofile" style={{paddingTop: "1em", color: "rgb(111, 110, 110)", overflow:"scroll"}}>
 				<div style={{fontWeight:"bold", fontSize:"1.2em"}}>About</div>
-				<div style={{height: "15%", width: "100%"}}>
+				<div style={{height: "15%", width: "100%", marginBottom:"1em"}}>
 					<i style={{margin:"0"}} className="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
 					<input style={{width: "80%", fontSize: "1em", height:"100%", borderBottom:"none"}} type="text" onChange={this.saveAbout} placeholder={user.get("about")}/>
 				</div>
@@ -81,6 +81,10 @@ class EditProfile extends React.Component {
 					<div style={nameStyle}>
 						<span>Phone No.</span>
 						<input type="text" style={{width:"65%", borderBottom:"none"}} onChange={this.savePhone} placeholder={user.get("phone")}/>
+					</div>
+					<div style={nameStyle}>
+						<span>ID Proof</span>
+						<input type="text" style={{width:"65%", borderBottom:"none"}} onChange={this.saveID} placeholder="Add Id proof"/>
 					</div>
 				</div>
 				<div className="dndbutton" style={button}>

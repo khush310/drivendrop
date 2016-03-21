@@ -360,18 +360,22 @@ input:-moz-placeholder{ /* Firefox 18- */
 
 .editprofile input::-webkit-input-placeholder {
     color: #FFD900;
+    font-size: 1em;
 }
 .editprofile input::-moz-placeholder {
     color: #FFD900;
+    font-size: 1em;
 }
 .editprofile input:-ms-input-placeholder {
     color: #FFD900;
 }
 .editprofile input:-moz-placeholder {
     color: #FFD900;
+    font-size: 1em;
 }
 .editprofile input{
     color: rgb(61, 61, 61);
+    font-size: 1em;
 }
 input:focus {
     outline: none;
