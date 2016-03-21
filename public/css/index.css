@@ -807,7 +807,7 @@ li h3 {
     align-items: center;
     border-top: 1px solid rgba(66, 66, 66, 0.5);
     justify-content: space-around;
-}*/
+}
 .editinfo{
     height:10%;
     justify-content: flex-start;
@@ -824,7 +824,7 @@ li h3 {
 .editinfo input{
     border: none !important;
     font-size:1em;
-}
+}*/
 .heading{
     font-weight:bold;
     font-size:1.2em;
