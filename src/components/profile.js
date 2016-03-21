@@ -33,17 +33,17 @@ class Profile extends React.Component {
 						</div>
 					</div>
 					<div style={otherinfoStyle}>
-						<i className="fa fa-3x fa-mobile" style={{color: "rgb(66, 66, 66)", marginLeft:"4px"}}></i>
+						<i className="fa fa-2x fa-mobile" style={{color: "#585858", marginLeft:"4px"}}></i>
 						<span style={spanStyle}>{user.get("phone")}</span>
 						<i className="fa fa-2x fa-check-circle-o" style={{color: "#FFD900"}}></i>
 					</div>
 					<div style={otherinfoStyle}>
-						<i className="fa fa-2x fa-envelope" style={{color: "rgb(66, 66, 66)"}}></i>
+						<i className="fa fa-envelope" style={{fontSize:"1.5em", color: "#585858"}}></i>
 						<span style={spanStyle}>{user.get("email")}</span>
 						<i className="fa fa-2x fa-check-circle-o" style={{color: "#FFD900"}}></i>
 					</div>
 					<div style={otherinfoStyle}>
-						<i className="fa fa-2x fa-child" style={{color: "rgb(66, 66, 66)", marginLeft: "5px"}}></i>
+						<i className="fa fa-2x fa-child" style={{color: "#585858"}}></i>
 						<span style={spanStyle}>ID Verified</span>
 						<i className="fa fa-2x fa-check-circle-o" style={{color: "#FFD900"}}></i>
 					</div>
