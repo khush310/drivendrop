@@ -26,7 +26,7 @@ class Map extends React.Component {
 	}
 
 	render(){
-		return (<div style={{width: "100%"}}>
+		return (<div className="stage" style={{width: "100%"}}>
 				Share your location!
 				<GoogleMap
 					defaultCenter={this.props.center}

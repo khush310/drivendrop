@@ -769,13 +769,13 @@ li h3 {
 .close{
     text-align: left;
 }
-.aboutsection{
+/*.aboutsection{
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: baseline;
     margin-top: 1em;
-}
+}*/
 .name{
     font-size: 1.5em;
 }
