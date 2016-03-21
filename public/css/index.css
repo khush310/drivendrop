@@ -247,9 +247,9 @@ a {
     float: right;
 }
 svg {
-    width: 60%;
-    height: 60%;
-    /*position: absolute;
+    width: 100%;
+    height: 100%;/*
+    position: absolute;
     left: 0;
     right: 0;
     top: 0;
@@ -525,6 +525,11 @@ li {
     border-bottom: 1px solid rgba(61, 61, 61, 0.67);
     color: #FFFFFF;
 }*/
+.lefticons {
+    width:35px;
+    height:35px;
+    margin-left: 0.5em;
+}
 li h3 {
     margin: 0;
     font-weight: normal;
@@ -581,7 +586,7 @@ li h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
 }
 #droplist li {
     height: 25%;
