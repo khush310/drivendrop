@@ -7,7 +7,7 @@ class Profile extends React.Component {
 		const user = store.cursor(["profileUser"]).deref();
 		const otherinfoStyle = {width: "100%", height:"7%", display: "flex", alignItems: "center", justifyContent:"space-around"};
 		const spanStyle = {width: "70%", textAlign:"left"};
-		const button=Object.assign({},buttonStyle,{height:"7%", width: "80%", marginTop: "1.5em", background: "#00c5d1", borderRadius: "40px", border:"#00c5d1"});
+		const button=Object.assign({},buttonStyle,{height:"7%", width: "80%", margin: "1.5em 0", background: "#00c5d1", borderRadius: "40px", border:"#00c5d1"});
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
 		return (
 			<div className="stage profile" style={{paddingTop: "1em", color: "rgba(61, 61, 61, 0.8)"}}>
