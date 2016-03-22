@@ -13,12 +13,13 @@ body {
     overflow: hidden;
 }
 .stage {
-    height: 100%;
+    height: 78%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow: scroll;
 }
 /*#landing {
     overflow: hidden;

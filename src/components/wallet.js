@@ -6,7 +6,7 @@ class Wallet extends React.Component {
 		const spendings = store.cursor(["profileUser", "recenttransactions"]).deref();
 		const spentStyle = Object.assign({width: "100%", height: "15%", display: "flex", flexDirection: "column", alignItems:"center", borderRadius:"10px"});
 		return (
-			<div style={{width: "100%", height: "100%", padding: "0 1em"}}>
+			<div className="stage">
 				<div style={{fontWeight: "bold", fontSize: "1.6em", margin: "0.5em 0", color: "#484848"}}>
 					My Drive'n'Drop Cash
 				</div>
@@ -16,7 +16,7 @@ class Wallet extends React.Component {
 				<div style={{height:"8%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight:"bold"}}>
 					Recently spent
 				</div>
-				<section style={{overflow:"scroll"}}>
+				<section>
 					{spendings.map((spent) =>{
 						return(
 							<div style={spentStyle}>
