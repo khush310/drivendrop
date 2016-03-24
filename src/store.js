@@ -118,7 +118,8 @@ export function createStore() {
 			reviews: null,
 			cardetails: "lorem ipsum lorem ipsum lorem ipsum lorem ipsum",
 			totalcash: 1000,
-			recenttransactions: history
+			recenttransactions: history,
+			id: "xRabePl1mn"
 		}),
 		offer: Immutable.Map({
 			from: null,

@@ -2,9 +2,9 @@ import React from "react";
 import Parse from "parse";
 import ParseReact from "parse-react";
 import Superagent from "superagent";
-import Searchresults from "../components/searchresults.js";
+import Profile from "../components/profile.js";
 
-class Listings extends React.Component {
+class Listing extends React.Component {
 	constructor() {
 		super();
 		this.state = {reqStatus:"waiting"}
@@ -16,20 +16,21 @@ class Listings extends React.Component {
 
 	};
 	componentDidMount(){
+
 		Superagent
-			.get('https://api.parse.com/1/classes/Listing')
+			.get('https://api.parse.com/1/users/'+this.props.params.id)
 			.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
 			.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
-			.query({ include: 'driver' })
 			.end((err, res) =>{
-				this.setState({"results":res.body.results, "reqStatus":"done"})
+				this.setState({"result":res.body, "reqStatus":"done"})
+
 			})
 	};
 	render(){
 		return (<div style={{display:"flex", flexDirection:"column", flex:1, width:"100%"}}>
-				{this.state.reqStatus == "waiting" ? this.renderLoading() : <Searchresults store = {this.props.store} list={this.state.results}></Searchresults>}
+				{this.state.reqStatus == "waiting" ? this.renderLoading() : <Profile store = {this.props.store} user={this.state.result}></Profile>}
 			</div>
 		)
 	};
 }
-export default Listings;
+export default Listing;

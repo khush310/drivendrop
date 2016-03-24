@@ -5,6 +5,7 @@ import Footer from "./footer";
 import {Link} from "react-router";
 import classnames from "classnames";
 import Toggle from 'react-toggle';
+import Superagent from "superagent";
 import {buttonStyle, buttonLink} from "../stylesheets/button";
 import {center} from "../stylesheets/center";
 
@@ -13,49 +14,29 @@ class OfferRide extends React.Component {
 		super(props);
 		this.state = {active: false};
 	};
-
-	handleFrom= (e) =>{
+	handleForm = (e) => {
 		const {store} = this.props;
-		store.cursor(["offer", "from"]).update(function() {
-			return e.target.value;
-		});
+		const payload = {
+			driver: {__type: "Pointer", className: "_User", objectId: store.cursor(["profileUser", "id"]).deref()},
+			src: this.refs.to.value,
+			destination: this.refs.from.value,
+			timestamp: {__type: "Date", iso: new Date(this.refs.time.value)},
+			seats: parseInt(this.refs.seats.value),
+			womensafety: this.refs.womensafety.state.checked
+		};
+		Superagent
+			.post('https://api.parse.com/1/classes/Listing')
+			.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
+			.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
+			.send(payload)
+			.end((err, res) =>{
+				console.log(res);
+			})
 	};
-	handleTo=(e) =>{
-		const {store} = this.props;
-		store.cursor(["offer", "to"]).update(function () {
-			return e.target.value;
-		})
-	};
-	handleTime=(e) =>{
-		const {store} = this.props;
-		store.cursor(["offer", "time"]).update(function () {
-			return e.target.value;
-		})
-	};
-	handleSeats = (e) => {
-		const {store} = this.props;
-		store.cursor(["offer", "seats"]).update(function () {
-			return e.target.value;
-		})
-	};
-	handlewomensafety = (e) => {
-		const {store} = this.props;
-		store.cursor(["offer", "women"]).update(function () {
-			return e.target.value;
-		})
-	};
-	getInitialState =(e) =>{
-		return {
-			womenOnly: false
-		}
-	};
-	handleWomenOnly(event) {
-		this.setState({womenOnly: event.target.checked})
-	}
 
 	render(){
 		let classes = classnames('stage', 'offerheader');
-		const sectionStyle = Object.assign({},center, {marginTop:"1em", width:"86%", height:"76%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)", justifyContent:"space-between"});
+		const sectionStyle = Object.assign({},center, {marginTop:"1em", width:"90%", height:"86%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)", justifyContent:"space-between"});
 		const button = Object.assign({},buttonStyle, {width: "65%", background:"rgba(0, 0, 0, 0.8)", border: "1px solid rgba(0, 0, 0, 0.8)", marginBottom:"1em"});
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
 		return (
@@ -66,25 +47,25 @@ class OfferRide extends React.Component {
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/circleyellow.png" />
 								</div>
-								<input onChange={this.handleFrom} type="text" name="from" placeholder="From" id="from" />
+								<input ref="from" type="text" name="from" placeholder="From" id="from" />
 							</li>
 							<li>
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/circleblue.png" />
 								</div>
-								<input onChange={this.handleTo} type="text" name="to" placeholder="To" id="to" />
+								<input ref="to" type="text" name="to" placeholder="To" id="to" />
 							</li>
 							<li>
 								<div className="lefticons" style={{width:"9%", marginLeft:"0.5em"}}>
 									<svg style={{width:"100%", height:"100%"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><circle cx="12" cy="12" r="11.5" /><path d="M11.5 6.5v5.5l6 5.5" /></g></svg>
 								</div>
-								<input onChange={this.handleTime} className="selecttr" type="time" placeholder="hrs:mins" name="usr_time" />
+								<input ref="time" style={{fontSize:"1.1em"}} className="selecttr" type="datetime-local" placeholder="Pick time and date" name="usr_time" />
 							</li>
 							<li>
 								<div className="lefticons">
 									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path d="M6 16.187v2.181l-3.941 1.412c-.944.338-1.559 1.231-1.559 2.231v1.489h15v-1.489c0-1-.616-1.893-1.559-2.231l-3.941-1.412v-2.306"/><ellipse cx="7.901" cy="12.051" rx="3.947" ry="4.739"/><path d="M11.817 11.625l-.374.033c-1.345.259-2.208-.229-2.949-1.524-.443.852-1.831 1.524-2.972 1.524-.562 0-1.045-.115-1.528-.369"/><path strokeLinecap="round" d="M18.031 23.5h3.469v-1.489c0-1-.616-1.893-1.559-2.231l-3.941-1.412v-2.306M13.901 7.315c2.18 0 3.947 2.121 3.947 4.736 0 2.617-1.768 4.739-3.947 4.739M17.817 11.625l-.374.033c-1.345.259-2.208-.229-2.949-1.524M17.521 4.5h6M20.5 1.5v6.016"/></g></svg>
 								</div>
-								<input onChange={this.handleSeats} type="number" name="numberofseats" placeholder="Seats available" id="numseats" />
+								<input ref="seats" type="number" name="numberofseats" placeholder="Seats available" id="numseats" />
 							</li>
 							<li>
 								<div className="lefticons">
@@ -95,16 +76,16 @@ class OfferRide extends React.Component {
 									<label className="togglebtn">
 										<Toggle
 											defaultChecked={this.state.handleWomenOnly}
-											onChange={this.handlewomenOnly} />
+											ref="womensafety" />
 									</label>
 								</div>
 							</li>
 							<li>
-								<textarea name='comment' id='comment' placeholder="Any other information for passengers" rows="4" cols="50" ></textarea>
+								<textarea name='comment' id='comment' placeholder="Any information about meeting point?" rows="4" cols="50" ></textarea>
 							</li>
 						</ul>
 						<button className="dndbutton" style={button}>
-							<Link to="/public/offerride2" style={linkStyle} >Publish</Link>
+							<div to="/public/offerride2" style={linkStyle} onClick={this.handleForm}>Publish</div>
 						</button>
 					</section>
 				</div>

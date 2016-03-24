@@ -174,3 +174,31 @@ findride
 	<div style={{color:"#3ab0ba"}}>Kar bhala to ho bhala!</div>
 
 	<label className="onoffswitch-label" for="myonoffswitch"></label>
+
+
+
+
+	<li style={listStyle} className="settings">
+		<Link style={linkStyle} to="/public/settings">Settings</Link>
+	</li>
+
+
+
+
+	                                        FB LOGIN
+{
+	"facebook": {
+	"id": "user's Facebook id number as a string",
+		"access_token": "an authorized Facebook access token for the user",
+		"expiration_date": "token expiration date of the format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+}
+}
+
+SEARCH RESULTS = EXTRA FEATURES DELETED FOR NOW
+<div className="extrainfo">
+	<p className="filter">More Filters</p>
+	<p className="numberresults">{search.get("results")} rides available</p>
+</div>
+
+	user
+import Sidebar from "./sidebar";
