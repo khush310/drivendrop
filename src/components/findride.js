@@ -20,14 +20,14 @@ class FindRide extends React.Component {
 		const payload = {
 			//src: this.refs.to.value,
 			//destination: this.refs.from.value,
-			timestamp: {$gt: {__type: "Date", iso: new Date(this.refs.time.value)}},
+			//timestamp: {$gt: {__type: "Date", iso: new Date(this.refs.time.value)}},
 			womensafety: this.refs.womensafety.state.checked
 		};
 		Superagent
 			.post('https://api.parse.com/1/classes/Listing')
 			.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
 			.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
-			.send({where: payload, _method: "GET", limit: 200, order: "-createdAt,-createdAt"})
+			.send({where: payload, _method: "GET", limit: 200, order: "-createdAt,-createdAt", include:"driver"})
 			.end((err, res) =>{
 				console.log(res);
 				this.setState({fetched: true, results: res.body.results})
