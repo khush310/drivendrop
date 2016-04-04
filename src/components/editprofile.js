@@ -41,6 +41,7 @@ class EditProfile extends React.Component {
 			return e.target.value;
 		})
 	};
+	
 	render(){
 		const {store} = this.props;
 		const user = store.cursor(["profileUser"]).deref();
@@ -56,7 +57,8 @@ class EditProfile extends React.Component {
 					<i style={{margin:"0"}} className="fa fa-quote-left fa-2x fa-pull-left fa-border"></i>
 					<input style={{width: "80%", fontSize: "1em", height:"100%", borderBottom:"none"}} type="text" onChange={this.saveAbout} placeholder={user.get("about")}/>
 				</div>
-				<div style={{fontWeight:"bold", fontSize:"1.2em"}}>Name</div>
+				<div style={{fontWeight:"bold", fontSize:"1.2em"}}>Name</div>y
+
 				<div style={{width:"100%", display:"flex", flexDirection:"column", alignItems:"center", margin:"1em"}}>
 					<div style={nameStyle}>
 						<span>First Name</span>

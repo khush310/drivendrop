@@ -1,7 +1,7 @@
 import React from "react";
 import {render} from "react-dom";
 import routingTree from "./routes";
-import {browserHistory, Router} from "react-router";
+import {browserHistory, Router, hashHistory} from "react-router";
 import {createStore} from "./store";
 
 const store = createStore();

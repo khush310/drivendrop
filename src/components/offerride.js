@@ -36,13 +36,13 @@ class OfferRide extends React.Component {
 
 	render(){
 		let classes = classnames('stage', 'offerheader');
-		const sectionStyle = Object.assign({},center, {marginTop:"1em", width:"90%", height:"86%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)", justifyContent:"space-between"});
+		const sectionStyle = Object.assign({},center, {marginTop:"1em", width:"90%", height:"90%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)", justifyContent:"space-between"});
 		const button = Object.assign({},buttonStyle, {width: "65%", background:"rgba(0, 0, 0, 0.8)", border: "1px solid rgba(0, 0, 0, 0.8)", marginBottom:"1em"});
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
 		return (
 				<div className={classes}>
 					<section style={sectionStyle}>
-						<ul id="offerlist" style={{width: "100%", height: "70%", padding: "0", margin:"0", display: "flex",flexDirection:"column"}}>
+						<ul id="offerlist" style={{width: "100%", height: "65%", padding: "0", margin:"0", display: "flex",flexDirection:"column"}}>
 							<li>
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/circleyellow.png" />
@@ -59,7 +59,7 @@ class OfferRide extends React.Component {
 								<div className="lefticons" style={{width:"9%", marginLeft:"0.5em"}}>
 									<svg style={{width:"100%", height:"100%"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><circle cx="12" cy="12" r="11.5" /><path d="M11.5 6.5v5.5l6 5.5" /></g></svg>
 								</div>
-								<input ref="time" style={{fontSize:"1.1em"}} className="selecttr" type="datetime-local" placeholder="Pick time and date" name="usr_time" />
+								<input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand"}} className="selecttr" type="datetime-local" placeholder="Pick time and date" name="usr_time" />
 							</li>
 							<li>
 								<div className="lefticons">

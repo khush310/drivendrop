@@ -23,6 +23,7 @@ class FindRide extends React.Component {
 			//timestamp: {$gt: {__type: "Date", iso: new Date(this.refs.time.value)}},
 			womensafety: this.refs.womensafety.state.checked
 		};
+		console.log("inside fom of find ride")
 		Superagent
 			.post('https://api.parse.com/1/classes/Listing')
 			.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
@@ -86,7 +87,7 @@ class FindRide extends React.Component {
 
 	render() {
 		return (
-			<div>
+			<div style={{height:"100%"}}>
 				{this.state.fetched ? <Searchresults store = {this.props.store} list={this.state.results}></Searchresults> :  this.renderForm()}
 			</div>
 		)

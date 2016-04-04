@@ -1,0 +1,868 @@
+#wrapper > div{
+    height:100%;
+}
+* {
+    box-sizing: border-box;
+    font-family:'Quicksand', sans-serif;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    overflow: hidden;
+}
+.stage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+}
+/*#landing {
+    overflow: hidden;
+}
+.topsection {
+    width: 100%;
+    background: rgb(0, 197, 209);
+    display: flex;
+    flex: 0.9;
+    justify-content: center;
+    align-items: center;
+}
+.bottomsection {
+    height: 45%;
+    width: 100vw;
+    background: rgb(255, 217, 0);
+    color: rgb(66, 66, 66);
+    position: relative;
+}
+/*.textline1 {
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    line-height: 10vh;
+    font-size: 6vw;
+}
+.logotxt {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    top: 0;
+    bottom: 15%;
+    margin: auto;
+    font-size: 10vw;
+    color: rgb(0, 204, 214);
+}
+.desc {
+    width: 90%;
+    height: 35%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15%;
+    margin: auto;
+    font-size: 6vw;
+    color: rgb(66, 66, 66);
+}
+footer {
+    height: 12%;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: rgb(239, 239, 239);
+    border-top: 1px solid rgba(0, 0, 0, 0.52);
+}
+.howitworks {
+    line-height: 9vh;
+    background-color: rgb(51, 51, 51);
+    color: rgb(239, 239, 239);
+}*/
+.howitworks a {
+    font-size: 6vw;
+}
+/*******END OF TUTORIAL 1*****START OF TUTORIAL 2*****/
+/*.intro {
+    font-size: 10vw;
+    line-height: 17vh;
+}*/
+/*******END OF TUTORIAL 2 AND 3*****START OF HOME*****/
+
+#opt {
+    background: url(../images/highway.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.options {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 0.8;
+    justify-content: center;
+    align-items: initial;
+}
+.options a{
+    width: 100%;
+    font-size: 5vw;
+    font-weight: bolder;
+}
+.button {
+    border-radius: 9vw;
+    text-align: center;
+    line-height: 9vh;
+    cursor: pointer;
+}
+.dndopt {
+    margin: 1em;
+    justify-content: center;
+    display: flex;
+}
+/****offer ride*****/
+
+.searchride, .offerride{
+    width: 50%;
+    float: left;
+    text-align: center;
+    border-left: 1px solid rgba(3, 2, 2, 0.22);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+.searchride svg{
+    width:32%;
+}
+.searchride:hover g, .offerride:hover g, .offerride:hover path, .offerride:hover line, .offerride:hover rect, .offerride:hover circle, .searchride:active g, .offerride:active g, .offerride:active path, .offerride:active line, .offerride:active rect, .offerride:active circle{
+    stroke: #00c5d1;
+}
+.searchride:hover, .offerride:hover, .searchride:active, .offerride:active{
+    color: rgb(0, 204, 214);
+}
+.offerheader{
+    background: url(../images/blurrcity.jpg) no-repeat;
+    background-size: cover;
+}
+
+a {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+#drive, #drop{
+    width: 50%;
+    height: 100%;
+}
+#drive{
+    float: left;
+    border-right: 1px solid rgba(0, 0, 0, 0.86);
+}
+#drop{
+    float: right;
+    border-left: 1px solid rgba(0, 0, 0, 0.86);
+}
+
+
+#DNDtitle {
+    width: 100%;
+    height: 25%;
+    line-height: 35vh;
+    font-size: 8vw;
+    color: #00BCD4;
+}
+.DNDlogo {
+    position: absolute;
+    top: 0;
+    bottom: 30%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 12%;
+    width: 25%;
+}
+.DNDlogo img {
+    width: 100%;
+}
+/*#searchbtn{
+    width: 80%;
+    margin: 10px auto 30px auto;
+    background: #00c5d1;
+    font-size: 1.3em;
+    font-weight: bold;
+    color: white;
+}*/
+
+#fblogin {
+    top: 25%;
+    width: 65%;
+    font-weight: bold;
+    line-height: 7.7vh;
+    background: yellow;
+    margin: auto;
+}
+#fblogin a {
+    color: rgb(51, 51, 51);
+}
+/*****DND HOME PAGE*****/
+
+/*.homeheader {
+    width: 100%;
+    height: 10%;
+    line-height: 10vh;
+    /*background: rgb(251, 251, 251);
+    color: rgb(51, 51, 51);
+    border-style: groove;
+    border: none;
+    background: rgba(54, 60, 62, 0.09);
+    border-bottom: 1px solid rgba(66, 66, 66, 0.83);
+}*/
+#homescreen{
+    flex: 0.1;
+}
+.icon {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.headersections{
+    flex:1;
+}
+.headersections,
+.left {
+    width: 20%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+#profileicon {
+    float: left;
+}
+#messages {
+    float: right;
+}
+/*
+svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;*/
+
+textarea{
+    width: 88%;
+    height: 70px;
+    font-size: 1em;
+    margin: auto;
+    margin-top: 30px;
+}
+/*
+.offersection2{
+    margin-top: 10px;
+    width: 86%;
+    height: 60%;
+    flex: 0;
+    background: rgba(158, 158, 158, 0.5);
+}
+.offersection2 ul{
+    height:80%;
+}
+.offersection2 ul li{
+    height: 16%;
+}
+.offersection2 ul li .selecttr{
+    line-height:2em;
+}
+.offersection2 .continue{
+    margin-bottom: 20px;
+}*/
+/*.current{
+    width: 50%;
+    float: left;
+    font-size: 6.5vw;
+    font-weight: bold;
+    color: rgb(0, 204, 214);
+}*/
+footer {
+    /*width: 100%;
+    position: absolute;
+    height: 10%;
+    bottom: 0;
+    cursor: pointer;
+    background: rgba(251, 251, 251, 1);
+    line-height: 9vh;
+    display: flex;
+    flex-direction: row;*/
+    width: 100%;
+    cursor: pointer;
+    background: rgba(66,66,66,1);
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#optDrive {
+    background: rgb(0, 197, 209);
+}
+#optDropped {
+    background: rgb(255, 217, 0);
+}
+.selection {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 90vw;
+}
+.circles {
+    height: 50%;
+    position: relative;
+}
+input {
+    font-size:1.3em;
+    width: 75%;
+    border: none;
+    border-bottom: 1px solid #333333;
+    border-radius: 0;
+    background: rgba(255, 0, 0, 0);
+    color:#fff;
+    margin:0;
+    padding:0;
+}
+    /*height: 100%;
+    display: block;*/
+    /*font-size: 6vw;
+    color: rgb(244, 244, 244);
+    transition: border 0.3s;
+    border-bottom: 1px solid rgba(61, 61, 61, 0.2);
+    border-radius: 0;*/
+input::-webkit-input-placeholder{ /* Chrome/Opera/Safari */
+    color: rgb(244, 244, 244);;
+}
+input::-moz-placeholder{ /* Firefox 19+ otherinfo input::-moz-placeholder */
+    color: rgb(244, 244, 244);
+}
+input:-ms-input-placeholder{ /* IE 10+ */
+    color: rgb(244, 244, 244);
+}
+input:-moz-placeholder{ /* Firefox 18- */
+    color: rgb(244, 244, 244);
+}
+
+.editprofile input::-webkit-input-placeholder {
+    color: #FFD900;
+    font-size: 1em;
+}
+.editprofile input::-moz-placeholder {
+    color: #FFD900;
+    font-size: 1em;
+}
+.editprofile input:-ms-input-placeholder {
+    color: #FFD900;
+}
+.editprofile input:-moz-placeholder {
+    color: #FFD900;
+    font-size: 1em;
+}
+.editprofile input{
+    color: rgb(61, 61, 61);
+    font-size: 1em;
+}
+input:focus {
+    outline: none;
+}
+/*****on off button ******/
+.react-toggle {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.react-toggle-screenreader-only {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.react-toggle--disabled {
+    opacity: 0.5;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+}
+
+.react-toggle-track {
+    width: 50px;
+    height: 24px;
+    padding: 0;
+    border-radius: 30px;
+    background-color: #424242;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.react-toggle--checked .react-toggle-track {
+    background-color: #ffd900;
+}
+
+.react-toggle-track-check {
+    position: absolute;
+    width: 14px;
+    height: 10px;
+    top: 0px;
+    bottom: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 0;
+    left: 8px;
+    opacity: 0;
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-track-check {
+    opacity: 1;
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+}
+
+.react-toggle-track-x {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 0px;
+    bottom: 0px;
+    margin-top: auto;
+    margin-bottom: auto;
+    line-height: 0;
+    right: 10px;
+    opacity: 1;
+    -webkit-transition: opacity 0.25s ease;
+    -moz-transition: opacity 0.25s ease;
+    transition: opacity 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-track-x {
+    opacity: 0;
+}
+
+.react-toggle-thumb {
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #FAFAFA;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+}
+
+.react-toggle--checked .react-toggle-thumb {
+    left: 27px;
+}
+
+.togglebtn svg{
+    visibility: hidden;
+}
+
+/*****/
+
+.selectdrive {
+    width: 100%;
+    height: 35%;
+}
+/*ul {
+    list-style: none;
+    width: 100%;
+    height: 70%;
+    padding: 10px 0px;
+    margin: 0;
+}
+li {
+    /*height: 25%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+}
+.lefticons {
+    margin-left: 0.5em;
+}
+.selecttr{
+    width: 75%;
+    text-align: left;
+    font-size: 1.5em;
+    border-bottom: 1px solid rgba(61, 61, 61, 0.67);
+    color: #FFFFFF;
+}*/
+.lefticons {
+    width:30px;
+    height:30px;
+    margin-left: 0.5em;
+}
+li h3 {
+    margin: 0;
+    font-weight: normal;
+    float: left;
+    padding: 4vw 0 0 6vw;
+    color: rgba(61, 61, 61, 0.66);
+    line-height: normal;
+}
+/*.circledest {
+    height: 60%;
+    position: absolute;
+    box-sizing: content-box;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}*/
+.findsection, #drivebgd {
+    margin-top: 10px;
+    width: 86%;
+    height: 60%;
+    background: rgba(158, 158, 158, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.continue{
+    width: 70%;
+    background: rgba(0, 0, 0, 0.67);
+    height: 14%;
+    font-size: 1.3em;
+    margin-bottom: 15%;
+    border-radius: 21px;
+    border-color: rgba(255, 0, 0, 0);
+}
+.continue:focus{
+    outline:none;
+}
+.continue a{
+    color: rgb(239, 239, 239);
+
+}
+/*.findride {
+    width: 100%;
+    height: 100%;
+    background: url(../images/nyc.jpg) no-repeat;
+    background-position: center;
+}*/
+#findlist li, #offerlist li, #offerlist2 li{
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+#offerlist2 li{
+    height: 20%;
+}
+#droplist li {
+    height: 25%;
+}
+#dropbgd {
+    width: 100%;
+    height: 46%;
+    background: url(../images/map.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#backicon {
+    width: 40%;
+    height: 50%;
+}
+.route {
+    background: #00C5D1;
+}
+.wrapper.leftactive{
+    -webkit-transform: translateX(65%);
+}
+.wrapper{
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+}
+.wrapper.rightactive{
+    -webkit-transform: translateX(-65%);
+}
+.messages, .sidebar{
+    position: absolute;
+    top: 0;
+    background: rgb(239, 239, 239);
+    height: 100%;
+    width: 65%;
+}
+    /*float: left;
+    overflow: hidden;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align: center;*/
+.sidebar .myprofile{
+    height: 22%;
+    width: 60%;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.sidebar .myprofile img{
+    width:100%;
+    height:auto;
+}
+.sidebar .switchto{
+    height:10%;
+    width:100%;
+    position: absolute;
+    bottom:0;
+    line-height:10vh;
+    background: rgb(61, 61, 61);
+}
+.switchto a{
+    color: rgb(241, 241, 241)
+}
+/*.sidebar ul{
+    list-style: none;
+    height: 30%;
+    width:100%;
+    position: absolute;
+    top: 30%;
+    text-align: left;
+}
+.sidebar ul li{
+    height: 38%;
+    line-height: 5vh;
+    padding: 1em;
+    background: transparent;
+}
+.sidebar ul li:focus{
+    background: red;
+}*/
+/**** SEARCH RESULTS *****/
+
+.posts {
+    height: 81%;
+    overflow: scroll;
+    background: rgb(239, 239, 239);
+    position: relative;
+}
+.posts p {
+    width: 80%;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+.filter {
+    background: rgba(239, 239, 239, 0.01);
+    border: 1px solid rgb(0, 197, 209);
+    color: rgb(0, 197, 209);
+    top: 0.5em;
+}
+.numberresults {
+    color: rgb(51, 51, 51);
+    font-size: 0.8em;
+    top: 2.5em;
+    font-weight: bold;
+}
+.extrainfo {
+    width: 100%;
+    position: relative;
+    height: 12%;
+}
+.post {
+    width: 95%;
+    height: 23%;
+    background: white;
+    margin: 1em auto;
+}
+.time {
+    width: 15%;
+    float: left;
+    text-align: left;
+    margin-left: 1.4em;
+    font-weight: bold;
+}
+.leavingfrom {
+    text-align: left;
+    font-size: 0.7em;
+    margin: 0 1.5em 0 0;
+    float: right
+;
+}
+.seats {
+    width: 64%;
+    float: right;
+    color: rgb(216, 82, 128);
+    text-align: right;
+    margin: 0.5em 0.5em 0 0;
+    font-weight: bold;
+}
+.minidp {
+    width: 20%;
+    float: left;
+    margin: 1em;
+    border: 1px solid rgb(0, 197, 209);
+    border-radius: 2em;
+    background: rgb(0, 197, 209);
+}
+.minidp img {
+    width: 100%;
+}
+.driverinfo {
+    width: 57%;
+    margin: 0.5em;
+    float: right;
+    text-align: left;
+}
+.rating {
+    width: 10%;
+    float: left;
+}
+.rating img {
+    width: 100%;
+}
+
+.close, .edit{
+    width:50%;
+    font-size: 1.2em;
+    float: left;
+    padding:0 2em;
+}
+.edit{
+    text-align: right;
+}
+.close{
+    text-align: left;
+}
+/*.aboutsection{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-top: 1em;
+}*/
+.name{
+    font-size: 1.5em;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    margin-top:1em;
+}
+.abouttext{
+ text-align: left;
+}
+
+.messagealert{
+    width: 90%;
+    height:25%;
+    margin: 1em;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    -webkit-border-radius:15px;
+    -moz-border-radius:15px;
+    border-radius:15px;
+}
+/*.otherinfo{
+    width: 100%;
+    height:7%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(66, 66, 66, 0.5);
+    justify-content: space-around;
+}
+.editinfo{
+    height:10%;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(66, 66, 66, 0.5);
+    border-top: none;
+    padding: 0.5em 0.8em;
+}
+.editinfo span{
+    width: 40%;
+    display: block;
+    text-align: left;
+    font-size: 1.2em
+}
+.editinfo input{
+    border: none !important;
+    font-size:1em;
+}*/
+.heading{
+    font-weight:bold;
+    font-size:1.2em;
+}
+.dndbutton{
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47);
+}
+.dndbutton:active{
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.36), 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.recentsection{
+    height:60%;
+}
+.recentsection.active{
+    height:0;
+    width:100%;
+    overflow: scroll;
+}
+.notify{
+    display: none;
+}
+.notify.active{
+    display: block;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.54);
+    height: 90%;
+    top: 5%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    margin: auto;
+}

@@ -1,2 +1,5 @@
 node_modules/
 .idea/
+workshop/www/css/
+workshop/www/js/
+workshop/www/images/

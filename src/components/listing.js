@@ -11,7 +11,7 @@ class Listing extends React.Component {
 		const spanStyle = {width: "70%", textAlign:"left"};
 		const containerStyle={display:"flex", justifyContent:"flex-start", width:"90%", alignItems:"center"};
 		return (<div style={{width:"100%", height:"100%", display:"flex", alignItems:'center', flexDirection:"column", flex:"1"}}>
-				<div style={{width:"100%", fontSize:"1.3em", margin:"1em"}}>{moment(this.props.object.time.iso).format("ddd D, MMMM - h:m")}</div>
+				<div style={{width:"100%", fontSize:"1.3em", margin:"1em"}}>{moment(this.props.object.time).format("ddd D, MMMM - h:m")}</div>
 				<div style={containerStyle}>
 					<div style={{width:"30px", height:"30px", margin:"0, 2em 1em 0"}}>
 						<img style={{width: "100%"}} src="/_assets/images/circleyellow.png" />

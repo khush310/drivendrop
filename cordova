@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+cp -r public/css workshop/www/css
+cp -r public/images workshop/www/images
+./node_modules/.bin/webpack --config build/webpack/cordova/config.js
+cd workshop
+cordova run ios
+cd ..

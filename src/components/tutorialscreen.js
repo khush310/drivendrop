@@ -14,7 +14,7 @@ class Tutorialscreen extends React.Component {
 					Welcome to
 				</div>
 				<img className="logoimg" src="/_assets/images/zero-cab_1x.png" />
-				<div className="logotxt" style={{fontSize:"3em", color:"#3ab0ba"}}>
+				<div className="logotxt" style={{fontFamily:"Poiret One", fontSize:"3em", color:"#3ab0ba"}}>
 					Drive'n'Drop
 				</div>
 				<div className="desc" style={{fontSize:"1.3em", padding:"0.8em"}}>
