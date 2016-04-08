@@ -17,7 +17,7 @@ class Sidebar extends React.Component {
 			<div className="sidebar" style={{left:'-65%!important', display:"flex", justifyContent:"flex-start", flexDirection:"column", alignItems:"center"}}>
 				<div style={{height:"22%", width:"60%", margin:"2em 0 0 0", borderRadius:"50%", overflow:"hidden"}}>
 					<Link style={{width:"100%", height:"100%", display:"block"}}onClick={this.toggleBack} to={"/public/profile/" + user.get('id')} store={this.props.store}>
-						<img style={{width:"100%"}}src={user.get("img")} />
+						<img style={{width:"100%"}}src={user.get("avatar_url")} />
 					</Link>
 				</div>
 				<ul style={{height:"45%", width:"100%", padding:"0"}}>

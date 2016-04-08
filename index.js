@@ -28,10 +28,24 @@ export function compileToHtml(string){
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
             </head>
             <body style="overflow: hidden;">
-                <div id="wrapper" role="main" style="width: 100%; height: 100%;">
-                    ${string}
-                </div>
+                <div id="wrapper" role="main" style="width: 100%; height: 100%;">${string}</div>
                 <script src=${getBundleURL()} type="text/javascript" ></script>
+                <script>
+                  window.fbAsyncInit = function() {
+                    FB.init({
+                      appId      : '249616182050866',
+                      xfbml      : true,
+                      version    : 'v2.5'
+                    });
+                  };
+                  (function(d, s, id){
+                     var js, fjs = d.getElementsByTagName(s)[0];
+                     if (d.getElementById(id)) {return;}
+                     js = d.createElement(s); js.id = id;
+                     js.src = "//connect.facebook.net/en_US/sdk.js";
+                     fjs.parentNode.insertBefore(js, fjs);
+                   }(document, 'script', 'facebook-jssdk'));
+                </script>
             </body>
         </html>
       `;

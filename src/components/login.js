@@ -3,20 +3,97 @@ import Header from "./header";
 import { Link } from 'react-router';
 import {buttonStyle, buttonLink} from "../stylesheets/button";
 import {center} from "../stylesheets/center";
+import Superagent from "superagent";
+import Immutable from "immutable";
 
 class Login extends React.Component {
+	constructor(props) {
+		super(props);
+	};
+	handleFb = () => {
+		FB.getLoginStatus( (response) =>{
+			if (response.status === 'connected'){
+				this.getUserInfo(response.authResponse);
+			} else {
+				FB.login((response) =>{
+					if (response.authResponse){
+						this.getUserInfo(response.authResponse);
+					} else{
+						console.log("authorize please");
+					}
+				}, {scope:'email, public_profile,user_friends, user_education_history,user_work_history'});
+			}
+		});
+	};
+	getUserInfo = (authResponse) =>{
+		FB.api('/me/?fields=name,email,birthday,gender,education,work', (userprofile) =>{
+			console.log('insdie get user info with all the other info',  userprofile);
+			FB.api('/me/picture?type=normal', (userpicture) => {
+				console.log(userpicture.data.url);
+				this.callParse(authResponse, userprofile, userpicture);
+			});
+		});
+	};
+	logoutFb = () =>{
+		FB.logout(function(){document.location.reload();});
+	};
+	callParse = (authResponse, userprofile, userpicture) => { 
+		const {store, history} = this.props; 
+		let expiration_date = new Date(); 
+		expiration_date.setSeconds(expiration_date.getSeconds() + authResponse.expiresIn); 
+		expiration_date = expiration_date.toISOString();
+		const education = userprofile.education || [];
+		const work = userprofile.work || [];
+		const payload = { 
+			"authData": { 
+				"facebook": { 
+					"id": authResponse.userID, 
+					"access_token": authResponse.accessToken, 
+					"expiration_date": expiration_date 
+				} 
+			}, 
+			"email": userprofile.email,
+			"name": userprofile.name ,
+			"fb_id": userprofile.id,
+			"avatar_url": userpicture.data.url,
+			"education": education[education.length-1],
+			"work": work[work.length-1]
+		}; 
+		console.log('this is the payload  ',  payload); 
+		Superagent 
+			.post('https://api.parse.com/1/users') 
+			.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM') 
+			.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF') 
+			.send(payload) 
+			.end((err, res) =>{ 
+				if (err) {  
+				} else{ 
+					Superagent
+						.get('https://api.parse.com/1/users/'+ res.body.objectId)
+						.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
+						.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
+						.end((error, response) =>{
+							if (error){
+							} else{
+								console.log("this is what is getting stored in the store ", response.body)
+								store.cursor(["profileUser"]).update(() =>{return Immutable.fromJS(response.body) });
+								history.pushState(null, "/home")
+							}
+						})
+
+				} 
+			})
+	 }
+
 	render(){
 		const blueButton = Object.assign({},buttonStyle, {width: "90%", background:"#00c5d1", margin: "1em", border: "1px solid #00c5d1"});
-		const yellowButton = Object.assign({},buttonStyle, {width: "90%", background:"#ffd900", margin: "1em", border: "1px solid #ffd900"});
-		const centered = Object.assign({},center, {width: "100%", flex: "0.8", flexDirection:"column"});
 		const linkstyle = Object.assign({},buttonLink, {fontSize: "5vw", fontWeight: "bolder"})
 
-		return (<div style={{height:"100%", width:"100%"}}>
-					<div className="dndbutton" style={yellowButton}>
-						<Link to='/home' style={linkstyle} type="passenger">Log In with Facebook</Link>
-					</div>
-			</div>
-		)
+		return (<div style={{height:"100%", width:"100%", display:"flex", justifyContent:"center", alignItems:"center", background:"#383838"}}>
+							<div onClick={this.handleFb} className="dndbutton" style={blueButton}>
+								<div style={linkstyle} type="passenger">Log In with Facebook</div>
+							</div>
+					</div>)
 	};
 }
 export default Login;

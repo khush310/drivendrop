@@ -20,9 +20,9 @@ class App extends React.Component {
 		const {store} = this.props;
 		let classes = classnames("wrapper", {leftactive: this.state.active}, {rightactive: this.state.check});
 		return (
-			<div  className={classes} style={{width: '100%', height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+			<div  className={classes} style={{width: '100vw', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
 				<Header title="Offer a Ride" ontoggleLeft={this.toggleLeft} ontoggleRight={this.toggleRight}></Header>
-				<div style={{width:"100%", height:"78%"}}>{this.props.children}</div>
+				<div style={{width:"100vw", height:"78vh"}}>{this.props.children}</div>
 				<Sidebar store={this.props.store} ontoggle={this.toggleLeft}></Sidebar>
 				<Messages store={this.props.store} ontoggle={this.toggleRight}></Messages>
 				<Footer></Footer>

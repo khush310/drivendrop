@@ -26,7 +26,7 @@ class Profile extends React.Component {
 					</div>
 					<div style={{width:"50%", textAlign:"left", height: "100%", textAlign:"left", display: "flex", flexDirection: "column",justifyContent: "center"}}>
 						<div className="name" style={{fontSize: "1.5em", fontWeight: "bold", paddingBottom: "0.5em", width: "100%"}}>
-							{profileuser.username} Verma
+							{profileuser.name} Verma
 						</div>
 						<div className="name" style={{fontSize: "1.5em", width: "100%"}}>
 							{profileuser.age} yrs old

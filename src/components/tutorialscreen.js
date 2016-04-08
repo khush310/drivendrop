@@ -45,7 +45,7 @@ class Tutorialscreen extends React.Component {
 					and use your D'n'D cash! You can also earn this cash by giving a ride next time you are travelling!
 				</div>
 			</section>;
-			footer = <footer style={lastfooter} className="dndbutton"><Link to='/home' style={{color:"00c5d1"}}>Continue ></Link></footer>;
+			footer = <footer style={lastfooter} className="dndbutton"><Link to='/login' style={{color:"00c5d1"}}>Continue ></Link></footer>;
 		}
 
 		return (
