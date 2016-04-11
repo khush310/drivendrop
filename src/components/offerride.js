@@ -9,6 +9,8 @@ import Superagent from "superagent";
 import {buttonStyle, buttonLink} from "../stylesheets/button";
 import {center} from "../stylesheets/center";
 
+import PlacePicker from "./placepicker";
+
 class OfferRide extends React.Component {
 	constructor(props) {
 		super(props);
@@ -34,6 +36,36 @@ class OfferRide extends React.Component {
 			})
 	};
 
+	renderPlacePicker(fieldName) {
+		if (this.state[fieldName]) {
+			return (
+				<div style={{position: "fixed", width :"100%", height: "100%", background: "white", zIndex: 999999, left: 0, top: 0}}>
+					<PlacePicker onSubmit={(place) => {
+							console.log("place", place)
+							const state = {};
+							state[fieldName] = place;
+							this.setState(state);
+						}} onClose={(e) => {
+						const state = {};
+						state[fieldName] = false;
+						this.setState(state);
+					}}>
+					</PlacePicker>
+				</div>
+			)
+		} else {
+			return (
+			<div onClick={(e) => {
+					const state = {};
+					state[fieldName] = true;
+					this.setState(state);
+				}}>
+				{fieldName} - pick a location
+			</div>
+			)
+		}
+	}
+
 	render(){
 		let classes = classnames('stage', 'offerheader');
 		const sectionStyle = Object.assign({},center, {marginTop:"1em", width:"90%", height:"90%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)", justifyContent:"space-between"});
@@ -47,13 +79,13 @@ class OfferRide extends React.Component {
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/circleyellow.png" />
 								</div>
-								<input ref="from" type="text" name="from" placeholder="From" id="from" />
+								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>{this.renderPlacePicker("From")}</div>
 							</li>
 							<li>
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/circleblue.png" />
 								</div>
-								<input ref="to" type="text" name="to" placeholder="To" id="to" />
+								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>{this.renderPlacePicker("To")}</div>
 							</li>
 							<li>
 								<div className="lefticons" style={{width:"9%", marginLeft:"0.5em"}}>
