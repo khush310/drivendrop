@@ -23,31 +23,54 @@ function createMapOptions(maps) {
 		panControl: true,
 		scrollwheel: true
 	};
-}
+};
 
 class PlacePicker extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
 	}
-	static defaultProps = {
-		center: {lat: 59.938043, lng: 30.337157},
-		zoom: 9,
-		greatPlaceCoords: {lat: 59.724465, lng: 30.080121}
-	};
 
 	handleSearch = (value) => {
 		if (value && value.length > 3) {
 			Superagent.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${value}&key=${API_KEY}`).end((err, res) => {
-				console.log("res", res.body.results[0].geometry.location.lat);
-				const topResult = filterTopResult(res.body);
+				//latitude = res.body.results[0].geometry.location.lat;
+				//longitude = res.body.results[0].geometry.location.lng;
+				const topResult = filterTopResult(res.body.results);
 				if (topResult) {
-					this.setState({match: topResult})
+					this.props.onPlaceChnage(topResult);
 				} else {
-					this.setState({match: null})
-				}
+					this.props.onPlaceChnage(null);
+				};
 			});
-
+		}
+	};
+	static defaultProps = {
+		center: {lat: 28.6139391, lng: 77.2090212},
+		zoom: 9,
+		greatPlaceCoords: {lat: 28.6139391, lng: 77.2090212}
+	};
+	renderMap = () =>{
+		if (this.props.place){
+			const config = {
+				greatPlaceCoords: {lat: this.props.place.geometry.location.lat, lng: this.props.place.geometry.location.lng}
+			};
+			console.log(config.greatPlaceCoords);
+			return (
+				<GoogleMap
+					defaultCenter={this.props.center}
+					defaultZoom={this.props.zoom}
+					options={createMapOptions}>
+					<MyGreatPlace {...config.greatPlaceCoords} text={"B"}/>
+				</GoogleMap>
+			);
+		} else {
+			return (
+				<GoogleMap
+					defaultCenter={this.props.center}
+					defaultZoom={this.props.zoom}
+					options={createMapOptions}>
+				</GoogleMap>
+			)
 		}
 	};
 
@@ -66,26 +89,20 @@ class PlacePicker extends React.Component {
 		return(
 			<div style={{display: "flex", flexDirection: "column", width: "100%", height: "100%", background: "whitesmoke"}}>
 				<div style={{height: 40}}>
-						<input type="text" onChange={this.handleSearchWithDelay} name="src" placeholder="pick the location.." style={{color: "#555"}}/>
+						<input type="text" onChange={this.handleSearchWithDelay} name="src" placeholder="pick the location.." style={{color: "#555", width: "100%"}}/>
 				</div>
 				<div style={{height:"78%", flex: 1, background: "white"}}>
-					<GoogleMap
-						defaultCenter={this.props.center}
-						defaultZoom={this.props.zoom}
-						options={createMapOptions}>
-						<MyGreatPlace lat={59.955413} lng={30.337844} text={'A'}/>
-						<MyGreatPlace {...this.props.greatPlaceCoords} text={'B'}/>
-					</GoogleMap>
+					{this.renderMap()}
 				</div>
 				<div style={{height: 40, display: "flex"}}>
-					<div onClick={(e) => {
-						if (this.state.match) {
-							this.props.onSubmit(this.state.match)
+					<div  onClick={(e) => {
+						if (this.props.place) {
+							this.props.onSubmit(this.props.place)
 						}
-					}} style={this.state.match ? {opacity: 1, color:"#383838"} : {opacity: 0}}>
+					}} style={this.props.place ? {opacity: 1, color:"#383838", flex: 1, textAlign: "center"} : {opacity: 0, flex: 1, textAlign: "center"}}>
 						OK
 					</div>
-					<div onClick={this.props.onClose} style={{color:"#383838"}}>
+					<div onClick={this.props.onClose} style={{color:"#383838", flex: 1, textAlign: "center"}}>
 						Cancel
 					</div>
 				</div>
@@ -93,19 +110,19 @@ class PlacePicker extends React.Component {
 		)
 	}
 }
+
+export default PlacePicker;
+
 class MyGreatPlace extends React.Component {
 	static defaultProps = {};
-
 	constructor(props) {
 		super(props);
 	}
 	render() {
 		return (
-			<div>
+			<div style={{background: "black", color: "white", height: 30, width: 40, padding: 10}}>
 				{this.props.text}
 			</div>
 		);
 	}
 }
-
-export default PlacePicker;

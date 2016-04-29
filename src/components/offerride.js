@@ -20,8 +20,18 @@ class OfferRide extends React.Component {
 		const {store} = this.props;
 		const payload = {
 			driver: {__type: "Pointer", className: "_User", objectId: store.cursor(["profileUser", "id"]).deref()},
-			src: this.refs.to.value,
-			destination: this.refs.from.value,
+			src_id: this.state["From/place"].place_id ,
+			src_name: this.state["From/place"].formatted_address,
+			src_coordinates: {
+				lat: this.state["From/place"].geometry.location.lat,
+				lng: this.state["From/place"].geometry.location.lng
+			},
+			destination_id: this.state["To/place"].place_id  ,
+			destination_name: this.state["To/place"].formatted_address,
+			destination_coordinates: {
+				lat: this.state["To/place"].geometry.location.lat,
+				lng : this.state["To/place"].geometry.location.lng
+			},
 			timestamp: {__type: "Date", iso: new Date(this.refs.time.value)},
 			seats: parseInt(this.refs.seats.value),
 			womensafety: this.refs.womensafety.state.checked
@@ -36,33 +46,57 @@ class OfferRide extends React.Component {
 			})
 	};
 
+
+
 	renderPlacePicker(fieldName) {
+		const placeKey = fieldName + "/place";
 		if (this.state[fieldName]) {
 			return (
 				<div style={{position: "fixed", width :"100%", height: "100%", background: "white", zIndex: 999999, left: 0, top: 0}}>
-					<PlacePicker onSubmit={(place) => {
-							console.log("place", place)
-							const state = {};
-							state[fieldName] = place;
-							this.setState(state);
-						}} onClose={(e) => {
-						const state = {};
-						state[fieldName] = false;
-						this.setState(state);
-					}}>
+					<PlacePicker style={{}}
+					             place={this.state[placeKey]}
+					             onPlaceChnage={(place)=> {
+					              const state = {};
+					              state[placeKey] = place;
+					              this.setState(state);
+					             }}
+					             onSubmit={() => {
+												 const state = {};
+												 state[fieldName] = false;
+												 this.setState(state);
+											 }}
+					             onClose={() => {
+												 const state = {};
+												 state[fieldName] = false;
+												 this.setState(state);
+											}}>
 					</PlacePicker>
 				</div>
 			)
 		} else {
-			return (
-			<div onClick={(e) => {
-					const state = {};
-					state[fieldName] = true;
-					this.setState(state);
-				}}>
-				{fieldName} - pick a location
-			</div>
-			)
+			console.log(this.state);
+			if (this.state[placeKey]) {
+				return (
+					<div onClick={(e) => {
+						const state = {};
+						state[fieldName] = true;
+						this.setState(state);
+					}}>
+						{fieldName} - {this.state[placeKey]["address_components"][0].long_name}
+					</div>
+				)
+			} else {
+				return (
+					<div onClick={(e) => {
+						const state = {};
+						state[fieldName] = true;
+						this.setState(state);
+					}}>
+						{fieldName} - pick a location
+					</div>
+				)
+
+			}
 		}
 	}
 

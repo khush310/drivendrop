@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "Drive'n'Drop": {
+      "applicationId": "OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM"
+    },
+    "_default": {
+      "link": "Drive'n'Drop"
+    }
+  }
+}
