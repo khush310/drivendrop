@@ -2,8 +2,9 @@ import React from "react";
 import express from "express";
 import { renderToString } from 'react-dom/server';
 import { match, RouterContext } from 'react-router';
-import routes from "./src/routes";
-import {createStore} from "./src/store";
+import routes from "./routes";
+import {createStore} from "./store";
+import loginAPI from "./api/login"
 
 var app = express();
 app.use("/_assets", express.static("./public"));
@@ -71,7 +72,9 @@ app.get("/*", function(req, res) {
       res.status(404).send('Not found')
     }
   })
-})
+});
+
+loginAPI(app);
 
 var port = process.env.PORT || 4000;
 app.listen(port, function(){
