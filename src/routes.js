@@ -8,6 +8,7 @@ import ListingProvider from "./providers/listing.js";
 import UserProvider from "./providers/user.js";
 import TutorialStep from "./components/tutorialscreen.js";
 import Login from "./components/login.js";
+import CreateAccount from "./components/createaccount.js";
 import Home from "./components/home.js";
 import OfferRide from "./components/offerride.js";
 import Published from "./components/published.js";
@@ -40,6 +41,7 @@ const routingTree = (
 		<IndexRoute component={Home} />
 		<Route path="home" component={Home} />
 		<Route path="login" component={Login} />
+		<Route path="createaccount/:step" component={CreateAccount} />
 	</Route>
 );
 export default routingTree;

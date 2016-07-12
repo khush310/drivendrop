@@ -25,6 +25,7 @@ class Login extends React.Component {
 			}
 		});
 	};
+
 	getUserInfo = (authResponse) =>{
 		FB.api('/me/?fields=name,email,birthday,gender,education,work', (userprofile) =>{
 			console.log('insdie get user info with all the other info',  userprofile);
@@ -87,13 +88,28 @@ class Login extends React.Component {
 
 	render(){
 		const blueButton = Object.assign({},buttonStyle, {width: "90%", background:"#00c5d1", margin: "1em", border: "1px solid #00c5d1"});
-		const linkstyle = Object.assign({},buttonLink, {fontSize: "5vw", fontWeight: "bolder"})
+		const linkstyle = Object.assign({},buttonLink, {fontSize: "5vw", fontWeight: "bolder", height: "100%"})
 
-		return (<div style={{height:"100%", width:"100%", display:"flex", justifyContent:"center", alignItems:"center", background:"#383838"}}>
-							<div onClick={this.handleFb} className="dndbutton" style={blueButton}>
-								<div style={linkstyle} type="passenger">Log In with Facebook</div>
-							</div>
-					</div>)
+		return (<div style={{height:"100%", width:"100%", display:"flex", justifyContent:"center", alignItems:"center", backgroundImage: "url(/_assets/images/Background-login.jpg)", backgroundSize: "cover", backgroundRepeat: "no-repeat"}}>
+			<div style={{height: "100%", width: "100%", backgroundColor:"rgba(62, 190, 201, 0.7)"}}>
+				<div style={{color: "white", fontSize: "2.3em", paddingTop: "4em"}}>Welcome to Drive'N'Drop </div>
+					<div onClick={this.handleFb} className="dndbutton active" style={{marginBottom: "3vw !important"}}>
+						<div style={linkstyle} type="passenger">
+							<img src="_assets/images/fbLogo.png" style={{height: "68%", position: "absolute", left: "0px"}} />
+							Connect with Facebook
+						</div>
+					</div>
+					<div className="dndbutton">
+						<Link to='/createaccount/1' style={linkstyle} type="passenger">Create Account</Link>
+					</div>
+				<div style={{bottom: "3vw", position: "absolute", width: "100%"}}>
+					<div style={{padding: "10px", color: "white",  fontSize: "1.3em"}}>Already a member?</div>
+					<div className="dndbutton">
+						<div style={linkstyle} type="passenger">Login</div>
+					</div>
+				</div>
+				</div>
+			</div>)
 	};
 }
 export default Login;

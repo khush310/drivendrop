@@ -24,6 +24,7 @@ class Tutorialscreen extends React.Component {
 			footer = <footer style={footerStyle} className="dndbutton"><Link to='/tutorial/2' style={{color:"#efefef"}}>How does it work ></Link></footer>;
 
 		} else if (step == "2") {
+			footer = <footer style={footerStyle} className="dndbutton"><Link to='/tutorial/3'>Continue ></Link></footer>;
 			headline = <section style={{height:"100%", background:"#fff", color:"#333333"}}>
 				<img className="logoimg" src="/_assets/images/zero-cab_1x.png" />
 				<div className="intro" style={{fontSize:"3em", color:"#3ab0ba"}}>
@@ -33,7 +34,6 @@ class Tutorialscreen extends React.Component {
 					and earn DnD cash! You can use this cash next time you need a ride!
 				</div>
 			</section>;
-			footer = <footer style={footerStyle} className="dndbutton"><Link to='/tutorial/3'>Continue ></Link></footer>;
 
 		} else {
 			headline = <section style={{height:"100%", background:"#00c5d1", color:"#333333"}}>

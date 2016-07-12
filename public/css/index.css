@@ -842,6 +842,21 @@ li h3 {
 }
 .dndbutton{
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47);
+    width: 85%;
+    margin: auto;
+    border-radius: 4px;
+    height: 45px;
+    background: transparent;
+    color: white;
+    position: relative;
+    border: 2px solid white;
+}
+.dndbutton:active, .dndbutton.active{
+    background: white;
+    color: rgb(62, 190, 201);
+}
+.dndbutton a{
+    color: #ffffff;
 }
 .dndbutton:active{
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.36), 0 1px 0 rgba(255, 255, 255, 0.15);
@@ -868,4 +883,24 @@ li h3 {
     position: absolute;
     right: 0;
     margin: auto;
+}
+
+
+/*****create account page form******/
+.createaccountpage [type=submit] {
+    margin-top: 25px;
+    width: 80%;
+    border: 0;
+    background-color: #53CACE;
+    border-radius: 5px;
+    height: 50px;
+    color: white;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+
+.createaccountpage [type='text']:focus {
+    outline: none;
+    border-color: #53CACE;
 }

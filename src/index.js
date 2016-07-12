@@ -27,6 +27,8 @@ export function compileToHtml(string){
                 <link href="/_assets/css/index.css" rel="stylesheet" type="text/css"> </link>
                 <link href='https://fonts.googleapis.com/css?family=Handlee|Indie+Flower|Raleway+Dots|Just+Me+Again+Down+Here|Bubbler+One|Quicksand:400,700|Poiret+One|Short+Stack|Delius|Work+Sans:400,700|Swanky+and+Moo+Moo|Dekko' rel='stylesheet' type='text/css'>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="http://848c50e1be05c0723203-eff084d8ec13efbd91c6ba23dce4c478.r48.cf3.rackcdn.com/resources/skin/dragdealer.css" type="text/css" />
+                <script src="http://848c50e1be05c0723203-eff084d8ec13efbd91c6ba23dce4c478.r48.cf3.rackcdn.com/resources/js/dragdealer.js" type="text/javascript"></script>
             </head>
             <body style="overflow: hidden;">
                 <div id="wrapper" role="main" style="width: 100%; height: 100%;">${string}</div>
@@ -46,6 +48,12 @@ export function compileToHtml(string){
                      js.src = "//connect.facebook.net/en_US/sdk.js";
                      fjs.parentNode.insertBefore(js, fjs);
                    }(document, 'script', 'facebook-jssdk'));
+
+                  var swiper = new Swiper('.swiper-container', {
+                      pagination: '.swiper-pagination',
+                      paginationClickable: true,
+                      direction: 'vertical'
+                  });
                 </script>
             </body>
         </html>
