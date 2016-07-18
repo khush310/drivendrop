@@ -37,12 +37,16 @@ class OfferRide extends React.Component {
 					driver: {__type: "Pointer", className: "_User", objectId: store.cursor(["profileUser", "id"]).deref()},
 					src_id: this.state["From/place"].place_id ,
 					src_name: this.state["From/place"].formatted_address,
-					src_coordinates_lat: this.state["From/place"].geometry.location.lat,
-					src_coordinates_lng: this.state["From/place"].geometry.location.lng,
+					src_coordinates: {
+						lat: this.state["From/place"].geometry.location.lat,
+						lng: this.state["From/place"].geometry.location.lng
+					},
 					destination_id: this.state["To/place"].place_id  ,
 					destination_name: this.state["To/place"].formatted_address,
-					destination_coordinates_lat: this.state["To/place"].geometry.location.lat,
-					destination_coordinates_lng : this.state["To/place"].geometry.location.lng,
+					destination_coordinates: {
+						lat: this.state["To/place"].geometry.location.lat,
+						lng : this.state["To/place"].geometry.location.lng
+					},
 					timestamp: {__type: "Date", iso: new Date(this.refs.time.value)},
 					seats: parseInt(this.refs.seats.value),
 					womensafety: this.refs.womensafety.state.checked
