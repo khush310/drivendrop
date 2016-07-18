@@ -3,10 +3,11 @@ import Superagent from "superagent";
 import GoogleMap from 'google-map-react';
 const API_KEY = "AIzaSyCo9ExihzwDbmOuISsRDNMAUCcJfCkTV0c";
 
-export function filterTopResult(results) {
+export function filterTopResult(value, results) {
 	return results.filter(function(item){
 		return item.address_components.filter(function(component){
-			return component.long_name == "Delhi";
+			//return component.long_name == "Delhi";
+			return (component.long_name.toLowerCase().indexOf(value.toLowerCase())!==-1);
 		}).length > 0;
 	})[0];
 }
@@ -28,6 +29,7 @@ function createMapOptions(maps) {
 class PlacePicker extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {place: this.props.place};
 	}
 
 	handleSearch = (value) => {
@@ -35,7 +37,9 @@ class PlacePicker extends React.Component {
 			Superagent.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${value}&key=${API_KEY}`).end((err, res) => {
 				//latitude = res.body.results[0].geometry.location.lat;
 				//longitude = res.body.results[0].geometry.location.lng;
-				const topResult = filterTopResult(res.body.results);
+
+				const topResult = filterTopResult(value, res.body.results);
+				this.setState({place: topResult});
 				if (topResult) {
 					this.props.onPlaceChnage(topResult);
 				} else {
@@ -55,10 +59,12 @@ class PlacePicker extends React.Component {
 				greatPlaceCoords: {lat: this.props.place.geometry.location.lat, lng: this.props.place.geometry.location.lng}
 			};
 			console.log(config.greatPlaceCoords);
+			var center = {lat: this.state.place.geometry.location.lat, lng: this.state.place.geometry.location.lng};
 			return (
 				<GoogleMap
 					defaultCenter={this.props.center}
 					defaultZoom={this.props.zoom}
+					center={center}
 					options={createMapOptions}>
 					<MyGreatPlace {...config.greatPlaceCoords} text={"B"}/>
 				</GoogleMap>

@@ -18,32 +18,51 @@ class OfferRide extends React.Component {
 	};
 	handleForm = (e) => {
 		const {store} = this.props;
-		const payload = {
-			driver: {__type: "Pointer", className: "_User", objectId: store.cursor(["profileUser", "id"]).deref()},
-			src_id: this.state["From/place"].place_id ,
-			src_name: this.state["From/place"].formatted_address,
-			src_coordinates: {
-				lat: this.state["From/place"].geometry.location.lat,
-				lng: this.state["From/place"].geometry.location.lng
-			},
-			destination_id: this.state["To/place"].place_id  ,
-			destination_name: this.state["To/place"].formatted_address,
-			destination_coordinates: {
-				lat: this.state["To/place"].geometry.location.lat,
-				lng : this.state["To/place"].geometry.location.lng
-			},
-			timestamp: {__type: "Date", iso: new Date(this.refs.time.value)},
-			seats: parseInt(this.refs.seats.value),
-			womensafety: this.refs.womensafety.state.checked
+
+		const login_post_data = {
+				username: "ram",
+				password: "rammahesh"
 		};
+
 		Superagent
-			.post('https://api.parse.com/1/classes/Listing')
-			.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
-			.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
-			.send(payload)
-			.end((err, res) =>{
-				console.log(res);
-			})
+			.post('http://dndapi.herokuapp.com/api/login')
+			//.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
+			//.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
+			.send(login_post_data)
+			.then((res) =>{
+				var auth_token = res.body.auth_token;
+				console.log(auth_token);
+				const payload = {
+					auth_token: auth_token,
+					driver: {__type: "Pointer", className: "_User", objectId: store.cursor(["profileUser", "id"]).deref()},
+					src_id: this.state["From/place"].place_id ,
+					src_name: this.state["From/place"].formatted_address,
+					src_coordinates: {
+						lat: this.state["From/place"].geometry.location.lat,
+						lng: this.state["From/place"].geometry.location.lng
+					},
+					destination_id: this.state["To/place"].place_id  ,
+					destination_name: this.state["To/place"].formatted_address,
+					destination_coordinates: {
+						lat: this.state["To/place"].geometry.location.lat,
+						lng : this.state["To/place"].geometry.location.lng
+					},
+					timestamp: {__type: "Date", iso: new Date(this.refs.time.value)},
+					seats: parseInt(this.refs.seats.value),
+					womensafety: this.refs.womensafety.state.checked
+				};
+
+				Superagent
+					.post('http://dndapi.herokuapp.com/api/rides')
+					//.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
+					//.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
+					.send(payload)
+					.end((err, res) =>{
+						console.log(res);
+					});
+
+			});
+
 	};
 
 
