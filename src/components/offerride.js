@@ -89,7 +89,6 @@ class OfferRide extends React.Component {
 				</div>
 			)
 		} else {
-			console.log(this.state);
 			if (this.state[placeKey]) {
 				return (
 					<div onClick={(e) => {

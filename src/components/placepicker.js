@@ -1,120 +1,101 @@
-import React from "react";
-import Superagent from "superagent";
-import GoogleMap from 'google-map-react';
-const API_KEY = "AIzaSyCo9ExihzwDbmOuISsRDNMAUCcJfCkTV0c";
-
-export function filterTopResult(value, results) {
-	return results.filter(function(item){
-		return item.address_components.filter(function(component){
-			//return component.long_name == "Delhi";
-			return (component.long_name.toLowerCase().indexOf(value.toLowerCase())!==-1);
-		}).length > 0;
-	})[0];
-}
-function createMapOptions(maps) {
-	return {
-		zoomControlOptions: {
-			position: maps.ControlPosition.RIGHT_CENTER,
-			style: maps.ZoomControlStyle.SMALL
-		},
-		mapTypeControlOptions: {
-			position: maps.ControlPosition.TOP_RIGHT
-		},
-		mapTypeControl: true,
-		panControl: true,
-		scrollwheel: true
-	};
-};
+import { default as React } from "react";
+import { GoogleMapLoader, GoogleMap, DirectionsRenderer } from "react-google-maps";
+import Geosuggest from 'react-geosuggest';
 
 class PlacePicker extends React.Component {
+
 	constructor(props) {
 		super(props);
-		this.state = {place: this.props.place};
+		this.state = {
+			origin: new google.maps.LatLng(12.971599, 77.594563),
+			destination: new google.maps.LatLng(13.08268, 80.270718),
+			directions: null,
+		};
+
+		this.onSuggestSelect = this.onSuggestSelect.bind(this);
 	}
 
-	handleSearch = (value) => {
-		if (value && value.length > 3) {
-			Superagent.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${value}&key=${API_KEY}`).end((err, res) => {
-				//latitude = res.body.results[0].geometry.location.lat;
-				//longitude = res.body.results[0].geometry.location.lng;
+	route(origin, destination, travelMode) {
 
-				const topResult = filterTopResult(value, res.body.results);
-				this.setState({place: topResult});
-				if (topResult) {
-					this.props.onPlaceChnage(topResult);
-				} else {
-					this.props.onPlaceChnage(null);
-				};
-			});
-		}
-	};
-	static defaultProps = {
-		center: {lat: 28.6139391, lng: 77.2090212},
-		zoom: 9,
-		greatPlaceCoords: {lat: 28.6139391, lng: 77.2090212}
-	};
-	renderMap = () =>{
-		if (this.props.place){
-			const config = {
-				greatPlaceCoords: {lat: this.props.place.geometry.location.lat, lng: this.props.place.geometry.location.lng}
-			};
-			console.log(config.greatPlaceCoords);
-			var center = {lat: this.state.place.geometry.location.lat, lng: this.state.place.geometry.location.lng};
-			return (
-				<GoogleMap
-					defaultCenter={this.props.center}
-					defaultZoom={this.props.zoom}
-					center={center}
-					options={createMapOptions}>
-					<MyGreatPlace {...config.greatPlaceCoords} text={"B"}/>
-				</GoogleMap>
-			);
-		} else {
-			return (
-				<GoogleMap
-					defaultCenter={this.props.center}
-					defaultZoom={this.props.zoom}
-					options={createMapOptions}>
-				</GoogleMap>
-			)
-		}
-	};
+		const DirectionsService = new google.maps.DirectionsService();
+		DirectionsService.route({
+      origin: origin,
+      destination: destination,
+      travelMode: travelMode,
+    }, (result, status) => {
+      if (status === google.maps.DirectionsStatus.OK) {
+        this.setState({
+          directions: result,
+        });
+      } else {
+        console.error(`error fetching directions ${result}`);
+      }
+    });
 
-	handleSearchWithDelay = (e) => {
-		const value = e.target.value;
-		if (this.timeout) {
-			clearTimeout(this.timeout);
-			delete this.timeout;
-		}
-		this.timeout = setTimeout(() => {
-			this.handleSearch(value);
-		}, 500);
-	};
-
-	render(){
-		return(
-			<div style={{display: "flex", flexDirection: "column", width: "100%", height: "100%", background: "whitesmoke"}}>
-				<div style={{height: 40}}>
-						<input type="text" onChange={this.handleSearchWithDelay} name="src" placeholder="pick the location.." style={{color: "#555", width: "100%"}}/>
-				</div>
-				<div style={{height:"78%", flex: 1, background: "white"}}>
-					{this.renderMap()}
-				</div>
-				<div style={{height: 40, display: "flex"}}>
-					<div  onClick={(e) => {
-						if (this.props.place) {
-							this.props.onSubmit(this.props.place)
-						}
-					}} style={this.props.place ? {opacity: 1, color:"#383838", flex: 1, textAlign: "center"} : {opacity: 0, flex: 1, textAlign: "center"}}>
-						OK
-					</div>
-					<div onClick={this.props.onClose} style={{color:"#383838", flex: 1, textAlign: "center"}}>
-						Cancel
-					</div>
-				</div>
-			</div>
-		)
 	}
+
+	onSuggestSelect(suggest, discrim) {
+
+		if (this.state.origin && this.state.destination) {
+			  if (discrim==='source') {
+				  var origin = new google.maps.LatLng(suggest.gmaps.geometry.location.lat(), suggest.gmaps.geometry.location.lng());
+					this.setState({origin: origin});
+				  this.route(origin, this.state.destination, google.maps.TravelMode.DRIVING);
+				} else if (discrim==='destination') {
+					var destination = new google.maps.LatLng(suggest.gmaps.geometry.location.lat(), suggest.gmaps.geometry.location.lng());
+					this.setState({destination: destination});
+					this.route(this.state.origin, destination, google.maps.TravelMode.DRIVING);
+				}
+		}
+	}
+
+	componentDidMount() {
+		this.route(this.state.origin, this.state.destination, google.maps.TravelMode.DRIVING);
+
+  }
+
+	renderMap() {
+		return (
+
+		<GoogleMapLoader
+			containerElement={
+				<div
+					{...this.props}
+					style={{
+						height: `100%`,
+					}}
+				/>
+			}
+			googleMapElement={
+				<GoogleMap
+					containerProps={{
+						...this.props,
+						style: {
+							height: `100%`,
+						},
+					}}
+					defaultZoom={7}
+					defaultCenter={this.state.origin}
+				>
+					{this.state.directions ? <DirectionsRenderer directions={this.state.directions} /> : null}
+				</GoogleMap>
+			}
+			/>
+		);
+
+	}
+
+	render() {
+		return (
+				<div style={{display: "flex", flexDirection: "column", width: "100%", height: "100%", background: "whitesmoke"}}>
+				  <MyGreatPlace discrim="source" onSuggestSelect={this.onSuggestSelect}/>
+					<MyGreatPlace discrim="destination" onSuggestSelect={this.onSuggestSelect}/>
+					<div style={{height:"78%", flex: 1, background: "white"}}>
+						{this.renderMap()}
+					</div>
+				</div>
+	  )
+  }
 }
 
 export default PlacePicker;
@@ -123,12 +104,19 @@ class MyGreatPlace extends React.Component {
 	static defaultProps = {};
 	constructor(props) {
 		super(props);
+		this.onSuggestSelect = this.onSuggestSelect.bind(this);
+
 	}
+
 	render() {
 		return (
-			<div style={{background: "black", color: "white", height: 30, width: 40, padding: 10}}>
-				{this.props.text}
+			<div style={{height: 40}}>
+				<Geosuggest onSuggestSelect={this.onSuggestSelect}/>
 			</div>
 		);
+	}
+
+	onSuggestSelect(suggest) {
+		this.props.onSuggestSelect(suggest, this.props.discrim);
 	}
 }

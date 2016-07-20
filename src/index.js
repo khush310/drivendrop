@@ -29,6 +29,7 @@ export function compileToHtml(string){
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
                 <link rel="stylesheet" href="http://848c50e1be05c0723203-eff084d8ec13efbd91c6ba23dce4c478.r48.cf3.rackcdn.com/resources/skin/dragdealer.css" type="text/css" />
                 <script src="http://848c50e1be05c0723203-eff084d8ec13efbd91c6ba23dce4c478.r48.cf3.rackcdn.com/resources/js/dragdealer.js" type="text/javascript"></script>
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCo9ExihzwDbmOuISsRDNMAUCcJfCkTV0c&libraries=geometry,drawing,places"></script>
             </head>
             <body style="overflow: hidden;">
                 <div id="wrapper" role="main" style="width: 100%; height: 100%;">${string}</div>
