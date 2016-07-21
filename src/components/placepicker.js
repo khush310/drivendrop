@@ -7,8 +7,6 @@ class PlacePicker extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			origin: new google.maps.LatLng(12.971599, 77.594563),
-			destination: new google.maps.LatLng(13.08268, 80.270718),
 			directions: null,
 		};
 
@@ -35,24 +33,28 @@ class PlacePicker extends React.Component {
 	}
 
 	onSuggestSelect(suggest, discrim) {
-
-		if (this.state.origin && this.state.destination) {
-			  if (discrim==='source') {
-				  var origin = new google.maps.LatLng(suggest.gmaps.geometry.location.lat(), suggest.gmaps.geometry.location.lng());
-					this.setState({origin: origin});
-				  this.route(origin, this.state.destination, google.maps.TravelMode.DRIVING);
-				} else if (discrim==='destination') {
-					var destination = new google.maps.LatLng(suggest.gmaps.geometry.location.lat(), suggest.gmaps.geometry.location.lng());
-					this.setState({destination: destination});
-					this.route(this.state.origin, destination, google.maps.TravelMode.DRIVING);
-				}
-		}
+		  if (discrim==='source') {
+			  var origin = new google.maps.LatLng(suggest.gmaps.geometry.location.lat(), suggest.gmaps.geometry.location.lng());
+				var json = {origin: origin};
+				json.maps = this.state.maps? this.state.maps: [];
+				json.maps[0] = suggest.gmaps;
+				this.setState(json);
+				if (this.state.destination) {
+			    this.route(origin, this.state.destination, google.maps.TravelMode.DRIVING);
+			  }
+				this.props.onPlaceChnage(this.state.maps);
+			} else if (discrim==='destination') {
+				var destination = new google.maps.LatLng(suggest.gmaps.geometry.location.lat(), suggest.gmaps.geometry.location.lng());
+				var json = {destination: destination};
+				json.maps = this.state.maps? this.state.maps: [];
+				json.maps[1] = suggest.gmaps;
+				this.setState(json)
+				if (this.state.origin) {
+				  this.route(this.state.origin, destination, google.maps.TravelMode.DRIVING);
+			  }
+				this.props.onPlaceChnage(this.state.maps);
+			}
 	}
-
-	componentDidMount() {
-		this.route(this.state.origin, this.state.destination, google.maps.TravelMode.DRIVING);
-
-  }
 
 	renderMap() {
 		return (
@@ -92,6 +94,18 @@ class PlacePicker extends React.Component {
 					<MyGreatPlace discrim="destination" onSuggestSelect={this.onSuggestSelect}/>
 					<div style={{height:"78%", flex: 1, background: "white"}}>
 						{this.renderMap()}
+					</div>
+					<div style={{height: 40, display: "flex"}}>
+						<div  onClick={(e) => {
+							if (this.state.origin && this.state.destination) {
+								this.props.onSubmit(this.state.origin)
+							}
+						}} style={(this.state.origin && this.state.destination) ? {opacity: 1, color:"#383838", flex: 1, textAlign: "center"} : {opacity: 0, flex: 1, textAlign: "center"}}>
+							OK
+						</div>
+						<div onClick={this.props.onClose} style={{color:"#383838", flex: 1, textAlign: "center"}}>
+							Cancel
+						</div>
 					</div>
 				</div>
 	  )

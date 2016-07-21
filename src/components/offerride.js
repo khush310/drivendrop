@@ -37,12 +37,12 @@ class OfferRide extends React.Component {
 					driver: {__type: "Pointer", className: "_User", objectId: store.cursor(["profileUser", "id"]).deref()},
 					src_id: this.state["From/place"].place_id ,
 					src_name: this.state["From/place"].formatted_address,
-					src_coordinates_lat: this.state["From/place"].geometry.location.lat,
-					src_coordinates_lng: this.state["From/place"].geometry.location.lng,
+					src_coordinates_lat: this.state["From/place"].geometry.location.lat(),
+					src_coordinates_lng: this.state["From/place"].geometry.location.lng(),
 					destination_id: this.state["To/place"].place_id  ,
 					destination_name: this.state["To/place"].formatted_address,
-					destination_coordinates_lat: this.state["To/place"].geometry.location.lat,
-					destination_coordinates_lng : this.state["To/place"].geometry.location.lng,
+					destination_coordinates_lat: this.state["To/place"].geometry.location.lat(),
+					destination_coordinates_lng : this.state["To/place"].geometry.location.lng(),
 					timestamp: {__type: "Date", iso: new Date(this.refs.time.value)},
 					seats: parseInt(this.refs.seats.value),
 					womensafety: this.refs.womensafety.state.checked
@@ -70,19 +70,22 @@ class OfferRide extends React.Component {
 				<div style={{position: "fixed", width :"100%", height: "100%", background: "white", zIndex: 999999, left: 0, top: 0}}>
 					<PlacePicker style={{}}
 					             place={this.state[placeKey]}
-					             onPlaceChnage={(place)=> {
+					             onPlaceChnage={(maps)=> {
 					              const state = {};
-					              state[placeKey] = place;
+					              state['From/place'] = maps[0];
+												state['To/place'] = maps[1];
 					              this.setState(state);
 					             }}
 					             onSubmit={() => {
 												 const state = {};
-												 state[fieldName] = false;
+												 state['From'] = false;
+												 state['To'] = false;
 												 this.setState(state);
 											 }}
 					             onClose={() => {
 												 const state = {};
-												 state[fieldName] = false;
+												 state['From'] = false;
+												 state['To'] = false;
 												 this.setState(state);
 											}}>
 					</PlacePicker>
