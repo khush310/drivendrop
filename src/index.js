@@ -18,7 +18,7 @@ export function getBundleURL(){
 }
 
 export function compileToHtml(string){
-    const response = `
+  const response = `
         <html>
             <head>
                 <meta charSet='utf-8' />
@@ -27,7 +27,9 @@ export function compileToHtml(string){
                 <link href="/_assets/css/index.css" rel="stylesheet" type="text/css"> </link>
                 <link href='https://fonts.googleapis.com/css?family=Handlee|Indie+Flower|Raleway+Dots|Just+Me+Again+Down+Here|Bubbler+One|Quicksand:400,700|Poiret+One|Short+Stack|Delius|Work+Sans:400,700|Swanky+and+Moo+Moo|Dekko' rel='stylesheet' type='text/css'>
                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCP-lTN2k3QEeRdmjz-GZqnlaiybpH5-0c&libraries=geometry,drawing,places"></script>
+                <link rel="stylesheet" href="http://848c50e1be05c0723203-eff084d8ec13efbd91c6ba23dce4c478.r48.cf3.rackcdn.com/resources/skin/dragdealer.css" type="text/css" />
+                <script src="http://848c50e1be05c0723203-eff084d8ec13efbd91c6ba23dce4c478.r48.cf3.rackcdn.com/resources/js/dragdealer.js" type="text/javascript"></script>
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCo9ExihzwDbmOuISsRDNMAUCcJfCkTV0c&libraries=geometry,drawing,places"></script>
             </head>
             <body style="overflow: hidden;">
                 <div id="wrapper" role="main" style="width: 100%; height: 100%;">${string}</div>
@@ -57,7 +59,7 @@ export function compileToHtml(string){
             </body>
         </html>
       `;
-    return response;
+  return response;
 };
 
 app.get("/*", function(req, res) {
@@ -85,5 +87,5 @@ loginAPI(app);
 
 var port = process.env.PORT || 4000;
 app.listen(port, function(){
-    console.log("listing to " + port);
+  console.log("listing to " + port);
 });

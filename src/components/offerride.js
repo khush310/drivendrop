@@ -18,32 +18,46 @@ class OfferRide extends React.Component {
 	};
 	handleForm = (e) => {
 		const {store} = this.props;
-		const payload = {
-			driver: {__type: "Pointer", className: "_User", objectId: store.cursor(["profileUser", "id"]).deref()},
-			src_id: this.state["From/place"].place_id ,
-			src_name: this.state["From/place"].formatted_address,
-			src_coordinates: {
-				lat: this.state["From/place"].geometry.location.lat,
-				lng: this.state["From/place"].geometry.location.lng
-			},
-			destination_id: this.state["To/place"].place_id  ,
-			destination_name: this.state["To/place"].formatted_address,
-			destination_coordinates: {
-				lat: this.state["To/place"].geometry.location.lat,
-				lng : this.state["To/place"].geometry.location.lng
-			},
-			timestamp: {__type: "Date", iso: new Date(this.refs.time.value)},
-			seats: parseInt(this.refs.seats.value),
-			womensafety: this.refs.womensafety.state.checked
+
+		const login_post_data = {
+				username: "ram",
+				password: "rammahesh"
 		};
+
 		Superagent
-			.post('https://api.parse.com/1/classes/Listing')
-			.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
-			.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
-			.send(payload)
-			.end((err, res) =>{
-				console.log(res);
-			})
+			.post('http://dndapi.herokuapp.com/api/login')
+			//.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
+			//.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
+			.send(login_post_data)
+			.then((res) =>{
+				var auth_token = res.body.auth_token;
+				const payload = {
+					auth_token: auth_token,
+					driver: {__type: "Pointer", className: "_User", objectId: store.cursor(["profileUser", "id"]).deref()},
+					src_id: this.state["From/place"].place_id ,
+					src_name: this.state["From/place"].formatted_address,
+					src_coordinates_lat: this.state["From/place"].geometry.location.lat(),
+					src_coordinates_lng: this.state["From/place"].geometry.location.lng(),
+					destination_id: this.state["To/place"].place_id  ,
+					destination_name: this.state["To/place"].formatted_address,
+					destination_coordinates_lat: this.state["To/place"].geometry.location.lat(),
+					destination_coordinates_lng : this.state["To/place"].geometry.location.lng(),
+					timestamp: {__type: "Date", iso: new Date(this.refs.time.value)},
+					seats: parseInt(this.refs.seats.value),
+					womensafety: this.refs.womensafety.state.checked
+				};
+
+				Superagent
+					.post('http://dndapi.herokuapp.com/api/rides')
+					//.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
+					//.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
+					.send(payload)
+					.end((err, res) =>{
+						console.log(res);
+					});
+
+			});
+
 	};
 
 
@@ -55,26 +69,28 @@ class OfferRide extends React.Component {
 				<div style={{position: "fixed", width :"100%", height: "100%", background: "white", zIndex: 999999, left: 0, top: 0}}>
 					<PlacePicker style={{}}
 					             place={this.state[placeKey]}
-					             onPlaceChnage={(place)=> {
+					             onPlaceChnage={(maps)=> {
 					              const state = {};
-					              state[placeKey] = place;
+					              state['From/place'] = maps[0];
+												state['To/place'] = maps[1];
 					              this.setState(state);
 					             }}
 					             onSubmit={() => {
 												 const state = {};
-												 state[fieldName] = false;
+												 state['From'] = false;
+												 state['To'] = false;
 												 this.setState(state);
 											 }}
 					             onClose={() => {
 												 const state = {};
-												 state[fieldName] = false;
+												 state['From'] = false;
+												 state['To'] = false;
 												 this.setState(state);
 											}}>
 					</PlacePicker>
 				</div>
 			)
 		} else {
-			console.log(this.state);
 			if (this.state[placeKey]) {
 				return (
 					<div onClick={(e) => {
@@ -146,6 +162,15 @@ class OfferRide extends React.Component {
 									</label>
 								</div>
 							</li>
+                            <li style={{alignItems: "flex-start", paddingTop: "20px"}}>
+                                <div className="lefticons">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291"><circle cx="11.5" cy="4" r="3.5"/><path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z"/></g></svg>
+                                </div>
+                                <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+                                Tap to Add car details
+
+                                </div>
+                            </li>
 							<li>
 								<textarea name='comment' id='comment' placeholder="Any information about meeting point?" rows="4" cols="50" ></textarea>
 							</li>
