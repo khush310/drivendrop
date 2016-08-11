@@ -1,6 +1,79 @@
 import React from "react";
+import {GoogleMapLoader, GoogleMap, Marker, SearchBox} from "react-google-maps";
+import Geosuggest from "react-geosuggest";
+
+class PlacePicker extends React.Component {
+
+	constructor(props) {
+		super(props);
+	}
+
+	render() {
+		return (
+			<div id="app">
+				<App/>
+			</div>
+		)
+	}
+}
+
+export default PlacePicker;
+
+class App extends React.Component {
+	static defaultProps = {};
+	constructor(props) {
+		super(props);
+	}
+
+	onFocus = () => {
+		console.log('onFocus');
+	};
+
+	onBlur = (value) => {
+		console.log('onBlur', value);
+	};
+
+	onChange = (value) => {
+		console.log('input changes to :' + value);
+	};
+
+	onSuggestSelect = (suggest) => {
+		console.log(suggest);
+	};
+
+	onSuggestNoResults = (userInput) => {
+		console.log('onSuggestNoResults for :' + userInput);
+	};
+
+	render() {
+
+		var fixtures = [
+			{label: 'New York', location: {lat: 40.7033127, lng: -73.979681}},
+			{label: 'Rio', location: {lat: -22.066452, lng: -42.9232368}},
+			{label: 'Tokyo', location: {lat: 35.673343, lng: 139.710388}}
+		];
+
+		return (
+			<div>
+				<Geosuggest
+					fixtures={fixtures}
+					onFocus={this.onFocus}
+					onBlur={this.onBlur}
+					onChange={this.onChange}
+					onSuggestSelect={this.onSuggestSelect}
+					onSuggestNoResults={this.onSuggestNoResults}
+					location={new google.maps.LatLng(53.558572, 9.9278215)}
+					radius="20" />
+			</div>
+		);
+	}
+}
+
+
+/*import React from "react";
 import Superagent from "superagent";
 import GoogleMap from 'google-map-react';
+import Geosuggest from 'react-geosuggest';
 const API_KEY = "AIzaSyCo9ExihzwDbmOuISsRDNMAUCcJfCkTV0c";
 
 export function filterTopResult(results) {
@@ -125,4 +198,4 @@ class MyGreatPlace extends React.Component {
 			</div>
 		);
 	}
-}
+}*/
