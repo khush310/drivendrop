@@ -102,13 +102,20 @@ class OfferRide extends React.Component {
 					</div>
 				)
 			} else {
+
+                var placeHolder;
+                if (fieldName=='From') {
+                    placeHolder = 'Leaving From';
+                } else if (fieldName=='To') {
+                    placeHolder = 'Going To';
+                }
 				return (
 					<div onClick={(e) => {
 						const state = {};
 						state[fieldName] = true;
 						this.setState(state);
 					}}>
-						{fieldName} - pick a location
+                        {placeHolder}
 					</div>
 				)
 
@@ -118,7 +125,7 @@ class OfferRide extends React.Component {
 
 	render(){
 		let classes = classnames('stage', 'offerheader');
-		const sectionStyle = Object.assign({},center, {marginTop:"1em", width:"90%", height:"90%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)", justifyContent:"space-between"});
+		const sectionStyle = Object.assign({},center, {marginTop:"1em", width:"90%", height:"90%", flexDirection:"column", background:"white", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)", justifyContent:"space-between"});
 		const button = Object.assign({},buttonStyle, {width: "65%", background:"rgba(0, 0, 0, 0.8)", border: "1px solid rgba(0, 0, 0, 0.8)", marginBottom:"1em"});
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
 		return (
@@ -129,31 +136,36 @@ class OfferRide extends React.Component {
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/pickuplocation.png" />
 								</div>
-								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>{this.renderPlacePicker("From")}</div>
+								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+                                    {this.renderPlacePicker("From")}
+                                </div>
 							</li>
 							<li>
-								<div className="lefticons" style={{marginLeft:"0.5em"}}>
+								<div className="lefticons" style={{marginLeft:"0.8em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/droplocation.png" />
 								</div>
-								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>{this.renderPlacePicker("To")}</div>
+								<div className="selecttr" style={{width:"57%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between", paddingLeft:"0.4em"}}>
+                                    {this.renderPlacePicker("To")}
+                                </div>
+                                <div><img style={{width: "50%"}} src="/_assets/images/changeroutes.png" /></div>
 							</li>
 							<li>
-								<div className="lefticons" style={{width:"9%", marginLeft:"0.5em"}}>
-                                    <img style={{width: "60%"}} src="/_assets/images/time.png" />
+								<div className="lefticons" style={{width:"9%", marginLeft:"0.3em"}}>
+                                    <img style={{width: "100%"}} src="/_assets/images/time.png" />
 								</div>
-								<input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand"}} className="selecttr" type="datetime-local" placeholder="Pick time and date" name="usr_time" />
+								<input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand", color:"#7f7f7f"}} className="selecttr" type="datetime-local" placeholder="Choose date" name="usr_time" />
 							</li>
 							<li>
 								<div className="lefticons">
                                     <img style={{width: "100%"}} src="/_assets/images/user-1.png" />
 								</div>
-								<input ref="seats" type="number" name="numberofseats" placeholder="Seats available" id="numseats" />
+								<input ref="seats" type="number" className="selecttr" name="numberofseats" placeholder="Seats available" id="numseats" />
 							</li>
 							<li>
 								<div className="lefticons">
-									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291"><circle cx="11.5" cy="4" r="3.5"/><path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z"/></g></svg>
+                                    <img style={{width: "100%"}} src="/_assets/images/womenonly.png" />
 								</div>
-								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
 									Women only
 									<label className="togglebtn">
 										<Toggle

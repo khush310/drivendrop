@@ -146,7 +146,7 @@ footer {
     color: rgb(0, 204, 214);
 }
 .offerheader{
-    background: url(../images/blurrcity.jpg) no-repeat;
+    background-color: white;
     background-size: cover;
 }
 
@@ -535,6 +535,11 @@ li {
     border-bottom: 1px solid rgba(61, 61, 61, 0.67);
     color: #FFFFFF;
 }*/
+
+.selecttr1{
+    color: 7f7f7f;
+}
+
 .lefticons {
     width:30px;
     height:30px;
