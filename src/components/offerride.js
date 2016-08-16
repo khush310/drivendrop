@@ -127,25 +127,25 @@ class OfferRide extends React.Component {
 						<ul id="offerlist" style={{width: "100%", height: "65%", padding: "0", margin:"0", display: "flex",flexDirection:"column"}}>
 							<li>
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
-									<img style={{width: "100%"}} src="/_assets/images/circleyellow.png" />
+									<img style={{width: "100%"}} src="/_assets/images/pickuplocation.png" />
 								</div>
 								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>{this.renderPlacePicker("From")}</div>
 							</li>
 							<li>
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
-									<img style={{width: "100%"}} src="/_assets/images/circleblue.png" />
+									<img style={{width: "100%"}} src="/_assets/images/droplocation.png" />
 								</div>
 								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>{this.renderPlacePicker("To")}</div>
 							</li>
 							<li>
 								<div className="lefticons" style={{width:"9%", marginLeft:"0.5em"}}>
-									<svg style={{width:"100%", height:"100%"}} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g stroke="#000" strokeLinecap="round" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><circle cx="12" cy="12" r="11.5" /><path d="M11.5 6.5v5.5l6 5.5" /></g></svg>
+                                    <img style={{width: "60%"}} src="/_assets/images/time.png" />
 								</div>
 								<input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand"}} className="selecttr" type="datetime-local" placeholder="Pick time and date" name="usr_time" />
 							</li>
 							<li>
 								<div className="lefticons">
-									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="none"><path d="M6 16.187v2.181l-3.941 1.412c-.944.338-1.559 1.231-1.559 2.231v1.489h15v-1.489c0-1-.616-1.893-1.559-2.231l-3.941-1.412v-2.306"/><ellipse cx="7.901" cy="12.051" rx="3.947" ry="4.739"/><path d="M11.817 11.625l-.374.033c-1.345.259-2.208-.229-2.949-1.524-.443.852-1.831 1.524-2.972 1.524-.562 0-1.045-.115-1.528-.369"/><path strokeLinecap="round" d="M18.031 23.5h3.469v-1.489c0-1-.616-1.893-1.559-2.231l-3.941-1.412v-2.306M13.901 7.315c2.18 0 3.947 2.121 3.947 4.736 0 2.617-1.768 4.739-3.947 4.739M17.817 11.625l-.374.033c-1.345.259-2.208-.229-2.949-1.524M17.521 4.5h6M20.5 1.5v6.016"/></g></svg>
+                                    <img style={{width: "100%"}} src="/_assets/images/user-1.png" />
 								</div>
 								<input ref="seats" type="number" name="numberofseats" placeholder="Seats available" id="numseats" />
 							</li>
@@ -167,8 +167,7 @@ class OfferRide extends React.Component {
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291"><circle cx="11.5" cy="4" r="3.5"/><path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z"/></g></svg>
                                 </div>
                                 <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
-                                Tap to Add car details
-
+                                    Tap to Add car details
                                 </div>
                             </li>
 							<li>

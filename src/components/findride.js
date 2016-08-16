@@ -47,7 +47,7 @@ class FindRide extends React.Component {
 					<ul id="findlist" style={{width: "100%", height: "65%", padding: "0", margin:"0", display: "flex",flexDirection:"column"}}>
 						<li>
 							<div className="lefticons">
-								<img style={{width: "100%"}} src="/_assets/images/circleyellow.png" />
+								<img style={{width: "100%"}} src="/_assets/images/pickuplocation.png" />
 							</div>
 							<input ref="from" type="text" name="from" placeholder="From" id="from" />
 						</li>

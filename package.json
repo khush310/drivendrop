@@ -29,7 +29,8 @@
     "react-native": "^0.22.2",
     "react-router": "^2.0.0",
     "react-sidebar": "^2.1.1",
-    "superagent": "^1.8.2"
+    "superagent": "^1.8.2",
+    "webpack": "^1.13.1"
   },
   "devDependencies": {
     "babel": "^6.0.0",
