@@ -14,7 +14,7 @@ class Listing extends React.Component {
 				<div style={{width:"100%", fontSize:"1.3em", margin:"1em"}}>{moment(this.props.object.time).format("ddd D, MMMM - h:m")}</div>
 				<div style={containerStyle}>
 					<div style={{width:"30px", height:"30px", margin:"0, 2em 1em 0"}}>
-						<img style={{width: "100%"}} src="/_assets/images/circleyellow.png" />
+						<img style={{width: "100%"}} src="/_assets/images/pickuplocation.png" />
 					</div>
 					<div>{this.props.object.src}</div>
 				</div>
