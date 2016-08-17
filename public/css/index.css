@@ -266,10 +266,11 @@ svg {
 
 textarea{
     width: 88%;
-    height: 70px;
     font-size: 1em;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 2em;
 }
 /*
 .offersection2{
@@ -603,6 +604,15 @@ li h3 {
     justify-content: space-around;
     align-items: flex-end;
 }
+
+#findlist li, #offerlist li, #offerlist2 li, #addcar li{
+    height: 41em;
+}
+
+#carMeta {
+    list-style: none;
+}
+
 #offerlist2 li, #addcar li{
     height: 20%;
 }
@@ -846,7 +856,6 @@ li h3 {
     font-size:1.2em;
 }
 .dndbutton{
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47);
     width: 85%;
     margin: auto;
     border-radius: 4px;
@@ -854,7 +863,7 @@ li h3 {
     background: transparent;
     color: white;
     position: relative;
-    border: 2px solid white;
+    border: 2px solid #fcce20;
 }
 .dndbutton:active, .dndbutton.active{
     background: white;

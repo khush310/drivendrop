@@ -14,7 +14,7 @@ import PlacePicker from "./placepicker";
 class OfferRide extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {active: false};
+		this.state = {active: false, clickedAddCar: false};
 	};
 	handleForm = (e) => {
 		const {store} = this.props;
@@ -59,6 +59,10 @@ class OfferRide extends React.Component {
 			});
 
 	};
+
+    onClickedAddCar = () => {
+        this.setState({ clickedAddCar: true });
+    };
 
 
 
@@ -126,7 +130,7 @@ class OfferRide extends React.Component {
 	render(){
 		let classes = classnames('stage', 'offerheader');
 		const sectionStyle = Object.assign({},center, {width:"100%", height:"90%", flexDirection:"column", justifyContent:"space-between"});
-		const button = Object.assign({},buttonStyle, {width: "65%", background:"rgba(0, 0, 0, 0.8)", border: "1px solid rgba(0, 0, 0, 0.8)", marginBottom:"1em"});
+		const button = Object.assign({},buttonStyle, {width: "65%", background:"#fcce20", marginBottom:"1em", top: "20px"});
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
 		return (
 				<div className={classes}>
@@ -174,20 +178,12 @@ class OfferRide extends React.Component {
 									</label>
 								</div>
 							</li>
-							<li style={{height: "130em"}}>
+							<li style={{height: "100em"}}>
 								<textarea name='comment' id='comment' placeholder="Any information about meeting point?" rows="4" cols="50" ></textarea>
 							</li>
 						</ul>
-                        <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
-                            <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px"}}>
-                                <div className="lefticons" style={{marginLeft: "3.5em"}}>
-                                    <img style={{width: "100%"}} src="/_assets/images/addno.png" />
-                                </div>
-                                <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
-                                Tap to Add car details
-                                </div>
-                            </li>
-                        </ul>
+                        { !this.state.clickedAddCar ? <ShowAddCar onClickedAddCar={this.onClickedAddCar}/> : <AddCar /> }
+
                             <button className="dndbutton" style={button}>
 							<div to="/public/offerride2" style={linkStyle} onClick={this.handleForm}>Publish</div>
 						</button>
@@ -197,3 +193,60 @@ class OfferRide extends React.Component {
 	};
 }
 export default OfferRide;
+
+class ShowAddCar extends React.Component {
+    static defaultProps = {};
+    constructor(props) {
+        super(props);
+        this.state = {clicked: false};
+    }
+
+    onClickedAddCar = (e) => {
+        this.props.onClickedAddCar();
+    };
+
+    render() {
+        return (
+            <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
+                <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px"}}>
+                    <div className="lefticons" style={{marginLeft: "3.5em"}}>
+                        <img style={{width: "100%"}} src="/_assets/images/add.png" />
+                    </div>
+                    <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}} onClick={this.onClickedAddCar}>
+                        Tap to Add car details
+                    </div>
+                </li>
+            </ul>
+        );
+    }
+
+}
+
+class AddCar extends React.Component {
+    static defaultProps = {};
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <ul id="addcar1" style={{backgroundColor: "white", width: "100%", height: "50%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
+                <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px", display: "-webkit-box"}}>
+                    <div style={{width: "25%", marginLeft: "2.5em"}}>
+                        <div style={{borderRadius: "75%", width: "75%", height: "75%", background: "white", border: "2px solid #838383", marginLeft: "0.8em"}}>
+                            <i className="fa fa-2x fa-plus" style={{color:"#434240", fontSize: "1.35em"}}></i> <div style={{lineHeight: "1.8em", marginTop: "0.5em"}}>Add Car Photo</div>
+                        </div>
+                    </div>
+                    <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+                        <ul id="carMeta">
+                            <li>Car Brand<i className="fa fa-2x fa-caret-down" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i></li>
+                            <li>Number Plate<i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i></li>
+                            <li>Color<i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        );
+    }
+
+}
