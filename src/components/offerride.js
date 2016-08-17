@@ -125,13 +125,13 @@ class OfferRide extends React.Component {
 
 	render(){
 		let classes = classnames('stage', 'offerheader');
-		const sectionStyle = Object.assign({},center, {marginTop:"1em", width:"90%", height:"90%", flexDirection:"column", background:"white", justifyContent:"space-between"});
+		const sectionStyle = Object.assign({},center, {width:"100%", height:"90%", flexDirection:"column", justifyContent:"space-between"});
 		const button = Object.assign({},buttonStyle, {width: "65%", background:"rgba(0, 0, 0, 0.8)", border: "1px solid rgba(0, 0, 0, 0.8)", marginBottom:"1em"});
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
 		return (
 				<div className={classes}>
 					<section style={sectionStyle}>
-						<ul id="offerlist" style={{width: "100%", height: "65%", padding: "0", margin:"0", display: "flex",flexDirection:"column"}}>
+						<ul id="offerlist" style={{backgroundColor: "white", width: "100%", height: "100%", padding: "0", marginTop:"1.2em", display: "flex",flexDirection:"column"}}>
 							<li>
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/pickuplocation.png" />
@@ -174,19 +174,21 @@ class OfferRide extends React.Component {
 									</label>
 								</div>
 							</li>
-                            <li style={{alignItems: "flex-start", paddingTop: "20px"}}>
-                                <div className="lefticons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291"><circle cx="11.5" cy="4" r="3.5"/><path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z"/></g></svg>
-                                </div>
-                                <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
-                                    Tap to Add car details
-                                </div>
-                            </li>
-							<li>
+							<li style={{height: "130em"}}>
 								<textarea name='comment' id='comment' placeholder="Any information about meeting point?" rows="4" cols="50" ></textarea>
 							</li>
 						</ul>
-						<button className="dndbutton" style={button}>
+                        <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
+                            <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px"}}>
+                                <div className="lefticons" style={{marginLeft: "3.5em"}}>
+                                    <img style={{width: "100%"}} src="/_assets/images/addno.png" />
+                                </div>
+                                <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+                                Tap to Add car details
+                                </div>
+                            </li>
+                        </ul>
+                            <button className="dndbutton" style={button}>
 							<div to="/public/offerride2" style={linkStyle} onClick={this.handleForm}>Publish</div>
 						</button>
 					</section>
