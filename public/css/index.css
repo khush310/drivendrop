@@ -975,3 +975,31 @@ li h3 {
 .geosuggest-item--active:focus {
   background: #ccc;
 }
+
+::-moz-placeholder {
+    opacity: 1;
+}
+
+::-webkit-input-placeholder {
+    color: #7d7f7e;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #7d7f7e;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    color: #7d7f7e;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    color: #7d7f7e;
+}
+
+::-ms-input-placeholder { /* Edge */
+    color: #7d7f7e;
+}
+
+:placeholder-shown { /* Standard one last! */
+    color: #7d7f7e;
+}
