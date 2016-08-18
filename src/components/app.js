@@ -25,7 +25,6 @@ class App extends React.Component {
 				<div style={{width:"100vw", height:"78vh"}}>{this.props.children}</div>
 				<Sidebar store={this.props.store} ontoggle={this.toggleLeft}></Sidebar>
 				<Messages store={this.props.store} ontoggle={this.toggleRight}></Messages>
-				<Footer></Footer>
 			</div>
 		)
 	}

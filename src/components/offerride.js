@@ -14,7 +14,7 @@ import PlacePicker from "./placepicker";
 class OfferRide extends React.Component {
 	constructor(props) {
 		super(props);
-		this.state = {active: false};
+		this.state = {active: false, clickedAddCar: false};
 	};
 	handleForm = (e) => {
 		const {store} = this.props;
@@ -60,6 +60,10 @@ class OfferRide extends React.Component {
 
 	};
 
+    onClickedAddCar = () => {
+        this.setState({ clickedAddCar: true });
+    };
+
 
 
 	renderPlacePicker(fieldName) {
@@ -102,13 +106,20 @@ class OfferRide extends React.Component {
 					</div>
 				)
 			} else {
+
+                var placeHolder;
+                if (fieldName=='From') {
+                    placeHolder = 'Leaving From';
+                } else if (fieldName=='To') {
+                    placeHolder = 'Going To';
+                }
 				return (
 					<div onClick={(e) => {
 						const state = {};
 						state[fieldName] = true;
 						this.setState(state);
 					}}>
-						{fieldName} - pick a location
+                        {placeHolder}
 					</div>
 				)
 
@@ -118,42 +129,47 @@ class OfferRide extends React.Component {
 
 	render(){
 		let classes = classnames('stage', 'offerheader');
-		const sectionStyle = Object.assign({},center, {marginTop:"1em", width:"90%", height:"90%", flexDirection:"column", background:"rgba(158, 158, 158, 0.5)", boxShadow:"0 1px 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 0 rgba(255, 255, 255, 0.47)", justifyContent:"space-between"});
-		const button = Object.assign({},buttonStyle, {width: "65%", background:"rgba(0, 0, 0, 0.8)", border: "1px solid rgba(0, 0, 0, 0.8)", marginBottom:"1em"});
+		const sectionStyle = Object.assign({},center, {width:"100%", height:"90%", flexDirection:"column", justifyContent:"space-between"});
+		const button = Object.assign({},buttonStyle, {width: "65%", background:"#fcce20", marginBottom:"1em", top: "20px"});
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
 		return (
 				<div className={classes}>
 					<section style={sectionStyle}>
-						<ul id="offerlist" style={{width: "100%", height: "65%", padding: "0", margin:"0", display: "flex",flexDirection:"column"}}>
+						<ul id="offerlist" style={{backgroundColor: "white", width: "100%", height: "100%", padding: "0", marginTop:"1.2em", display: "flex",flexDirection:"column"}}>
 							<li>
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/pickuplocation.png" />
 								</div>
-								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>{this.renderPlacePicker("From")}</div>
+								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+                                    {this.renderPlacePicker("From")}
+                                </div>
 							</li>
 							<li>
-								<div className="lefticons" style={{marginLeft:"0.5em"}}>
+								<div className="lefticons" style={{marginLeft:"0.8em"}}>
 									<img style={{width: "100%"}} src="/_assets/images/droplocation.png" />
 								</div>
-								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>{this.renderPlacePicker("To")}</div>
+								<div className="selecttr" style={{width:"57%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between", paddingLeft:"0.4em"}}>
+                                    {this.renderPlacePicker("To")}
+                                </div>
+                                <div><img style={{width: "50%"}} src="/_assets/images/changeroutes.png" /></div>
 							</li>
 							<li>
-								<div className="lefticons" style={{width:"9%", marginLeft:"0.5em"}}>
-                                    <img style={{width: "60%"}} src="/_assets/images/time.png" />
+								<div className="lefticons" style={{width:"9%", marginLeft:"0.3em"}}>
+                                    <img style={{width: "100%"}} src="/_assets/images/time.png" />
 								</div>
-								<input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand"}} className="selecttr" type="datetime-local" placeholder="Pick time and date" name="usr_time" />
+								<input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand", color:"#7f7f7f"}} className="selecttr" type="datetime-local" placeholder="Choose date" name="usr_time" />
 							</li>
 							<li>
 								<div className="lefticons">
                                     <img style={{width: "100%"}} src="/_assets/images/user-1.png" />
 								</div>
-								<input ref="seats" type="number" name="numberofseats" placeholder="Seats available" id="numseats" />
+								<input ref="seats" type="number" className="selecttr" name="numberofseats" placeholder="Seats available" id="numseats" />
 							</li>
 							<li>
 								<div className="lefticons">
-									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291"><circle cx="11.5" cy="4" r="3.5"/><path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z"/></g></svg>
+                                    <img style={{width: "100%"}} src="/_assets/images/womenonly.png" />
 								</div>
-								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
 									Women only
 									<label className="togglebtn">
 										<Toggle
@@ -162,19 +178,13 @@ class OfferRide extends React.Component {
 									</label>
 								</div>
 							</li>
-                            <li style={{alignItems: "flex-start", paddingTop: "20px"}}>
-                                <div className="lefticons">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g stroke="#000" stroke-linejoin="round" stroke-miterlimit="10" fill="#EA6291"><circle cx="11.5" cy="4" r="3.5"/><path d="M11.5 9c-3.038 0-5.5 4.5-5.5 9.5h3.5v5h4v-5h3.5c0-5-2.463-9.5-5.5-9.5z"/></g></svg>
-                                </div>
-                                <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#fff", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
-                                    Tap to Add car details
-                                </div>
-                            </li>
-							<li>
+							<li style={{height: "100em"}}>
 								<textarea name='comment' id='comment' placeholder="Any information about meeting point?" rows="4" cols="50" ></textarea>
 							</li>
 						</ul>
-						<button className="dndbutton" style={button}>
+                        { !this.state.clickedAddCar ? <ShowAddCar onClickedAddCar={this.onClickedAddCar}/> : <AddCar /> }
+
+                            <button className="dndbutton" style={button}>
 							<div to="/public/offerride2" style={linkStyle} onClick={this.handleForm}>Publish</div>
 						</button>
 					</section>
@@ -183,3 +193,60 @@ class OfferRide extends React.Component {
 	};
 }
 export default OfferRide;
+
+class ShowAddCar extends React.Component {
+    static defaultProps = {};
+    constructor(props) {
+        super(props);
+        this.state = {clicked: false};
+    }
+
+    onClickedAddCar = (e) => {
+        this.props.onClickedAddCar();
+    };
+
+    render() {
+        return (
+            <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
+                <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px"}}>
+                    <div className="lefticons" style={{marginLeft: "3.5em"}}>
+                        <img style={{width: "100%"}} src="/_assets/images/add.png" />
+                    </div>
+                    <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}} onClick={this.onClickedAddCar}>
+                        Tap to Add car details
+                    </div>
+                </li>
+            </ul>
+        );
+    }
+
+}
+
+class AddCar extends React.Component {
+    static defaultProps = {};
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <ul id="addcar1" style={{backgroundColor: "white", width: "100%", height: "50%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
+                <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px", display: "-webkit-box"}}>
+                    <div style={{width: "25%", marginLeft: "2.5em"}}>
+                        <div style={{borderRadius: "75%", width: "75%", height: "75%", background: "white", border: "2px solid #838383", marginLeft: "0.8em"}}>
+                            <i className="fa fa-2x fa-plus" style={{color:"#434240", fontSize: "1.35em"}}></i> <div style={{lineHeight: "1.8em", marginTop: "0.5em"}}>Add Car Photo</div>
+                        </div>
+                    </div>
+                    <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+                        <ul id="carMeta">
+                            <li>Car Brand<i className="fa fa-2x fa-caret-down" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i></li>
+                            <li>Number Plate<i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i></li>
+                            <li>Color<i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i></li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        );
+    }
+
+}
