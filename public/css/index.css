@@ -360,6 +360,15 @@ textarea{
     border: 2px solid #838383;
 }
 
+.photocirccle-outer{
+    width: 25%;
+    margin-left: 0.5em;
+}
+
+.addcardetalls {
+    color: #1dcac8;
+}
+
 /*
 .offersection2{
     margin-top: 10px;
@@ -695,7 +704,7 @@ li h3 {
     background: url(../images/nyc.jpg) no-repeat;
     background-position: center;
 }*/
-#findlist li, #offerlist li, #offerlist2 li, #addcar li{
+#findlist li, #offerlist li, #offerlist2 li, #addcar > li{
     height: 3.5em;
     display: flex;
     flex-direction: row;
@@ -703,15 +712,30 @@ li h3 {
     align-items: flex-end;
 }
 
-#findlist li, #offerlist li, #offerlist2 li, #addcar li{
+#findlist li, #offerlist li, #offerlist2 li, #addcar > li{
     height: 3.5em;
 }
 
 #carMeta {
     list-style: none;
+    width: 90%;
 }
 
-#offerlist2 li, #addcar li{
+#carMeta {
+    margin-bottom: 0px!important;
+}
+
+#carMeta li {
+    height: 30%;
+    width: 100%;
+}
+
+select#brand {
+    height: 100%;
+    width: 100%;
+}
+
+#offerlist2 li, #addcar > li{
     height: 20%;
 }
 
@@ -968,6 +992,7 @@ li h3 {
     color: white;
     position: relative;
     border: 2px solid #fcce20;
+    border-radius: 0vw!important;
 }
 .dndbutton:active, .dndbutton.active{
     background: white;
@@ -1198,6 +1223,11 @@ and (-webkit-min-device-pixel-ratio: 3) {
     ul#addcar {
         height: 25%;
     }
+
+    #addcar {
+        margin-bottom: 0px!important;
+    }
+
     .addcar-container {
         padding: 36px 0px 0px 0px;
     }
@@ -1205,6 +1235,22 @@ and (-webkit-min-device-pixel-ratio: 3) {
     .addcar-text {
         margin-top: 11px;
         margin-left: 20px;
+    }
+
+    .addphoto-circle {
+        border-radius: 55%;
+        width: 100%;
+        height: 100%;
+        margin-left: 0.8em;
+    }
+
+    .addcardetalls {
+        color: #1dcac8;
+        height: 6%;
+        font-size: 23px;
+        padding-bottom: 4px;
+        background-color: white;
+        border-bottom: 1px solid #ababab;
     }
 
 
@@ -1340,7 +1386,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
         margin-left: 4.4em!important;
     }
 
-    #findlist li, #offerlist li, #offerlist2 li, #addcar li {
+    #findlist li, #offerlist li, #offerlist2 li, #addcar > li {
         height: 5em;
     }
 
@@ -1368,6 +1414,27 @@ and (-webkit-min-device-pixel-ratio: 1) {
         width: 40%;
         height: 90%;
         margin-left: 0.8em;
+    }
+
+    .photocirccle-outer {
+        margin-left: 2.5em;
+    }
+
+    .addcardetalls {
+        color: #1dcac8;
+        height: 6%;
+        font-size: 26px;
+        padding-bottom: 4px;
+        background-color: white;
+        border-bottom: 1px solid #ababab;
+    }
+
+    .dndbutton {
+        height: 10vh!important;
+    }
+
+    .dndbuttonLink {
+        font-size: 4vw!important;
     }
 
 
