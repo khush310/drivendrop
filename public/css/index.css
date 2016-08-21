@@ -1335,6 +1335,21 @@ and (orientation: landscape) {
         width: 64%!important;
     }
 
+    .addcar-container {
+        padding: 18px 0px 0px 0px;
+    }
+
+    .addcarcontairner {
+        padding: 3px 0px 3px 0px!important;
+    }
+
+    .addphoto-circle {
+        border-radius: 50%;
+        width: 50%;
+        height: 100%;
+        margin-left: 0.8em;
+    }
+
 
 }
 

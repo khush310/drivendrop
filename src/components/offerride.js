@@ -333,7 +333,7 @@ class PlateSelector extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" style={{width: "80%"}} disabled={this.state.disable} value={this.state.val} onChange={this.handleChange}/>
+                <input type="text" style={{width: "80%", height: "80%"}} disabled={this.state.disable} value={this.state.val} onChange={this.handleChange}/>
                 <i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}} onClick={this.handleClick}></i>
             </div>
         );
@@ -361,7 +361,7 @@ class ColorSelector extends React.Component {
     render() {
         return (
             <div>
-                <input type="text" style={{width: "80%"}} disabled={this.state.disable} value={this.state.val} onChange={this.handleChange}/>
+                <input type="text" style={{width: "80%", height: "80%"}} disabled={this.state.disable} value={this.state.val} onChange={this.handleChange}/>
                 <i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}} onClick={this.handleClick}></i>
             </div>
         );
