@@ -1268,6 +1268,7 @@ and (-webkit-min-device-pixel-ratio: 3) {
         border-bottom: 1px solid #ababab;
     }
 }
+<<<<<<< HEAD
 
 /* Landscape */
 @media only screen
@@ -1280,6 +1281,20 @@ and (orientation: landscape) {
         height:89vh;
     }
 
+=======
+
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+    .outier {
+        height:89vh;
+    }
+
+>>>>>>> 72f85c241cd674aba2d2476542bca5cab3b311ff
     #menuimg {
         width: 38px;
         height: 38px;
