@@ -303,39 +303,45 @@ textarea{
 
 #pickuplocation {
     width: 50px;
-    height: 45px;
+    height: 50px;
     background-image: url('/_assets/images/pickuplocation-m.png');
+    background-size: cover;
 }
 
 #changeroutes {
     width: 50px;
-    height: 45px;
+    height: 50px;
     background-image: url('/_assets/images/changeroutes-m.png');
+    background-size: cover;
 }
 
 #time {
     width: 50px;
-    height: 45px;
+    height: 50px;
     background-image: url('/_assets/images/time-m.png');
+    background-size: cover;
 }
 
 
 #user {
     width: 50px;
-    height: 45px;
+    height: 50px;
     background-image: url('/_assets/images/user-m.png');
+    background-size: cover;
 }
 
 #womenonly {
     width: 50px;
-    height: 45px;
+    height: 50px;
     background-image: url('/_assets/images/womenonly-m.png');
+    background-size: cover;
 }
 
 #add {
     width: 50px;
-    height: 45px;
+    height: 50px;
     background-image: url('/_assets/images/add-m.png');
+    background-size: cover;
 }
 
 .icon_wrapper {
@@ -344,8 +350,9 @@ textarea{
 
 #droplocation {
     width: 50px;
-    height: 45px;
+    height: 50px;
     background-image: url('/_assets/images/droplocation-m.png');
+    background-size: cover;
 }
 
 #menuimg {
@@ -354,6 +361,14 @@ textarea{
     background-image: url('/_assets/images/menu-m.png');
     background-size: cover;
 }
+
+.addcarcontairner {
+    align-items: flex-start!important;
+    padding: 18px 0px 10px 0px!important;
+    height: 100%!important;
+    display: -webkit-box!important;
+}
+
 
 .addphoto-circle {
     background: white;
@@ -1252,7 +1267,73 @@ and (-webkit-min-device-pixel-ratio: 3) {
         background-color: white;
         border-bottom: 1px solid #ababab;
     }
+}
 
+/* Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3)
+and (orientation: landscape) {
+
+    .outier {
+        height:89vh;
+    }
+
+    #menuimg {
+        width: 38px;
+        height: 38px;
+    }
+    #locationwhite {
+        width: 38px;
+        height: 38px;
+    }
+
+    #messagewhite {
+        width: 38px;
+        height: 38px;
+    }
+
+    .offerride-title {
+        margin-right: 243px;
+    }
+
+    #pickuplocation {
+        width: 38px;
+        height: 38px;
+    }
+
+    #droplocation {
+        width: 38px;
+        height: 38px;
+    }
+
+    #user {
+        width: 38px;
+        height: 38px;
+    }
+
+    #time  {
+        width: 38px;
+        height: 38px;
+    }
+
+    #womenonly  {
+        width: 38px;
+        height: 38px;
+    }
+
+    .drop-icon-out {
+        margin-left: 1.2em;
+    }
+
+    .drop-location-text {
+        width: 64%!important;
+    }
+
+    .addcarcontairner {
+
+    }
 
 }
 

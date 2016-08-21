@@ -256,7 +256,7 @@ class AddCar extends React.Component {
         return (
             <div style={{width: "100%"}}>
             <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column", borderBottom: "1px solid #ababab"}}>
-                <li style={{alignItems: "flex-start", padding: "18px 0px 10px 0px", height: "100%", display: "-webkit-box"}}>
+                <li className="addcarcontairn">
                     <div className="photocirccle-outer">
                         <div className="addphoto-circle">
                             <div style={{marginTop: "10px"}}><i className="fa fa-2x fa-plus" style={{color:"#434240", fontSize: "1.35em"}}></i></div>
