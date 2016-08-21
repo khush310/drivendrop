@@ -365,7 +365,6 @@ textarea{
 .addcarcontairner {
     align-items: flex-start!important;
     padding: 18px 0px 10px 0px!important;
-    height: 100%!important;
     display: -webkit-box!important;
 }
 
@@ -748,6 +747,7 @@ li h3 {
 select#brand {
     height: 100%;
     width: 100%;
+    font-size: 1em;
 }
 
 #offerlist2 li, #addcar > li{
@@ -1267,6 +1267,11 @@ and (-webkit-min-device-pixel-ratio: 3) {
         background-color: white;
         border-bottom: 1px solid #ababab;
     }
+
+    .addcarcontairner {
+        height: 100%!important;
+    }
+
 }
 <<<<<<< HEAD
 
@@ -1346,9 +1351,21 @@ and (orientation: landscape) {
         width: 64%!important;
     }
 
-    .addcarcontairner {
-
+    .addcar-container {
+        padding: 18px 0px 0px 0px;
     }
+
+    .addcarcontairner {
+        padding: 3px 0px 3px 0px!important;
+    }
+
+    .addphoto-circle {
+        border-radius: 50%;
+        width: 50%;
+        height: 100%;
+        margin-left: 0.8em;
+    }
+
 
 }
 
@@ -1367,6 +1384,10 @@ and (-webkit-min-device-pixel-ratio: 1) {
         justify-content:space-between;
     }
 
+
+    .addcarcontairner {
+        height: 100%!important;
+    }
 
     ul.offerlistqa {
         height: 57%!important;
@@ -1532,7 +1553,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     .dndbuttonLink {
         font-size: 4vw!important;
     }
-
 
 }
 

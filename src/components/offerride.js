@@ -242,12 +242,13 @@ class AddCar extends React.Component {
     };
 
 
-    updatePlate = (plate) => {
+    handlePlateChange= (e) => {
+        var plate = e.target.value;
         this.setState({plate:plate});
     };
 
-
-    updateColor = (color) => {
+    handleColorChange= (e) => {
+        var color = e.target.value;
         this.setState({color:color});
     };
 
@@ -256,7 +257,7 @@ class AddCar extends React.Component {
         return (
             <div style={{width: "100%"}}>
             <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column", borderBottom: "1px solid #ababab"}}>
-                <li className="addcarcontairn">
+                <li className="addcarcontairner">
                     <div className="photocirccle-outer">
                         <div className="addphoto-circle">
                             <div style={{marginTop: "10px"}}><i className="fa fa-2x fa-plus" style={{color:"#434240", fontSize: "1.35em"}}></i></div>
@@ -266,8 +267,18 @@ class AddCar extends React.Component {
                     <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
                         <ul id="carMeta">
                             <li><BrandSelector brand={this.state.brand} handleBrandUpdates={this.updateBrand}/></li>
-                            <li><PlateSelector plate={this.state.plate} handlePlateUpdates={this.updatePlate}/></li>
-                            <li><ColorSelector color={this.state.color} handleColorUpdates={this.updateColor}/></li>
+                            <li>
+                                <div>
+                                    <input type="text" style={{width: "80%", height: "80%"}} value={this.state.plate} onChange={this.handlePlateChange}/>
+                                    <i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <input type="text" style={{width: "80%", height: "80%"}} value={this.state.color} onChange={this.handleColorChange}/>
+                                    <i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </li>
@@ -300,69 +311,13 @@ class BrandSelector extends React.Component {
                 value={this.state.selectValue}
                 onChange={this.handleChange}
                 >
-                    <option value="none">Car Brand</option>
+                    <option value="none">Select Car Brand</option>
                     <option value="Maruti">Maruti</option>
                     <option value="Tata">Tata</option>
                     <option value="Hyundai">Hyundai</option>
                     <option value="Tavera">Tavera</option>
                     <option value="Innova">Innova</option>
                 </select>
-            </div>
-        );
-    }
-
-}
-
-class PlateSelector extends React.Component {
-    static defaultProps = {};
-    constructor(props) {
-        super(props);
-        this.state = {disable: true, val: ''};
-    }
-
-    handleChange = (e) => {
-        var val = e.target.value;
-        this.setState({val:val});
-        this.props.handlePlateUpdates(val);
-    };
-
-    handleClick = (e) => {
-        this.setState({disable: !this.state.disable});
-    };
-
-    render() {
-        return (
-            <div>
-                <input type="text" style={{width: "80%"}} disabled={this.state.disable} value={this.state.val} onChange={this.handleChange}/>
-                <i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}} onClick={this.handleClick}></i>
-            </div>
-        );
-    }
-
-}
-
-class ColorSelector extends React.Component {
-    static defaultProps = {};
-    constructor(props) {
-        super(props);
-        this.state = {disable: true, val: ''};
-    }
-
-    handleChange = (e) => {
-        var val = e.target.value;
-        this.setState({val:val});
-        this.props.handleColorUpdates(val);
-    };
-
-    handleClick = (e) => {
-        this.setState({disable: !this.state.disable});
-    };
-
-    render() {
-        return (
-            <div>
-                <input type="text" style={{width: "80%"}} disabled={this.state.disable} value={this.state.val} onChange={this.handleChange}/>
-                <i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}} onClick={this.handleClick}></i>
             </div>
         );
     }
