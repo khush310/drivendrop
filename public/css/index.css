@@ -747,6 +747,7 @@ li h3 {
 select#brand {
     height: 100%;
     width: 100%;
+    font-size: 1em;
 }
 
 #offerlist2 li, #addcar > li{

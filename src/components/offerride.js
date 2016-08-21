@@ -311,7 +311,7 @@ class BrandSelector extends React.Component {
                 value={this.state.selectValue}
                 onChange={this.handleChange}
                 >
-                    <option value="none">Car Brand</option>
+                    <option value="none">Select Car Brand</option>
                     <option value="Maruti">Maruti</option>
                     <option value="Tata">Tata</option>
                     <option value="Hyundai">Hyundai</option>
