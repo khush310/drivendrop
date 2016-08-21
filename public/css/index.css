@@ -365,7 +365,6 @@ textarea{
 .addcarcontairner {
     align-items: flex-start!important;
     padding: 18px 0px 10px 0px!important;
-    height: 100%!important;
     display: -webkit-box!important;
 }
 
@@ -1267,6 +1266,11 @@ and (-webkit-min-device-pixel-ratio: 3) {
         background-color: white;
         border-bottom: 1px solid #ababab;
     }
+
+    .addcarcontairner {
+        height: 100%!important;
+    }
+
 }
 
 /* Landscape */
@@ -1331,9 +1335,6 @@ and (orientation: landscape) {
         width: 64%!important;
     }
 
-    .addcarcontairner {
-
-    }
 
 }
 
@@ -1352,6 +1353,10 @@ and (-webkit-min-device-pixel-ratio: 1) {
         justify-content:space-between;
     }
 
+
+    .addcarcontairner {
+        height: 100%!important;
+    }
 
     ul.offerlistqa {
         height: 57%!important;
@@ -1517,7 +1522,6 @@ and (-webkit-min-device-pixel-ratio: 1) {
     .dndbuttonLink {
         font-size: 4vw!important;
     }
-
 
 }
 
