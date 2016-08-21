@@ -134,53 +134,60 @@ class OfferRide extends React.Component {
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
 		return (
 				<div className={classes}>
-					<section style={sectionStyle}>
-						<ul id="offerlist" style={{backgroundColor: "white", width: "100%", height: "100%", padding: "0", marginTop:"1.2em", display: "flex",flexDirection:"column"}}>
+					<section style={sectionStyle} className="offerlist-sectino">
+						<ul id="offerlist" className="ul-setmargins offerlistqa" style={{backgroundColor: "white", width: "100%", height: "100%", padding: "0", display: "flex",flexDirection:"column"}}>
 							<li>
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
-									<img style={{width: "100%"}} src="/_assets/images/pickuplocation.png" />
+									<div className="icon_wrapper">
+                                      <div id="pickuplocation"></div>
+                                    </div>
 								</div>
 								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
                                     {this.renderPlacePicker("From")}
                                 </div>
 							</li>
-							<li>
-								<div className="lefticons" style={{marginLeft:"0.8em"}}>
-									<img style={{width: "100%"}} src="/_assets/images/droplocation.png" />
-								</div>
-								<div className="selecttr" style={{width:"57%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between", paddingLeft:"0.4em"}}>
+                            <li>
+                                <div className="lefticons drop-icon-out">
+                                    <div className="icon_wrapper">
+                                        <div id="droplocation"></div>
+                                    </div>
+                                </div>
+                                <div className="selecttr drop-location-text" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
                                     {this.renderPlacePicker("To")}
                                 </div>
-                                <div><img style={{width: "50%"}} src="/_assets/images/changeroutes.png" /></div>
-							</li>
-							<li>
-								<div className="lefticons" style={{width:"9%", marginLeft:"0.3em"}}>
-                                    <img style={{width: "100%"}} src="/_assets/images/time.png" />
-								</div>
-								<input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand", color:"#7f7f7f"}} className="selecttr" type="datetime-local" placeholder="Choose date" name="usr_time" />
-							</li>
-							<li>
-								<div className="lefticons">
-                                    <img style={{width: "100%"}} src="/_assets/images/user-1.png" />
-								</div>
-								<input ref="seats" type="number" className="selecttr" name="numberofseats" placeholder="Seats available" id="numseats" />
-							</li>
-							<li>
-								<div className="lefticons">
-                                    <img style={{width: "100%"}} src="/_assets/images/womenonly.png" />
-								</div>
-								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
-									Women only
-									<label className="togglebtn">
-										<Toggle
-											defaultChecked={this.state.handleWomenOnly}
-											ref="womensafety" />
-									</label>
-								</div>
-							</li>
-							<li style={{height: "100em"}}>
-								<textarea name='comment' id='comment' placeholder="Any information about meeting point?" rows="4" cols="50" ></textarea>
-							</li>
+                                <div><div id="changeroutes"></div></div>
+                            </li>
+                            <li>
+                                <div className="lefticons" style={{marginLeft:"0.5em"}}>
+                                    <div className="icon_wrapper">
+                                        <div id="time"></div>
+                                    </div>
+                                </div>
+                                <input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand"}} className="selecttr" type="datetime-local" placeholder="Pick time and date" name="usr_time" />
+                            </li>
+                            <li>
+                                <div className="lefticons" style={{marginLeft:"0.5em"}}>
+                                    <div className="icon_wrapper">
+                                        <div id="user"></div>
+                                    </div>
+                               </div>
+                                <input ref="seats" type="number" className="selecttr" name="numberofseats" placeholder="Seats available" id="numseats" />
+                            </li>
+                            <li>
+                                <div className="lefticons" style={{marginLeft:"0.5em"}}>
+                                    <div className="icon_wrapper">
+                                        <div id="womenonly"></div>
+                                    </div>
+                                </div>
+                                <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#ec4b75", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+                                Women only
+                                    <label className="togglebtn">
+                                        <Toggle
+                                        defaultChecked={this.state.handleWomenOnly}
+                                        ref="womensafety" />
+                                    </label>
+                                </div>
+                            </li>
 						</ul>
                         { !this.state.clickedAddCar ? <ShowAddCar onClickedAddCar={this.onClickedAddCar}/> : <AddCar /> }
 
@@ -208,11 +215,11 @@ class ShowAddCar extends React.Component {
     render() {
         return (
             <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
-                <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px"}}>
+                <li className="addcar-container" style={{alignItems: "flex-start"}}>
                     <div className="lefticons" style={{marginLeft: "3.5em"}}>
-                        <img style={{width: "100%"}} src="/_assets/images/add.png" />
+                        <div><div id="add"></div></div>
                     </div>
-                    <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}} onClick={this.onClickedAddCar}>
+                    <div className="selecttr addcar-text" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}} onClick={this.onClickedAddCar}>
                         Tap to Add car details
                     </div>
                 </li>
@@ -230,10 +237,10 @@ class AddCar extends React.Component {
 
     render() {
         return (
-            <ul id="addcar1" style={{backgroundColor: "white", width: "100%", height: "50%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
-                <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px", display: "-webkit-box"}}>
-                    <div style={{width: "25%", marginLeft: "2.5em"}}>
-                        <div style={{borderRadius: "75%", width: "75%", height: "75%", background: "white", border: "2px solid #838383", marginLeft: "0.8em"}}>
+            <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
+                <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px", height: "100%", display: "-webkit-box"}}>
+                    <div className="photocirccle-outer">
+                        <div className="addphoto-circle">
                             <i className="fa fa-2x fa-plus" style={{color:"#434240", fontSize: "1.35em"}}></i> <div style={{lineHeight: "1.8em", marginTop: "0.5em"}}>Add Car Photo</div>
                         </div>
                     </div>

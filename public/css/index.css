@@ -224,6 +224,34 @@ a {
     background: rgba(54, 60, 62, 0.09);
     border-bottom: 1px solid rgba(66, 66, 66, 0.83);
 }*/
+
+
+.outier {
+    width:100vw;
+    height:80vh;
+}
+
+.appheader {
+    background-color: #3ebec9;
+    width:100%;
+    height:11%;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-around;
+    box-shadow:2px 3px 5px 1px rgba(153,153,153,0.6);
+}
+
+
+.offerride-title {
+    margin-right: 54px;
+    float: left;
+    width: 137px;
+    color: #fffcff;
+    font-size:1.4em;
+}
+
+
 #homescreen{
     flex: 0.1;
 }
@@ -272,6 +300,66 @@ textarea{
     margin-bottom: 5px;
     margin-left: 2em;
 }
+
+#pickuplocation {
+    width: 50px;
+    height: 45px;
+    background-image: url('/_assets/images/pickuplocation-m.png');
+}
+
+#changeroutes {
+    width: 50px;
+    height: 45px;
+    background-image: url('/_assets/images/changeroutes-m.png');
+}
+
+#time {
+    width: 50px;
+    height: 45px;
+    background-image: url('/_assets/images/time-m.png');
+}
+
+
+#user {
+    width: 50px;
+    height: 45px;
+    background-image: url('/_assets/images/user-m.png');
+}
+
+#womenonly {
+    width: 50px;
+    height: 45px;
+    background-image: url('/_assets/images/womenonly-m.png');
+}
+
+#add {
+    width: 50px;
+    height: 45px;
+    background-image: url('/_assets/images/add-m.png');
+}
+
+.icon_wrapper {
+    width: 100%;
+}
+
+#droplocation {
+    width: 50px;
+    height: 45px;
+    background-image: url('/_assets/images/droplocation-m.png');
+}
+
+#menuimg {
+    width: 50px;
+    height: 50px;
+    background-image: url('/_assets/images/menu-m.png');
+    background-size: cover;
+}
+
+.addphoto-circle {
+    background: white;
+    border: 2px solid #838383;
+}
+
 /*
 .offersection2{
     margin-top: 10px;
@@ -342,7 +430,7 @@ input {
     border-bottom: 1px solid #333333;
     border-radius: 0;
     background: rgba(255, 0, 0, 0);
-    color:#fff;
+    color:#7f7f7f;
     margin:0;
     padding:0;
 }
@@ -542,10 +630,20 @@ li {
 }
 
 .lefticons {
-    width:30px;
-    height:30px;
+    width:auto;
+    height:auto;
     margin-left: 0.5em;
 }
+
+.lefticons1 {
+    display: inherit;
+    margin-right: 15px;
+}
+
+.lefticons-wrapper {
+    margin: 0em 1em 0em 0em;
+}
+
 li h3 {
     margin: 0;
     font-weight: normal;
@@ -598,7 +696,7 @@ li h3 {
     background-position: center;
 }*/
 #findlist li, #offerlist li, #offerlist2 li, #addcar li{
-    height: 41em;
+    height: 3.5em;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -606,7 +704,7 @@ li h3 {
 }
 
 #findlist li, #offerlist li, #offerlist2 li, #addcar li{
-    height: 41em;
+    height: 3.5em;
 }
 
 #carMeta {
@@ -616,6 +714,12 @@ li h3 {
 #offerlist2 li, #addcar li{
     height: 20%;
 }
+
+.comments {
+    height: 100em!important;
+}
+
+
 #droplist li {
     height: 25%;
 }
@@ -1011,4 +1115,268 @@ li h3 {
 
 :placeholder-shown { /* Standard one last! */
     color: #7d7f7e;
+}
+
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (-webkit-min-device-pixel-ratio: 3) {
+
+    .outier {
+        width:100vw;
+        height:80vh;
+    }
+
+    textarea{
+        width: 88%;
+        font-size: 1em;
+        margin: auto;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 2em;
+    }
+
+    #menuimg {
+        width: 50px;
+        height: 50px;
+        background-image: url('/_assets/images/menu-m.png');
+        background-size: cover;
+        margin-left: 17px;
+    }
+
+    #locationwhite {
+        width: 50px;
+        height: 50px;
+        background-image: url('/_assets/images/locationwhite.png');
+        background-size: cover;
+    }
+
+    #messagewhite {
+        width: 50px;
+        height: 50px;
+        background-image: url('/_assets/images/messagewhite.png');
+        background-size: cover;
+    }
+
+    ul.offerlistqa {
+        height: 57%!important;
+    }
+
+    .offerride-title {
+        margin-right: 54px;
+        float: left;
+        width: 137px;
+        color: #fffcff;
+        font-size:1.4em;
+    }
+
+    .lefticons1 {
+        display: inherit;
+        margin-right: 15px;
+    }
+
+    .ul-setmargins {
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 0px;
+    }
+
+    .drop-location-text {
+        margin-left: 1.2em;
+    }
+
+    .drop-icon-out {
+        margin-left: 1.2em;
+    }
+
+    ul#addcar {
+        height: 25%;
+    }
+    .addcar-container {
+        padding: 36px 0px 0px 0px;
+    }
+
+    .addcar-text {
+        margin-top: 11px;
+        margin-left: 20px;
+    }
+
+
+}
+
+/* ----------- Non-Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 1) {
+
+    .outier {
+        height:90vh;
+    }
+
+
+    .appheader {
+        justify-content:space-between;
+    }
+
+
+    ul.offerlistqa {
+        height: 57%!important;
+    }
+
+    .offerlist-sectino {
+        height: 100%!important;
+    }
+
+    .offerride-title {
+        margin-right: 424px;
+        float: left;
+        width: 330px;
+        color: #fffcff;
+        font-size: 3.4em;
+    }
+
+
+    #pickuplocation {
+        width: 58px;
+        height: 58px;
+        background-image: url('/_assets/images/pickuplocation-h.png');
+        background-size: cover;
+    }
+
+    #droplocation {
+        width: 58px;
+        height: 58px;
+        background-image: url('/_assets/images/droplocation-h.png');
+        background-size: cover;
+    }
+
+    #changeroutes {
+        width: 58px;
+        height: 58px;
+        background-image: url('/_assets/images/changeroutes-h.png');
+        background-size: cover;
+    }
+
+    #time {
+        width: 58px;
+        height: 58px;
+        background-image: url('/_assets/images/time-h.png');
+        background-size: cover;
+    }
+
+    #user {
+        width: 58px;
+        height: 58px;
+        background-image: url('/_assets/images/user-h.png');
+        background-size: cover;
+    }
+
+    #womenonly {
+        width: 58px;
+        height: 58px;
+        background-image: url('/_assets/images/womenonly-h.png');
+        background-size: cover;
+    }
+
+    #add {
+        width: 58px;
+        height: 58px;
+        background-image: url('/_assets/images/add-h.png');
+        background-size: cover;
+    }
+
+
+    #menuimg {
+        width: 72px;
+        height: 72px;
+        background-image: url('/_assets/images/menu-h.png');
+        background-size: cover;
+        margin-left: 35px;
+    }
+
+    #locationwhite {
+        width: 72px;
+        height: 72px;
+        background-image: url('/_assets/images/locationwhite-h.png');
+        background-size: cover;
+    }
+
+    #messagewhite {
+        width: 72px;
+        height: 72px;
+        background-image: url('/_assets/images/messagewhite-h.png');
+        background-size: cover;
+    }
+
+    .lefticons1 {
+        display: inherit;
+        margin-right: 26px;
+    }
+
+    .lefticons-wrapper {
+        margin: 0em 4.5em 0em 0em;
+    }
+
+    .ul-setmargins{
+        -webkit-margin-before: 0em;
+        -webkit-margin-after: 0em;
+        -webkit-margin-start: 0px;
+        -webkit-margin-end: 0px;
+        -webkit-padding-start: 0px;
+    }
+
+    .drop-location-text {
+        margin-left: 6.0em!important;
+    }
+
+    .drop-icon-out {
+        margin-left: 4.4em!important;
+    }
+
+    #findlist li, #offerlist li, #offerlist2 li, #addcar li {
+        height: 5em;
+    }
+
+    .lefticons {
+        width:auto;
+        height:auto;
+        margin-left: 0em;
+    }
+
+    ul#addcar {
+        height: 28%;
+    }
+
+    .addcar-container {
+        padding: 50px 0px 0px 0px;
+    }
+
+    .addcar-text {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .addphoto-circle {
+        border-radius: 55%;
+        width: 40%;
+        height: 90%;
+        margin-left: 0.8em;
+    }
+
+
+}
+
+/* ----------- Retina Screens ----------- */
+@media screen
+and (min-device-width: 1200px)
+and (max-device-width: 1600px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-resolution: 192dpi) {
 }
