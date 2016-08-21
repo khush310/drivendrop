@@ -130,62 +130,69 @@ class OfferRide extends React.Component {
 	render(){
 		let classes = classnames('stage', 'offerheader');
 		const sectionStyle = Object.assign({},center, {width:"100%", height:"90%", flexDirection:"column", justifyContent:"space-between"});
-		const button = Object.assign({},buttonStyle, {width: "65%", background:"#fcce20", marginBottom:"1em", top: "20px"});
+		const button = Object.assign({},buttonStyle, {width: "86%", background:"#fcce20", marginBottom:"1em", top: "10px"});
 		const linkStyle = Object.assign({}, buttonLink, {color: "white", fontSize: "5vw"});
 		return (
 				<div className={classes}>
-					<section style={sectionStyle}>
-						<ul id="offerlist" style={{backgroundColor: "white", width: "100%", height: "100%", padding: "0", marginTop:"1.2em", display: "flex",flexDirection:"column"}}>
+					<section style={sectionStyle} className="offerlist-sectino">
+						<ul id="offerlist" className="ul-setmargins offerlistqa" style={{backgroundColor: "white", width: "100%", height: "100%", padding: "0", display: "flex",flexDirection:"column"}}>
 							<li>
 								<div className="lefticons" style={{marginLeft:"0.5em"}}>
-									<img style={{width: "100%"}} src="/_assets/images/pickuplocation.png" />
+									<div className="icon_wrapper">
+                                      <div id="pickuplocation"></div>
+                                    </div>
 								</div>
 								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
                                     {this.renderPlacePicker("From")}
                                 </div>
 							</li>
-							<li>
-								<div className="lefticons" style={{marginLeft:"0.8em"}}>
-									<img style={{width: "100%"}} src="/_assets/images/droplocation.png" />
-								</div>
-								<div className="selecttr" style={{width:"57%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between", paddingLeft:"0.4em"}}>
+                            <li>
+                                <div className="lefticons drop-icon-out">
+                                    <div className="icon_wrapper">
+                                        <div id="droplocation"></div>
+                                    </div>
+                                </div>
+                                <div className="selecttr drop-location-text" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
                                     {this.renderPlacePicker("To")}
                                 </div>
-                                <div><img style={{width: "50%"}} src="/_assets/images/changeroutes.png" /></div>
-							</li>
-							<li>
-								<div className="lefticons" style={{width:"9%", marginLeft:"0.3em"}}>
-                                    <img style={{width: "100%"}} src="/_assets/images/time.png" />
-								</div>
-								<input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand", color:"#7f7f7f"}} className="selecttr" type="datetime-local" placeholder="Choose date" name="usr_time" />
-							</li>
-							<li>
-								<div className="lefticons">
-                                    <img style={{width: "100%"}} src="/_assets/images/user-1.png" />
-								</div>
-								<input ref="seats" type="number" className="selecttr" name="numberofseats" placeholder="Seats available" id="numseats" />
-							</li>
-							<li>
-								<div className="lefticons">
-                                    <img style={{width: "100%"}} src="/_assets/images/womenonly.png" />
-								</div>
-								<div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7f7f7f", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
-									Women only
-									<label className="togglebtn">
-										<Toggle
-											defaultChecked={this.state.handleWomenOnly}
-											ref="womensafety" />
-									</label>
-								</div>
-							</li>
-							<li style={{height: "100em"}}>
-								<textarea name='comment' id='comment' placeholder="Any information about meeting point?" rows="4" cols="50" ></textarea>
-							</li>
+                                <div><div id="changeroutes"></div></div>
+                            </li>
+                            <li>
+                                <div className="lefticons" style={{marginLeft:"0.5em"}}>
+                                    <div className="icon_wrapper">
+                                        <div id="time"></div>
+                                    </div>
+                                </div>
+                                <input ref="time" style={{fontSize:"1.1em", fontFamily: "quicksand"}} className="selecttr" type="datetime-local" placeholder="Pick time and date" name="usr_time" />
+                            </li>
+                            <li>
+                                <div className="lefticons" style={{marginLeft:"0.5em"}}>
+                                    <div className="icon_wrapper">
+                                        <div id="user"></div>
+                                    </div>
+                               </div>
+                                <input ref="seats" type="number" className="selecttr" name="numberofseats" placeholder="Seats available" id="numseats" />
+                            </li>
+                            <li>
+                                <div className="lefticons" style={{marginLeft:"0.5em"}}>
+                                    <div className="icon_wrapper">
+                                        <div id="womenonly"></div>
+                                    </div>
+                                </div>
+                                <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#ec4b75", borderBottom:"1px solid #333333", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
+                                Women only
+                                    <label className="togglebtn">
+                                        <Toggle
+                                        defaultChecked={this.state.handleWomenOnly}
+                                        ref="womensafety" />
+                                    </label>
+                                </div>
+                            </li>
 						</ul>
                         { !this.state.clickedAddCar ? <ShowAddCar onClickedAddCar={this.onClickedAddCar}/> : <AddCar /> }
 
                             <button className="dndbutton" style={button}>
-							<div to="/public/offerride2" style={linkStyle} onClick={this.handleForm}>Publish</div>
+							<div className="dndbuttonLink" to="/public/offerride2" style={linkStyle} onClick={this.handleForm}>PUBLISH</div>
 						</button>
 					</section>
 				</div>
@@ -208,11 +215,11 @@ class ShowAddCar extends React.Component {
     render() {
         return (
             <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
-                <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px"}}>
+                <li className="addcar-container" style={{alignItems: "flex-start"}}>
                     <div className="lefticons" style={{marginLeft: "3.5em"}}>
-                        <img style={{width: "100%"}} src="/_assets/images/add.png" />
+                        <div><div id="add"></div></div>
                     </div>
-                    <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}} onClick={this.onClickedAddCar}>
+                    <div className="selecttr addcar-text" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}} onClick={this.onClickedAddCar}>
                         Tap to Add car details
                     </div>
                 </li>
@@ -226,26 +233,137 @@ class AddCar extends React.Component {
     static defaultProps = {};
     constructor(props) {
         super(props);
+        this.state = {brand: 'empty', plate: '', color: ''};
+
     }
+
+    updateBrand = (brand) => {
+        this.setState({brand:brand});
+    };
+
+
+    updatePlate = (plate) => {
+        this.setState({plate:plate});
+    };
+
+
+    updateColor = (color) => {
+        this.setState({color:color});
+    };
+
 
     render() {
         return (
-            <ul id="addcar1" style={{backgroundColor: "white", width: "100%", height: "50%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column"}}>
-                <li style={{alignItems: "flex-start", padding: "18px 0px 0px 0px", display: "-webkit-box"}}>
-                    <div style={{width: "25%", marginLeft: "2.5em"}}>
-                        <div style={{borderRadius: "75%", width: "75%", height: "75%", background: "white", border: "2px solid #838383", marginLeft: "0.8em"}}>
-                            <i className="fa fa-2x fa-plus" style={{color:"#434240", fontSize: "1.35em"}}></i> <div style={{lineHeight: "1.8em", marginTop: "0.5em"}}>Add Car Photo</div>
+            <div style={{width: "100%"}}>
+            <ul id="addcar" style={{backgroundColor: "white", width: "100%", padding: "0", marginTop:"0.8em", display: "flex",flexDirection:"column", borderBottom: "1px solid #ababab"}}>
+                <li style={{alignItems: "flex-start", padding: "18px 0px 10px 0px", height: "100%", display: "-webkit-box"}}>
+                    <div className="photocirccle-outer">
+                        <div className="addphoto-circle">
+                            <div style={{marginTop: "10px"}}><i className="fa fa-2x fa-plus" style={{color:"#434240", fontSize: "1.35em"}}></i></div>
+                            <div style={{lineHeight: "1.2em", marginTop: "0.5em"}}>Add Car Photo</div>
                         </div>
                     </div>
                     <div className="selecttr" style={{width:"75%", textAlign:"left", fontSize:"1.3em", color:"#7e807f", display:"flex", paddingBottom:"0.15em", justifyContent:"space-between"}}>
                         <ul id="carMeta">
-                            <li>Car Brand<i className="fa fa-2x fa-caret-down" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i></li>
-                            <li>Number Plate<i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i></li>
-                            <li>Color<i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}}></i></li>
+                            <li><BrandSelector brand={this.state.brand} handleBrandUpdates={this.updateBrand}/></li>
+                            <li><PlateSelector plate={this.state.plate} handlePlateUpdates={this.updatePlate}/></li>
+                            <li><ColorSelector color={this.state.color} handleColorUpdates={this.updateColor}/></li>
                         </ul>
                     </div>
                 </li>
             </ul>
+            <div className="addcardetalls">ADD CAR DETAILS</div>
+            </div>
+        );
+    }
+
+}
+
+class BrandSelector extends React.Component {
+    static defaultProps = {};
+    constructor(props) {
+        super(props);
+        this.state = {selectValue: props.brand};
+    }
+
+    handleChange = (e) => {
+        var selectValue = e.target.value;
+        this.setState({selectValue:selectValue});
+        this.props.handleBrandUpdates(selectValue);
+
+    };
+
+    render() {
+        return (
+            <div>
+                <select id="brand"
+                value={this.state.selectValue}
+                onChange={this.handleChange}
+                >
+                    <option value="none">Car Brand</option>
+                    <option value="Maruti">Maruti</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Tavera">Tavera</option>
+                    <option value="Innova">Innova</option>
+                </select>
+            </div>
+        );
+    }
+
+}
+
+class PlateSelector extends React.Component {
+    static defaultProps = {};
+    constructor(props) {
+        super(props);
+        this.state = {disable: true, val: ''};
+    }
+
+    handleChange = (e) => {
+        var val = e.target.value;
+        this.setState({val:val});
+        this.props.handlePlateUpdates(val);
+    };
+
+    handleClick = (e) => {
+        this.setState({disable: !this.state.disable});
+    };
+
+    render() {
+        return (
+            <div>
+                <input type="text" style={{width: "80%"}} disabled={this.state.disable} value={this.state.val} onChange={this.handleChange}/>
+                <i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}} onClick={this.handleClick}></i>
+            </div>
+        );
+    }
+
+}
+
+class ColorSelector extends React.Component {
+    static defaultProps = {};
+    constructor(props) {
+        super(props);
+        this.state = {disable: true, val: ''};
+    }
+
+    handleChange = (e) => {
+        var val = e.target.value;
+        this.setState({val:val});
+        this.props.handleColorUpdates(val);
+    };
+
+    handleClick = (e) => {
+        this.setState({disable: !this.state.disable});
+    };
+
+    render() {
+        return (
+            <div>
+                <input type="text" style={{width: "80%"}} disabled={this.state.disable} value={this.state.val} onChange={this.handleChange}/>
+                <i className="fa fa-2x fa-pencil" style={{color:"#434240", fontSize: "1.35em", marginLeft: "0.35em"}} onClick={this.handleClick}></i>
+            </div>
         );
     }
 
