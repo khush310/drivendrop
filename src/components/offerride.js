@@ -25,7 +25,7 @@ class OfferRide extends React.Component {
 		};
 
 		Superagent
-			.post('http://dndapi.herokuapp.com/api/login')
+			.post('http://localhost:3001/api/login')
 			//.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
 			//.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
 			.send(login_post_data)
@@ -48,7 +48,7 @@ class OfferRide extends React.Component {
 				};
 
 				Superagent
-					.post('http://dndapi.herokuapp.com/api/rides')
+					.post('http://localhost:3001/api/rides')
 					//.set('X-Parse-Application-Id', 'OoK90cI6fsUljxChRLEmgbwHhMeaq5qlXJy4CBvM')
 					//.set('X-Parse-REST-API-Key', '78qvq4B8Q7PsyrAMfxoIXF7KfWRC200Vazx2FdEF')
 					.send(payload)
